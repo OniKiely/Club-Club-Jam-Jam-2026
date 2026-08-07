@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var deathUI: Control
 
-@onready var sprite = $Sprite2D
+@onready var sprite = $sprite
 @onready var camera = $Camera2D
 
 var speed: int = 175
@@ -17,6 +17,8 @@ enum state {
 	DEATH
 }
 
+var walking:bool = false
+var grounded:bool = false
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -27,6 +29,8 @@ func _physics_process(delta: float) -> void:
 		state.DEATH:
 			sprite.visible = false
 	
+		
+	
 	# FOR TESTING ONLY REMOVE BEFORE RELEASE
 	if Input.is_action_just_pressed("kill_button"):
 		on_death()
@@ -35,16 +39,20 @@ func movement(delta):
 	# move left and right
 	var input_axis = Input.get_axis("ui_left", "ui_right")
 	if input_axis != 0:
-		sprite.flip_h = (input_axis < 0) # flips sprite depending on move axis
+		sprite.scale.x = input_axis
 		velocity.x = move_toward(velocity.x, speed * input_axis, acceleration * delta)
+		walking = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
-	
+		walking = false
 	move_and_slide()
 
 func apply_gravity(delta):
 	if not is_on_floor():
+		grounded = false
 		velocity.y += gravity * delta
+	else:
+		grounded = true
 
 func handle_jump():
 	if is_on_floor():

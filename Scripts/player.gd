@@ -8,11 +8,23 @@ var friction = 900
 var jump_strength = -350
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var current_state = state.DEFAULT
+enum state {
+	DEFAULT,
+	DEATH
+}
+
 
 func _physics_process(delta: float) -> void:
-	apply_gravity(delta)
-	handle_jump()
-	
+	match current_state:
+		state.DEFAULT:
+			apply_gravity(delta)
+			handle_jump()
+			movement(delta)
+		state.DEATH:
+			pass
+
+func movement(delta):
 	# move left and right
 	var input_axis = Input.get_axis("ui_left", "ui_right")
 	if input_axis != 0:
@@ -34,3 +46,12 @@ func handle_jump():
 	else:
 		if Input.is_action_just_released("jump") and velocity.y < jump_strength / 2:
 			velocity.y = jump_strength / 2
+
+# this is where we write what happens depending on which power up is collected
+# gets called in power_up_pickup
+func collect_powerup(name):
+	match name:
+		"example":
+			pass
+		_:
+			print("Unknown powerup collected. ", name, " not valid")

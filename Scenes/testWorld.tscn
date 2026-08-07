@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="1_l54rq"]
 [ext_resource type="PackedScene" uid="uid://bhbwfqjinjgiq" path="res://Scenes/player.tscn" id="2_l54rq"]
+[ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_iey3s"]
+[ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -23,3 +25,7 @@ layer_0/tile_data = PackedInt32Array(786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 7
 
 [node name="Player" parent="." unique_id=492339151 instance=ExtResource("2_l54rq")]
 position = Vector2(567, 298)
+
+[node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("3_iey3s")]
+position = Vector2(696, 360)
+data = ExtResource("4_d0hh2")

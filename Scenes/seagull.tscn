@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cyqrilvmn4hrc" path="res://Scripts/seagull.gd" id="1_pmc4f"]
 [ext_resource type="Script" uid="uid://der2gy101s4ma" path="res://Scripts/State Machine/state_machine.gd" id="2_pmc4f"]
 [ext_resource type="Script" uid="uid://unkmq6f740r6" path="res://Scripts/State Machine/Seagull/default_state_seagull.gd" id="3_rap47"]
+[ext_resource type="Script" uid="uid://br2ej2gjnsb2d" path="res://Scripts/State Machine/Seagull/follow_state_seagull.gd" id="5_rap47"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -34,3 +35,6 @@ script = ExtResource("2_pmc4f")
 
 [node name="Default" type="Node" parent="StateMachine" unique_id=2006237279]
 script = ExtResource("3_rap47")
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=1008079882]
+script = ExtResource("5_rap47")

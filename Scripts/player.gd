@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+@export var deathUI: Control
+
 @onready var sprite = $Sprite2D
+@onready var camera = $Camera2D
 
 var speed: int = 175
 var acceleration: int = 700
@@ -22,7 +25,11 @@ func _physics_process(delta: float) -> void:
 			handle_jump()
 			movement(delta)
 		state.DEATH:
-			pass
+			sprite.visible = false
+	
+	# FOR TESTING ONLY REMOVE BEFORE RELEASE
+	if Input.is_action_just_pressed("kill_button"):
+		on_death()
 
 func movement(delta):
 	# move left and right
@@ -55,3 +62,12 @@ func collect_powerup(name):
 			pass
 		_:
 			print("Unknown powerup collected. ", name, " not valid")
+
+func on_death():
+	camera.apply_shake(15)
+	current_state = state.DEATH
+	Engine.time_scale = 0.5
+	await get_tree().create_timer(2).timeout
+	Engine.time_scale = 0
+	if deathUI:
+		deathUI.show()

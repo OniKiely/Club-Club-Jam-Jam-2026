@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="4_b8w0i"]
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
+[ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="9_xr43f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -133,3 +134,6 @@ color = Color(0.008968515, 0.119175576, 0.16108969, 1)
 energy = 0.94
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+
+[node name="Seagull" parent="." unique_id=1506539934 instance=ExtResource("9_xr43f")]
+position = Vector2(643, 177)

@@ -302,6 +302,8 @@ size = Vector2(46, 27.86125)
 polygon = PackedVector2Array(685, 562, 685, 578, 733, 579, 732, 563)
 
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
+collision_layer = 3
+collision_mask = 13
 script = ExtResource("1_cvnsp")
 bullet_scene = ExtResource("2_3smsa")
 

@@ -20,7 +20,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(57, 43)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 404.00494
+
 [node name="Seagull" type="CharacterBody2D" unique_id=1506539934]
+collision_layer = 32
+collision_mask = 17
 script = ExtResource("1_pmc4f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1645521583]
@@ -30,11 +35,29 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 position = Vector2(-2.5, -5.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
+[node name="DetectionArea" type="Area2D" parent="." unique_id=127340304]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=173181299]
+shape = SubResource("CircleShape2D_g4v7s")
+
 [node name="StateMachine" type="Node" parent="." unique_id=1948902725]
 script = ExtResource("2_pmc4f")
 
-[node name="Default" type="Node" parent="StateMachine" unique_id=2006237279]
+[node name="Wander" type="Node" parent="StateMachine" unique_id=2006237279]
 script = ExtResource("3_rap47")
+
+[node name="FlipTimer" type="Timer" parent="StateMachine/Wander" unique_id=536545657]
+wait_time = 3.0
 
 [node name="Follow" type="Node" parent="StateMachine" unique_id=1008079882]
 script = ExtResource("5_rap47")
+
+[node name="AttackTimer" type="Timer" parent="StateMachine/Follow" unique_id=228607985]
+wait_time = 3.0
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="StateMachine/Wander/FlipTimer" to="StateMachine/Wander" method="_on_flip_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Follow/AttackTimer" to="StateMachine/Follow" method="_on_attack_timer_timeout"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtxo7qs842l53"
-path="res://.godot/imported/crabbert.png-0b02981668e1544267d155a3f3d478d4.ctex"
+path="res://.godot/imported/crabbert.png-2a8ed79ef58dcd992d2ebd43a069c161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/crabbert.png"
-dest_files=["res://.godot/imported/crabbert.png-0b02981668e1544267d155a3f3d478d4.ctex"]
+source_file="res://Assets/Art/Player/crabbert.png"
+dest_files=["res://.godot/imported/crabbert.png-2a8ed79ef58dcd992d2ebd43a069c161.ctex"]
 
 [params]
 

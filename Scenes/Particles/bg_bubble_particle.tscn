@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bqqenx1dpamv7"]
+
+[ext_resource type="Script" uid="uid://dl1whajddp0yx" path="res://Scripts/particles/particle.gd" id="1_30owb"]
+[ext_resource type="Texture2D" uid="uid://i3eq550d2riv" path="res://Assets/Art/Bubble.png" id="2_8mig5"]
+[ext_resource type="Texture2D" uid="uid://ce866lgophsnp" path="res://Assets/Art/tiny bubble.png" id="3_h8704"]
+[ext_resource type="Texture2D" uid="uid://dmppo40ayx477" path="res://Assets/Art/big bubble.png" id="4_flqxk"]
+
+[sub_resource type="Animation" id="Animation_fotux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_30owb"]
+resource_name = "fade in"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uxq32"]
+resource_name = "fade out"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xnjrv"]
+_data = {
+&"RESET": SubResource("Animation_fotux"),
+&"fade in": SubResource("Animation_30owb"),
+&"fade out": SubResource("Animation_uxq32")
+}
+
+[node name="BG bubble particle" type="Node2D" unique_id=887517662 node_paths=PackedStringArray("spritesHolder", "fadeAnimationPlayer")]
+scale = Vector2(1, 0.9934739)
+script = ExtResource("1_30owb")
+initialVelocity = Vector2(0, -100)
+initialVelocityRandomness = Vector2(50, 50)
+gravity = Vector2(0, -0.3)
+hasDrag = true
+initialRotationalVelocityRandomness = 10.0
+spritesHolder = NodePath("sprites")
+spritesAmount = 3
+lifespan = 10.0
+lifespanRandomness = 4.0
+fadeAnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="sprites" type="Node2D" parent="." unique_id=880939335]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Bubble" type="Sprite2D" parent="sprites" unique_id=1284103975]
+visible = false
+modulate = Color(1, 1, 1, 0.30980393)
+scale = Vector2(1.4257319, 1.4257319)
+texture = ExtResource("2_8mig5")
+
+[node name="TinyBubble" type="Sprite2D" parent="sprites" unique_id=30533535]
+visible = false
+modulate = Color(1, 1, 1, 0.30980393)
+scale = Vector2(1.4257319, 1.4257319)
+texture = ExtResource("3_h8704")
+
+[node name="BigBubble" type="Sprite2D" parent="sprites" unique_id=48660978]
+visible = false
+modulate = Color(1, 1, 1, 0.30980393)
+texture = ExtResource("4_flqxk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=354879946]
+libraries/ = SubResource("AnimationLibrary_xnjrv")
+autoplay = &"fade in"

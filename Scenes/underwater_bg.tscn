@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cmcphjxhj7og0"]
+
+[ext_resource type="Texture2D" uid="uid://d2g5jglba14mo" path="res://Assets/Art/BG.png" id="1_37mcy"]
+[ext_resource type="Script" uid="uid://babr8gjh8irkn" path="res://Scripts/underwater_bg.gd" id="1_n26ei"]
+[ext_resource type="PackedScene" uid="uid://bqqenx1dpamv7" path="res://Scenes/Particles/bg_bubble_particle.tscn" id="2_spqf5"]
+
+[node name="underwater BG" type="Node2D" unique_id=1869367768]
+z_index = -5
+script = ExtResource("1_n26ei")
+P_particle = ExtResource("2_spqf5")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=636117362]
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(35, 0)
+
+[node name="Bg" type="Sprite2D" parent="Parallax2D" unique_id=1080530340]
+position = Vector2(334, 180)
+scale = Vector2(1.1626431, 1.1626431)
+texture = ExtResource("1_37mcy")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1251236899]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(35, 0)
+
+[node name="particles" type="Node2D" parent="Parallax2D2" unique_id=1500177525]
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(294, 362)
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1604849462]
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(35, 0)
+
+[node name="particles" type="Node2D" parent="Parallax2D3" unique_id=582544666]
+position = Vector2(294, 362)

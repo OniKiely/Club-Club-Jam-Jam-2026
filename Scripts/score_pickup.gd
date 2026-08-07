@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if animation_player:
 			animation_player.play("collect")
 			sprite.play("spin")
+			await get_tree().physics_frame
 			$CollisionShape2D.disabled = true
 			await get_tree().create_timer(1,false).timeout
 			queue_free()

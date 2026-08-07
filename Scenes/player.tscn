@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhbwfqjinjgiq"]
 
 [ext_resource type="Script" uid="uid://kdkqlnvpcj8x" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dtxo7qs842l53" path="res://Assets/Art/Player/crabbert.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dtxo7qs842l53" path="res://Assets/Art/Player/crabbert temp.png" id="2_cvnsp"]
 [ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scenes/camera_2d.gd" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]

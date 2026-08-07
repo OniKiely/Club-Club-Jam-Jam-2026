@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var sprite = $sprite
 @onready var camera = $Camera2D
 
+@export var attack_cooldown:float = 0
+var T_attack_cooldown:float = 0
+
 var speed: int = 250
 var acceleration: int = 700
 var friction = 900
@@ -90,10 +93,15 @@ func _process(delta: float):
 	var mouse_pos = get_global_mouse_position()
 	var direction = mouse_pos - global_position
 	weapon.rotation = direction.angle()
+	
+	
+	if T_attack_cooldown != 0:
+		T_attack_cooldown = move_toward(T_attack_cooldown,0,delta)
 
 func _input(event):
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and T_attack_cooldown == 0:
 		shoot()
+		T_attack_cooldown = attack_cooldown
 
 func shoot():
 	var bullet = bullet_scene.instantiate()

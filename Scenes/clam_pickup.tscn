@@ -80,20 +80,170 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hkdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uqwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5dhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujlc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm4o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7eri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4asau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suxvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujlc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5dhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uqwe")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 39.0
 }]
 
-[node name="Clam Pickup" type="Area2D" unique_id=1063037373]
+[sub_resource type="Animation" id="Animation_ekjuv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6hkdx"]
+resource_name = "collect"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"spin"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -51), Vector2(0, 38)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.42832127, 0.66243476),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.34850985, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -7.304203]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uqwe"]
+_data = {
+&"RESET": SubResource("Animation_ekjuv"),
+&"collect": SubResource("Animation_6hkdx")
+}
+
+[node name="Clam Pickup" type="Area2D" unique_id=1063037373 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_xjs5f")
 data = ExtResource("2_6hkdx")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070480538]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1929646803]
 shape = SubResource("CircleShape2D_we7n5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1514321483]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1514321483]
 sprite_frames = SubResource("SpriteFrames_1f8p0")
 autoplay = "default"
-frame_progress = 0.6389332
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=928162096]
+libraries/ = SubResource("AnimationLibrary_5uqwe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

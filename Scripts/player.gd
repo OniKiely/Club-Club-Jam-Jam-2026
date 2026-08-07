@@ -14,6 +14,8 @@ var friction = 900
 var jump_strength = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var current_checkpoint: Vector2
+
 var current_state = state.DEFAULT
 enum state {
 	DEFAULT,
@@ -27,6 +29,9 @@ func _ready():
 	GlobalVariables.Player = self
 	print("Aim:", aim)
 	print("Bullet Scene:", bullet_scene)
+	
+	# set starting checkpoint
+	current_checkpoint = global_position
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -88,6 +93,8 @@ func on_death():
 	if deathUI:
 		deathUI.show()
 
+func respawn():
+	self.global_position = current_checkpoint
 
 #bullet code
 @export var bullet_scene: PackedScene

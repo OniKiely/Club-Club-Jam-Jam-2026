@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
+[ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="11_xvvnt"]
+[ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -83,6 +85,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iey3s")
 sources/1 = SubResource("TileSetAtlasSource_rdb4h")
 sources/2 = SubResource("TileSetAtlasSource_xr43f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
+size = Vector2(2216, 112)
 
 [node name="TestWorld" type="Node2D" unique_id=2044987218]
 
@@ -158,10 +163,22 @@ script = ExtResource("9_xr43f")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235916004]
 
 [node name="fade_transition" parent="CanvasLayer" unique_id=871146565 instance=ExtResource("10_emcaa")]
+visible = false
 offset_right = 659.0
 offset_bottom = 377.0
 
 [node name="AnimationPlayer" parent="CanvasLayer/fade_transition" index="0" unique_id=189926567]
 autoplay = &"fade_out"
 
+[node name="Killzone" parent="." unique_id=308784554 instance=ExtResource("11_xvvnt")]
+position = Vector2(1048, 728)
+
+[node name="CollisionShape2D" parent="Killzone" index="0" unique_id=27263728]
+position = Vector2(-84, -32)
+shape = SubResource("RectangleShape2D_jvagm")
+
+[node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("12_l8m0x")]
+position = Vector2(784, 352)
+
 [editable path="CanvasLayer/fade_transition"]
+[editable path="Killzone"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://f4y4te615d1b"]
+
+[ext_resource type="Script" uid="uid://td7mmp24xui3" path="res://Scripts/killzone.gd" id="1_jvagm"]
+
+[node name="Killzone" type="Area2D" unique_id=308784554]
+script = ExtResource("1_jvagm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27263728]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

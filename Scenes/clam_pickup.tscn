@@ -230,8 +230,6 @@ _data = {
 }
 
 [node name="Clam Pickup" type="Area2D" unique_id=1063037373 node_paths=PackedStringArray("animation_player")]
-collision_layer = 64
-collision_mask = 2
 script = ExtResource("1_xjs5f")
 data = ExtResource("2_6hkdx")
 animation_player = NodePath("AnimationPlayer")

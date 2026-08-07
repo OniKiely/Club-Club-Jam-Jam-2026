@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
-[ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="9_xr43f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -202,7 +201,3 @@ position = Vector2(-464, 152)
 [editable path="CanvasLayer/fade_transition"]
 [editable path="Killzone"]
 [editable path="CameraLimiter"]
-shadow_color = Color(0, 0, 0, 1)
-
-[node name="Seagull" parent="." unique_id=1506539934 instance=ExtResource("9_xr43f")]
-position = Vector2(643, 177)

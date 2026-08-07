@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="score_item_data" format=3 uid="uid://dpbclpruurm4"]
+
+[ext_resource type="Script" uid="uid://dt5wjno5facc6" path="res://Scripts/score_item_data.gd" id="1_p2k28"]
+
+[resource]
+script = ExtResource("1_p2k28")
+name = "Clam"
+score_value = 100
+clam_value = 1
+metadata/_custom_type_script = "uid://dt5wjno5facc6"

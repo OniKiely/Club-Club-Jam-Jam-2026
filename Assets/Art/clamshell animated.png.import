@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtxo7qs842l53"
-path="res://.godot/imported/crabbert.png-2a8ed79ef58dcd992d2ebd43a069c161.ctex"
+uid="uid://c4qry6pnyhvrf"
+path="res://.godot/imported/clamshell animated.png-04001a7c971217e41fe13abb6372a8a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Player/crabbert.png"
-dest_files=["res://.godot/imported/crabbert.png-2a8ed79ef58dcd992d2ebd43a069c161.ctex"]
+source_file="res://Assets/Art/clamshell animated.png"
+dest_files=["res://.godot/imported/clamshell animated.png-04001a7c971217e41fe13abb6372a8a5.ctex"]
 
 [params]
 

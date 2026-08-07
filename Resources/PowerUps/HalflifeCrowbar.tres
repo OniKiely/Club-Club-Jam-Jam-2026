@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="power_up_data" format=3 uid="uid://bh4d4x7vun2rg"]
+
+[ext_resource type="Script" uid="uid://bt1mb2sgylyu3" path="res://Scripts/power_up_data.gd" id="1_8xg8u"]
+[ext_resource type="Texture2D" uid="uid://baa3kvou6ppw2" path="res://Assets/HalfLifeCrowbar.png" id="2_2emps"]
+
+[resource]
+script = ExtResource("1_8xg8u")
+name = "Halflife Crowbar"
+sprite = ExtResource("2_2emps")
+metadata/_custom_type_script = "uid://bt1mb2sgylyu3"

@@ -21,3 +21,11 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
 	$StateMachine.switch_to("Wander")
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	$StateMachine.stop()
+	$AnimatedSprite2D.hide()
+	$GPUParticles2D.emitting = true
+	await  $GPUParticles2D.finished
+	queue_free()

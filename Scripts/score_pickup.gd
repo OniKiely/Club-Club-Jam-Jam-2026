@@ -2,7 +2,10 @@
 extends Area2D
 class_name score_pickup
 
+@onready var sprite: AnimatedSprite2D = $sprite
+
 @export var data: score_item_data
+@export var animation_player:AnimationPlayer
 
 func _ready():
 	$Sprite2D.texture = data.sprite
@@ -13,4 +16,11 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalVariables.score += data.score_value
 		GlobalVariables.clams += data.clam_value
 		print("Points: ", GlobalVariables.score)
-		queue_free()
+		if animation_player:
+			animation_player.play("collect")
+			sprite.play("spin")
+			$CollisionShape2D.disabled = true
+			await get_tree().create_timer(1,false).timeout
+			queue_free()
+		else:
+			queue_free()

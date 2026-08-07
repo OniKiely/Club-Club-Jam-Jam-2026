@@ -13,7 +13,7 @@ config_version=5
 config/name="Club Club Jam Jam 2026"
 run/main_scene="uid://doul58i5xcg8o"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dw0otdk2y2qak"
 
 [autoload]
 

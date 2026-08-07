@@ -1,24 +1,20 @@
 [gd_scene format=3 uid="uid://c0m2iym4ydnde"]
 
 [ext_resource type="Script" uid="uid://ck3cs8vs0ccwo" path="res://Scripts/bullet.gd" id="1_oduel"]
-[ext_resource type="Texture2D" uid="uid://dmppo40ayx477" path="res://Assets/Art/big bubble.png" id="2_oduel"]
-[ext_resource type="Script" uid="uid://kcrf7q3w7vsy" path="res://Scripts/particles/particle_emmiter.gd" id="3_ycag2"]
-[ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="4_6afsh"]
+[ext_resource type="Texture2D" uid="uid://jtv0ulv3hpmx" path="res://Assets/tempBullet.png" id="1_xjght"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 35.0
 
 [node name="Bullet" type="Area2D" unique_id=1437750222]
+collision_layer = 16
+collision_mask = 33
 script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1065697638]
-texture = ExtResource("2_oduel")
+texture = ExtResource("1_xjght")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378539861]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="particle emmiter" type="Node2D" parent="." unique_id=1046005696 node_paths=PackedStringArray("trail")]
-script = ExtResource("3_ycag2")
-trail = NodePath("..")
-P_particle = ExtResource("4_6afsh")
-emitSpeed = 0.04
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

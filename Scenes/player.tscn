@@ -296,7 +296,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(28, 27.86125)
+size = Vector2(66, 27.86125)
 
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
 script = ExtResource("1_cvnsp")
@@ -326,7 +326,7 @@ animation = &"walking"
 libraries/ = SubResource("AnimationLibrary_tx1dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328232740]
-position = Vector2(8, 8.930625)
+position = Vector2(0, 8.930625)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1869746703]

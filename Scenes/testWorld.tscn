@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_iey3s"]
 [ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="3_ilxaj"]
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
-[ext_resource type="PackedScene" uid="uid://cnlkckue6rj86" path="res://Scenes/score_pickup.tscn" id="7_b8w0i"]
-[ext_resource type="Resource" uid="uid://dpbclpruurm4" path="res://Resources/ScoreItems/Clam.tres" id="8_xr43f"]
+[ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -51,18 +50,62 @@ data = ExtResource("4_d0hh2")
 
 [node name="Pickups" type="Node2D" parent="." unique_id=1325764474]
 
-[node name="ScorePickup" parent="Pickups" unique_id=2138356699 instance=ExtResource("7_b8w0i")]
-position = Vector2(328, 352)
-data = ExtResource("8_xr43f")
+[node name="Clam Pickup" parent="Pickups" unique_id=1418753025 instance=ExtResource("7_rdb4h")]
+position = Vector2(295, 368)
 
-[node name="ScorePickup2" parent="Pickups" unique_id=2025808954 instance=ExtResource("7_b8w0i")]
-position = Vector2(376, 352)
-data = ExtResource("8_xr43f")
+[node name="Clam Pickup2" parent="Pickups" unique_id=89947849 instance=ExtResource("7_rdb4h")]
+position = Vector2(336, 368)
 
-[node name="ScorePickup3" parent="Pickups" unique_id=1283112046 instance=ExtResource("7_b8w0i")]
-position = Vector2(424, 352)
-data = ExtResource("8_xr43f")
+[node name="Clam Pickup3" parent="Pickups" unique_id=2110761171 instance=ExtResource("7_rdb4h")]
+position = Vector2(378, 368)
 
-[node name="ScorePickup4" parent="Pickups" unique_id=289210508 instance=ExtResource("7_b8w0i")]
-position = Vector2(472, 352)
-data = ExtResource("8_xr43f")
+[node name="Clam Pickup4" parent="Pickups" unique_id=1868432643 instance=ExtResource("7_rdb4h")]
+position = Vector2(417, 368)
+
+[node name="Clam Pickup5" parent="Pickups" unique_id=437624405 instance=ExtResource("7_rdb4h")]
+position = Vector2(458, 368)
+
+[node name="Clam Pickup6" parent="Pickups" unique_id=1140951686 instance=ExtResource("7_rdb4h")]
+position = Vector2(315, 340)
+
+[node name="Clam Pickup7" parent="Pickups" unique_id=109517876 instance=ExtResource("7_rdb4h")]
+position = Vector2(356, 340)
+
+[node name="Clam Pickup8" parent="Pickups" unique_id=1918886248 instance=ExtResource("7_rdb4h")]
+position = Vector2(398, 340)
+
+[node name="Clam Pickup9" parent="Pickups" unique_id=208432069 instance=ExtResource("7_rdb4h")]
+position = Vector2(437, 340)
+
+[node name="Clam Pickup10" parent="Pickups" unique_id=488192142 instance=ExtResource("7_rdb4h")]
+position = Vector2(478, 340)
+
+[node name="Clam Pickup11" parent="Pickups" unique_id=1934651208 instance=ExtResource("7_rdb4h")]
+position = Vector2(290, 310)
+
+[node name="Clam Pickup12" parent="Pickups" unique_id=230810283 instance=ExtResource("7_rdb4h")]
+position = Vector2(331, 310)
+
+[node name="Clam Pickup13" parent="Pickups" unique_id=164461637 instance=ExtResource("7_rdb4h")]
+position = Vector2(373, 310)
+
+[node name="Clam Pickup14" parent="Pickups" unique_id=260260476 instance=ExtResource("7_rdb4h")]
+position = Vector2(412, 310)
+
+[node name="Clam Pickup15" parent="Pickups" unique_id=198796012 instance=ExtResource("7_rdb4h")]
+position = Vector2(453, 310)
+
+[node name="Clam Pickup16" parent="Pickups" unique_id=1467169830 instance=ExtResource("7_rdb4h")]
+position = Vector2(315, 282)
+
+[node name="Clam Pickup17" parent="Pickups" unique_id=1869393716 instance=ExtResource("7_rdb4h")]
+position = Vector2(356, 282)
+
+[node name="Clam Pickup18" parent="Pickups" unique_id=1447080527 instance=ExtResource("7_rdb4h")]
+position = Vector2(398, 282)
+
+[node name="Clam Pickup19" parent="Pickups" unique_id=2003619935 instance=ExtResource("7_rdb4h")]
+position = Vector2(437, 282)
+
+[node name="Clam Pickup20" parent="Pickups" unique_id=1152918966 instance=ExtResource("7_rdb4h")]
+position = Vector2(478, 282)

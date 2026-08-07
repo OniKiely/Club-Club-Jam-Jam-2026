@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bhbwfqjinjgiq" path="res://Scenes/player.tscn" id="2_pjf80"]
 [ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_owns2"]
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_aloet"]
+[ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="5_owns2"]
+[ext_resource type="Script" uid="uid://ctla7c8ula8pm" path="res://Scripts/fade_out_node.gd" id="6_aloet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_x7yqn")
@@ -29,3 +31,10 @@ position = Vector2(567, 298)
 [node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("3_owns2")]
 position = Vector2(696, 360)
 data = ExtResource("4_aloet")
+
+[node name="fade_out_node" type="Node" parent="." unique_id=1002960425]
+script = ExtResource("6_aloet")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1690722668]
+
+[node name="fade_transition" parent="CanvasLayer" unique_id=871146565 instance=ExtResource("5_owns2")]

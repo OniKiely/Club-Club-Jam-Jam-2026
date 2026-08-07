@@ -40,7 +40,7 @@ func _ready() -> void:
 	
 	lifespan += randf_range(-lifespanRandomness,lifespanRandomness)
 	if !liveForever:
-		await get_tree().create_timer(lifespan).timeout
+		await get_tree().create_timer(lifespan,false).timeout
 		if fadeAnimationPlayer:
 			fadeAnimationPlayer.play("fade out")
 		else:

@@ -3,6 +3,227 @@
 [ext_resource type="Texture2D" uid="uid://d2g5jglba14mo" path="res://Assets/Art/BG.png" id="1_dvnd1"]
 [ext_resource type="Script" uid="uid://bglv2vgmle42b" path="res://Scripts/start_menu.gd" id="1_xtte2"]
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="3_dl0pg"]
+[ext_resource type="Texture2D" uid="uid://er3uverof7rc" path="res://Assets/Art/main_buttons.png" id="3_h303d"]
+[ext_resource type="Texture2D" uid="uid://byyukqckbv2o3" path="res://Assets/Art/main_buttons drop shadow.png" id="3_ql1sk"]
+[ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animatinos.gd" id="3_ujd4t"]
+
+[sub_resource type="Animation" id="Animation_ujd4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button sprite/MainButtons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button sprite/MainButtons2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("button sprite/Node2D/MainButtons3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("button sprite/Node2D/MainButtons4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ql1sk"]
+resource_name = "enter"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button sprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1939898, 1.1939898), Vector2(1.2875918, 1.2875918)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button sprite/MainButtons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button sprite/MainButtons2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("button sprite/Node2D/MainButtons3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("button sprite/Node2D/MainButtons4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dibtv"]
+_data = {
+&"RESET": SubResource("Animation_ujd4t"),
+&"enter": SubResource("Animation_ql1sk")
+}
+
+[sub_resource type="Animation" id="Animation_o6asp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button sprite/MainButtons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button sprite/MainButtons2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o42a4"]
+resource_name = "enter"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button sprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1303617, 1.1303617), Vector2(1.1712539, 1.1712539)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button sprite/MainButtons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button sprite/MainButtons2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qo7l"]
+_data = {
+&"RESET": SubResource("Animation_o6asp"),
+&"enter": SubResource("Animation_o42a4")
+}
 
 [node name="StartMenu" type="Control" unique_id=103745356]
 layout_mode = 3
@@ -21,6 +242,12 @@ offset_right = 795.0
 offset_bottom = 432.0
 texture = ExtResource("1_dvnd1")
 
+[node name="MainButtonsDropShadow" type="Sprite2D" parent="Background" unique_id=1397272882]
+modulate = Color(0.4630682, 0.4630682, 0.4630682, 0.27058825)
+position = Vector2(421, 230.00002)
+scale = Vector2(0.6902394, 0.6902394)
+texture = ExtResource("3_ql1sk")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=843624193]
 layout_mode = 1
 anchors_preset = 8
@@ -30,20 +257,114 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.0
 offset_top = -56.0
-offset_right = 75.0
-offset_bottom = 56.0
+offset_right = 83.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=707579614]
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=707579614 node_paths=PackedStringArray("animationPlayer")]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start"
+flat = true
+script = ExtResource("3_ujd4t")
+animationPlayer = NodePath("AnimationPlayer")
 
-[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1413212598]
+[node name="button sprite" type="Node2D" parent="VBoxContainer/StartButton" unique_id=1625293039]
+position = Vector2(79, 24)
+
+[node name="MainButtons" type="Sprite2D" parent="VBoxContainer/StartButton/button sprite" unique_id=852270855]
+position = Vector2(0.05154419, -3.563034)
+scale = Vector2(0.607405, 0.607405)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(64, 20, 257, 64)
+
+[node name="MainButtons2" type="Sprite2D" parent="VBoxContainer/StartButton/button sprite" unique_id=2003414950]
+visible = false
+position = Vector2(0.05154419, -3.563034)
+scale = Vector2(0.607405, 0.607405)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(64, 116, 257, 64)
+
+[node name="Node2D" type="Node2D" parent="VBoxContainer/StartButton/button sprite" unique_id=1667948266]
+
+[node name="MainButtons3" type="Sprite2D" parent="VBoxContainer/StartButton/button sprite/Node2D" unique_id=1540340968]
+position = Vector2(-73.77785, 9.970322)
+scale = Vector2(0.607405, 0.607405)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(6, 67, 56, 36)
+
+[node name="MainButtons4" type="Sprite2D" parent="VBoxContainer/StartButton/button sprite/Node2D" unique_id=1835848741]
+visible = false
+position = Vector2(-72.77785, 11.970322)
+scale = Vector2(0.607405, 0.607405)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(2, 127, 60, 46)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/StartButton" unique_id=1745663413]
+libraries/ = SubResource("AnimationLibrary_dibtv")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=2062279850]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1413212598 node_paths=PackedStringArray("animationPlayer")]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
+flat = true
+script = ExtResource("3_ujd4t")
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="button sprite" type="Node2D" parent="VBoxContainer/ExitButton" unique_id=162712115]
+position = Vector2(79, 24)
+
+[node name="MainButtons" type="Sprite2D" parent="VBoxContainer/ExitButton/button sprite" unique_id=2136386940]
+position = Vector2(0.05154419, -3.563034)
+scale = Vector2(0.7031674, 0.7031674)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(369, 62, 224, 54)
+
+[node name="MainButtons2" type="Sprite2D" parent="VBoxContainer/ExitButton/button sprite" unique_id=1148621280]
+visible = false
+position = Vector2(0.05154419, -3.563034)
+scale = Vector2(0.7031674, 0.7031674)
+texture = ExtResource("3_h303d")
+region_enabled = true
+region_rect = Rect2(368, 126, 224, 54)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/ExitButton" unique_id=858680024]
+libraries/ = SubResource("AnimationLibrary_0qo7l")
+
+[node name="Control" type="Control" parent="." unique_id=1759746776]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="MainButtonsDropShadow" type="Sprite2D" parent="Control" unique_id=525844800]
+modulate = Color(0.4627451, 0.4627451, 0.4627451, 0.48235294)
+position = Vector2(104.30638, 73.97073)
+scale = Vector2(0.72255194, 0.23317075)
+texture = ExtResource("3_ql1sk")
+
+[node name="Label" type="Label" parent="Control" unique_id=585818790]
+layout_mode = 0
+offset_left = -62.69368
+offset_top = 34.97073
+offset_right = 103.30632
+offset_bottom = 79.97073
+theme_override_font_sizes/font_size = 32
+text = "ShellShock"
 
 [node name="fade_transition" parent="." unique_id=871146565 instance=ExtResource("3_dl0pg")]
 visible = false
@@ -51,6 +372,10 @@ layout_mode = 1
 
 [node name="fade_timer" type="Timer" parent="fade_transition" unique_id=1992459473]
 
+[connection signal="mouse_entered" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

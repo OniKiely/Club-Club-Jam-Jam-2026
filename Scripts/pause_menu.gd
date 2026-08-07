@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	get_tree().paused = false
+	visible = false
 	$AnimationPlayer.play("RESET")
 
 func resume():
@@ -10,6 +11,7 @@ func resume():
 
 func pause():
 	get_tree().paused = true
+	visible = true
 	$AnimationPlayer.play("blur")
 
 func testPause():

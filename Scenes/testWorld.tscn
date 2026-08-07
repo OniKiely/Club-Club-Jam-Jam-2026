@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
 [ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="11_xvvnt"]
 [ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
+[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -179,6 +180,10 @@ shape = SubResource("RectangleShape2D_jvagm")
 
 [node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("12_l8m0x")]
 position = Vector2(784, 352)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=166130899]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
 
 [editable path="CanvasLayer/fade_transition"]
 [editable path="Killzone"]

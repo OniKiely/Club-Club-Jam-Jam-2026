@@ -23,6 +23,11 @@ enum state {
 var walking:bool = false
 var grounded:bool = false
 
+func _ready():
+	GlobalVariables.Player = self
+	print("Aim:", aim)
+	print("Bullet Scene:", bullet_scene)
+
 func _physics_process(delta: float) -> void:
 	match current_state:
 		state.DEFAULT:
@@ -108,7 +113,3 @@ func shoot():
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
 	bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
-
-func _ready():
-	print("Aim:", aim)
-	print("Bullet Scene:", bullet_scene)

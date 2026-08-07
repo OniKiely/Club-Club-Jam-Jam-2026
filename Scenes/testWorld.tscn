@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
+[ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -153,3 +154,14 @@ shadow_filter = 2
 
 [node name="Particles" type="Node2D" parent="." unique_id=296845036]
 script = ExtResource("9_xr43f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235916004]
+
+[node name="fade_transition" parent="CanvasLayer" unique_id=871146565 instance=ExtResource("10_emcaa")]
+offset_right = 659.0
+offset_bottom = 377.0
+
+[node name="AnimationPlayer" parent="CanvasLayer/fade_transition" index="0" unique_id=189926567]
+autoplay = &"fade_out"
+
+[editable path="CanvasLayer/fade_transition"]

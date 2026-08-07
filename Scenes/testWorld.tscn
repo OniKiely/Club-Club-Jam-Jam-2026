@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_iey3s"]
 [ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="3_ilxaj"]
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
+[ext_resource type="PackedScene" uid="uid://cnlkckue6rj86" path="res://Scenes/score_pickup.tscn" id="7_b8w0i"]
+[ext_resource type="Resource" uid="uid://dpbclpruurm4" path="res://Resources/ScoreItems/Clam.tres" id="8_xr43f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -46,3 +48,21 @@ position = Vector2(567, 298)
 [node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("3_iey3s")]
 position = Vector2(696, 360)
 data = ExtResource("4_d0hh2")
+
+[node name="Pickups" type="Node2D" parent="." unique_id=1325764474]
+
+[node name="ScorePickup" parent="Pickups" unique_id=2138356699 instance=ExtResource("7_b8w0i")]
+position = Vector2(328, 352)
+data = ExtResource("8_xr43f")
+
+[node name="ScorePickup2" parent="Pickups" unique_id=2025808954 instance=ExtResource("7_b8w0i")]
+position = Vector2(376, 352)
+data = ExtResource("8_xr43f")
+
+[node name="ScorePickup3" parent="Pickups" unique_id=1283112046 instance=ExtResource("7_b8w0i")]
+position = Vector2(424, 352)
+data = ExtResource("8_xr43f")
+
+[node name="ScorePickup4" parent="Pickups" unique_id=289210508 instance=ExtResource("7_b8w0i")]
+position = Vector2(472, 352)
+data = ExtResource("8_xr43f")

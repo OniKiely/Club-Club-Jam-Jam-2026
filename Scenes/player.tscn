@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c0m2iym4ydnde" path="res://Scenes/bullet.tscn" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://dlxqcho462uog" path="res://Assets/Art/Player/crabbert sprites.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://y2atba2piycg" path="res://Assets/Art/Player/Crabbert Shell.png" id="2_fkybt"]
-[ext_resource type="Script" uid="uid://byc6j5xnjwif0" path="res://Scenes/player_animations.gd" id="2_vgqql"]
-[ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scenes/camera_2d.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://byc6j5xnjwif0" path="res://Scripts/player_animations.gd" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scripts/camera_2d.gd" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://k86ofuofu6cd" path="res://Assets/Art/Player/Crabbert Body.png" id="3_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]

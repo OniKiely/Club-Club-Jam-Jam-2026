@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="score_item_data" format=3 uid="uid://dpbclpruurm4"]
+
+[ext_resource type="Script" uid="uid://dt5wjno5facc6" path="res://Scripts/score_item_data.gd" id="1_p2k28"]
+[ext_resource type="Texture2D" uid="uid://dmvd7xc4eiyup" path="res://Assets/Art/clamshell.png" id="2_st3yf"]
+
+[resource]
+script = ExtResource("1_p2k28")
+name = "Clam"
+sprite = ExtResource("2_st3yf")
+score_value = 100
+clam_value = 1
+metadata/_custom_type_script = "uid://dt5wjno5facc6"

@@ -11,6 +11,8 @@ func resume():
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
+	visible = true
+	
 
 func testPause():
 	if Input.is_action_just_pressed("pause") and !get_tree().paused:

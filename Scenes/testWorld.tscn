@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
+[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="10_emcaa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -153,3 +154,8 @@ shadow_filter = 2
 
 [node name="Particles" type="Node2D" parent="." unique_id=296845036]
 script = ExtResource("9_xr43f")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=577762598]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("10_emcaa")]
+visible = false

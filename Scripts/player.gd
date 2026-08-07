@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 func movement(delta):
 	# move left and right
-	var input_axis = Input.get_axis("ui_left", "ui_right")
+	var input_axis = Input.get_axis("move_left", "move_right")
 	if input_axis != 0:
 		sprite.scale.x = input_axis
 		velocity.x = move_toward(velocity.x, speed * input_axis, acceleration * delta)

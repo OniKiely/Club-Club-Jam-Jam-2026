@@ -296,7 +296,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(66, 27.86125)
+size = Vector2(54, 27.86125)
 
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
 script = ExtResource("1_cvnsp")

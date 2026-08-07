@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_aloet"]
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="5_owns2"]
 [ext_resource type="Script" uid="uid://ctla7c8ula8pm" path="res://Scripts/fade_out_node.gd" id="6_aloet"]
+[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="7_aloet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_x7yqn")
@@ -38,3 +39,7 @@ script = ExtResource("6_aloet")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1690722668]
 
 [node name="fade_transition" parent="CanvasLayer" unique_id=871146565 instance=ExtResource("5_owns2")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=511853259]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("7_aloet")]

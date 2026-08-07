@@ -5,10 +5,10 @@ extends CharacterBody2D
 @onready var sprite = $sprite
 @onready var camera = $Camera2D
 
-var speed: int = 175
+var speed: int = 250
 var acceleration: int = 700
 var friction = 900
-var jump_strength = -350
+var jump_strength = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var current_state = state.DEFAULT

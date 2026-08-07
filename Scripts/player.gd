@@ -80,7 +80,7 @@ var last_input: int = 1
 func movement(delta):
 	# move left and right
 	var input_axis = Input.get_axis("move_left", "move_right")
-	print(input_axis)
+	#print(input_axis)
 	if input_axis != 0:
 		last_input = input_axis
 		sprite.scale.x = input_axis

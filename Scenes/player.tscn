@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://k86ofuofu6cd" path="res://Assets/Art/Player/Crabbert Body.png" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://cvd0kgvhb1l1j" path="res://Scripts/powerups.gd" id="8_8erm5"]
 [ext_resource type="Script" uid="uid://bkmqtc6d3svwp" path="res://Scripts/camera_limit_manager.gd" id="8_f1ek2"]
+[ext_resource type="Script" uid="uid://d2h1h3rgvf6lu" path="res://Scripts/UI/clam_counter.gd" id="10_gymyn"]
+[ext_resource type="Texture2D" uid="uid://bs65fjn0oosa6" path="res://Assets/Art/tiny clamshell.png" id="11_pu2lt"]
+[ext_resource type="Script" uid="uid://t48cw51hj2vr" path="res://Scripts/UI/score_counter.gd" id="12_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
@@ -365,6 +368,31 @@ shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="DashTimer" type="Timer" parent="." unique_id=354626906]
 wait_time = 0.5
+
+[node name="Player UI" type="CanvasLayer" parent="." unique_id=1211840619]
+
+[node name="Score Counter" type="Node2D" parent="Player UI" unique_id=1504653169]
+position = Vector2(15, 10)
+script = ExtResource("12_pu2lt")
+
+[node name="score count" type="Label" parent="Player UI/Score Counter" unique_id=1955417763]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Clam Counter" type="Node2D" parent="Player UI" unique_id=2127374055]
+position = Vector2(33, 44)
+script = ExtResource("10_gymyn")
+
+[node name="Label" type="Label" parent="Player UI/Clam Counter" unique_id=1636704631]
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 19.0
+
+[node name="TinyClamshell" type="Sprite2D" parent="Player UI/Clam Counter" unique_id=935911400]
+position = Vector2(-9, 8)
+scale = Vector2(1.3936069, 1.3936069)
+texture = ExtResource("11_pu2lt")
 
 [connection signal="area_entered" from="CameraLimitDetection" to="." method="_on_camera_limit_detection_area_entered"]
 [connection signal="timeout" from="DashTimer" to="Powerups" method="_on_dash_timer_timeout"]

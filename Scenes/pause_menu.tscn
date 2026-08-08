@@ -3,7 +3,8 @@
 [ext_resource type="Shader" uid="uid://1k6ybqyxpyqa" path="res://Scenes/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://ck5dmwrutqap5" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Texture2D" uid="uid://er3uverof7rc" path="res://Assets/Art/main_buttons.png" id="3_bpi0q"]
-[ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animatinos.gd" id="4_vmyb1"]
+[ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animations.gd" id="4_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://ca3l4s2xhb8c3" path="res://Assets/Art/Restartnpausebuttons.png" id="5_vmyb1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("1_emv3i")
@@ -44,7 +45,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
@@ -84,7 +85,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.033333335),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true]
 }
 
@@ -144,6 +145,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_k0w1u"]
 resource_name = "blur"
@@ -197,6 +210,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.006490545),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1och7"]
 _data = {
@@ -206,6 +231,7 @@ _data = {
 
 [node name="PauseMenu" type="Control" unique_id=1066546381]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -281,26 +307,27 @@ libraries/ = SubResource("AnimationLibrary_u8tnp")
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1283601672]
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1283601672 node_paths=PackedStringArray("animationPlayer")]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Restart"
 script = ExtResource("4_vmyb1")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="button sprite" type="Node2D" parent="VBoxContainer/RestartButton" unique_id=1880057994]
-visible = false
 position = Vector2(81, 19.5)
 
 [node name="MainButtons" type="Sprite2D" parent="VBoxContainer/RestartButton/button sprite" unique_id=1007951709]
 scale = Vector2(0.7140009, 0.7140009)
-texture = ExtResource("3_bpi0q")
+texture = ExtResource("5_vmyb1")
 region_enabled = true
 region_rect = Rect2(64, 222, 224, 54)
 
 [node name="MainButtons2" type="Sprite2D" parent="VBoxContainer/RestartButton/button sprite" unique_id=329594626]
 visible = false
 scale = Vector2(0.7140009, 0.7140009)
-texture = ExtResource("3_bpi0q")
+texture = ExtResource("5_vmyb1")
 region_enabled = true
 region_rect = Rect2(64, 286, 224, 54)
 
@@ -346,6 +373,8 @@ libraries/ = SubResource("AnimationLibrary_1och7")
 [connection signal="mouse_entered" from="VBoxContainer/ResumeButton" to="VBoxContainer/ResumeButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ResumeButton" to="VBoxContainer/ResumeButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/RestartButton" to="VBoxContainer/RestartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/RestartButton" to="VBoxContainer/RestartButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_exited"]

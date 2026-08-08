@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
+[ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="18_p6ccs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -198,6 +199,9 @@ shape = SubResource("RectangleShape2D_jvagm")
 position = Vector2(784, 352)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=166130899]
+
+[node name="pause button" parent="CanvasLayer2" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
+pauseMenu = NodePath("../PauseMenu")
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
 visible = false

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="3_dl0pg"]
 [ext_resource type="Texture2D" uid="uid://er3uverof7rc" path="res://Assets/Art/main_buttons.png" id="3_h303d"]
 [ext_resource type="Texture2D" uid="uid://byyukqckbv2o3" path="res://Assets/Art/main_buttons drop shadow.png" id="3_ql1sk"]
-[ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animatinos.gd" id="3_ujd4t"]
+[ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animations.gd" id="3_ujd4t"]
 
 [sub_resource type="Animation" id="Animation_ujd4t"]
 length = 0.001

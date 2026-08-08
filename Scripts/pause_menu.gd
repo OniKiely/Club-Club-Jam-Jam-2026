@@ -1,5 +1,7 @@
 extends Control
 
+var pause_locked := false
+
 func _ready() -> void:
 	get_tree().paused = false
 	visible = false
@@ -15,6 +17,9 @@ func pause():
 	$AnimationPlayer.play("blur")
 
 func testPause():
+	if pause_locked:
+		return
+		
 	if Input.is_action_just_pressed("pause") and !get_tree().paused:
 		pause()
 	elif Input.is_action_just_pressed("pause") and get_tree().paused:
@@ -36,3 +41,6 @@ func _on_exit_button_pressed() -> void:
 
 func _process(_delta):
 	testPause()
+
+func set_pause_locked(locked: bool):
+	pause_locked = locked

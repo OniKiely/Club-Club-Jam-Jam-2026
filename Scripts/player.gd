@@ -158,6 +158,10 @@ func _process(delta: float):
 	
 	if T_attack_cooldown != 0:
 		T_attack_cooldown = move_toward(T_attack_cooldown,0,delta)
+	
+	#press r to restart level
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func shoot():
 	var bullet = bullet_scene.instantiate()

@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
 [ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="18_p6ccs"]
+[ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_pgapj"]
+[ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="21_lsb16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -258,9 +260,12 @@ position = Vector2(-464, 152)
 
 [node name="Objects" type="Node2D" parent="." unique_id=1419944227]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235916004]
+[node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_pgapj")]
+position = Vector2(749, -34)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1544868489]
+[node name="FadeCL" type="CanvasLayer" parent="." unique_id=1235916004]
+
+[node name="ColorRect" type="ColorRect" parent="FadeCL" unique_id=1544868489]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -269,16 +274,21 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=125625497]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeCL/ColorRect" unique_id=125625497]
 libraries/ = SubResource("AnimationLibrary_6ux8o")
 autoplay = &"fade in"
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=166130899]
+[node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 
-[node name="pause button" parent="CanvasLayer2" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
+[node name="pause button" parent="PauseCL" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
 pauseMenu = NodePath("../PauseMenu")
 
-[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
+[node name="PauseMenu" parent="PauseCL" unique_id=1066546381 instance=ExtResource("13_t0p86")]
+
+[node name="WinCL" type="CanvasLayer" parent="." unique_id=1836203151]
+
+[node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("21_lsb16")]
+process_mode = 3
 
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

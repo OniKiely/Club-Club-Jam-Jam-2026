@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://dxu6f346vcy6m" path="res://Resources/PowerUps/Fastfall.tres" id="7_l8m0x"]
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
-[ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
 [ext_resource type="Resource" uid="uid://byedofx8jtefu" path="res://Resources/shell pickups/shell.tres" id="11_wm471"]
 [ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="11_xvvnt"]
 [ext_resource type="Resource" uid="uid://upmhh3kdsi13" path="res://Resources/shell pickups/no shell.tres" id="12_6ux8o"]
@@ -96,6 +95,58 @@ sources/2 = SubResource("TileSetAtlasSource_xr43f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
 size = Vector2(2216, 112)
 
+[sub_resource type="Animation" id="Animation_o7rkd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ypme4"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x3sen"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ux8o"]
+_data = {
+&"RESET": SubResource("Animation_o7rkd"),
+&"fade in": SubResource("Animation_ypme4"),
+&"fade out": SubResource("Animation_x3sen")
+}
+
 [node name="TestWorld" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player")]
 script = ExtResource("1_0roqs")
 initial_camera_limiter = NodePath("CameraLimiter")
@@ -178,16 +229,6 @@ shadow_filter = 2
 [node name="Particles" type="Node2D" parent="." unique_id=296845036]
 script = ExtResource("9_xr43f")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235916004]
-
-[node name="fade_transition" parent="CanvasLayer" unique_id=871146565 instance=ExtResource("10_emcaa")]
-visible = false
-offset_right = 659.0
-offset_bottom = 377.0
-
-[node name="AnimationPlayer" parent="CanvasLayer/fade_transition" index="0" unique_id=189926567]
-autoplay = &"fade_out"
-
 [node name="Killzone" parent="." unique_id=308784554 instance=ExtResource("11_xvvnt")]
 position = Vector2(1048, 728)
 
@@ -198,13 +239,6 @@ shape = SubResource("RectangleShape2D_jvagm")
 [node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("12_l8m0x")]
 position = Vector2(784, 352)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=166130899]
-
-[node name="pause button" parent="CanvasLayer2" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
-pauseMenu = NodePath("../PauseMenu")
-
-[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
-
 [node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("14_0roqs")]
 position = Vector2(656, 296)
 limit_y = 2
@@ -212,6 +246,29 @@ limit_y = 2
 [node name="LimitPosition" parent="CameraLimiter" index="1" unique_id=1422526312]
 position = Vector2(-464, 152)
 
-[editable path="CanvasLayer/fade_transition"]
+[node name="Objects" type="Node2D" parent="." unique_id=1419944227]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235916004]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1544868489]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=125625497]
+libraries/ = SubResource("AnimationLibrary_6ux8o")
+autoplay = &"fade in"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=166130899]
+
+[node name="pause button" parent="CanvasLayer2" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
+pauseMenu = NodePath("../PauseMenu")
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
+
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

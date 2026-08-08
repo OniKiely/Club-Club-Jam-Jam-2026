@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://d2g5jglba14mo" path="res://Assets/Art/BG.png" id="1_dvnd1"]
 [ext_resource type="Script" uid="uid://bglv2vgmle42b" path="res://Scripts/start_menu.gd" id="1_xtte2"]
-[ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="3_dl0pg"]
+[ext_resource type="PackedScene" uid="uid://cmcphjxhj7og0" path="res://Scenes/underwater_bg.tscn" id="2_o42a4"]
 [ext_resource type="Texture2D" uid="uid://er3uverof7rc" path="res://Assets/Art/main_buttons.png" id="3_h303d"]
 [ext_resource type="Texture2D" uid="uid://byyukqckbv2o3" path="res://Assets/Art/main_buttons drop shadow.png" id="3_ql1sk"]
 [ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animations.gd" id="3_ujd4t"]
+[ext_resource type="Texture2D" uid="uid://dyrt8mem24mb1" path="res://Assets/Art/Title.png" id="6_dibtv"]
+[ext_resource type="Texture2D" uid="uid://cxkeu2tfi306a" path="res://Assets/Art/Titleblueshell.png" id="6_o42a4"]
+[ext_resource type="Texture2D" uid="uid://d3pnwsewxnfwj" path="res://Assets/Art/Titletanshell.png" id="7_0qo7l"]
 
 [sub_resource type="Animation" id="Animation_ujd4t"]
 length = 0.001
@@ -225,6 +228,144 @@ _data = {
 &"enter": SubResource("Animation_o42a4")
 }
 
+[sub_resource type="Animation" id="Animation_b3loq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/shell:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/blue shell:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0qo7l"]
+resource_name = "title"
+length = 6.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7739837, 4.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.03490658503988659, -0.03490658503988659]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/shell:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.12217304763960307, 0.12217304763960307]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/blue shell:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.7073169, 4.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.12217304763960307, -0.17453292519943295]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3loq"]
+_data = {
+&"RESET": SubResource("Animation_b3loq"),
+&"title": SubResource("Animation_0qo7l")
+}
+
+[sub_resource type="Animation" id="Animation_o7rkd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ypme4"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x3sen"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7rkd"]
+_data = {
+&"RESET": SubResource("Animation_o7rkd"),
+&"fade in": SubResource("Animation_ypme4"),
+&"fade out": SubResource("Animation_x3sen")
+}
+
 [node name="StartMenu" type="Control" unique_id=103745356]
 layout_mode = 3
 anchors_preset = 15
@@ -233,8 +374,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xtte2")
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="underwater BG" parent="." unique_id=1869367768 instance=ExtResource("2_o42a4")]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1358546151]
+visible = false
 layout_mode = 0
 offset_left = -21.0
 offset_top = -27.0
@@ -255,9 +400,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
+offset_left = -79.0
 offset_top = -56.0
-offset_right = 83.0
+offset_right = 79.0
 offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -341,7 +486,7 @@ region_rect = Rect2(368, 126, 224, 54)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/ExitButton" unique_id=858680024]
 libraries/ = SubResource("AnimationLibrary_0qo7l")
 
-[node name="Control" type="Control" parent="." unique_id=1759746776]
+[node name="Title" type="Control" parent="." unique_id=1759746776]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -351,26 +496,63 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="MainButtonsDropShadow" type="Sprite2D" parent="Control" unique_id=525844800]
-modulate = Color(0.4627451, 0.4627451, 0.4627451, 0.48235294)
-position = Vector2(104.30638, 73.97073)
-scale = Vector2(0.72255194, 0.23317075)
+[node name="Node2D" type="Node2D" parent="Title" unique_id=884546307]
+position = Vector2(21, 60)
+
+[node name="Titledrop shadow" type="Sprite2D" parent="Title/Node2D" unique_id=525844800]
+modulate = Color(0.4627451, 0.4627451, 0.4627451, 0.34901962)
+position = Vector2(8.5, 7.731926)
+scale = Vector2(1.4087838, 0.4679803)
 texture = ExtResource("3_ql1sk")
+region_enabled = true
+region_rect = Rect2(83, 35, 296, 203)
 
-[node name="Label" type="Label" parent="Control" unique_id=585818790]
-layout_mode = 0
-offset_left = -62.69368
-offset_top = 34.97073
-offset_right = 103.30632
-offset_bottom = 79.97073
-theme_override_font_sizes/font_size = 32
-text = "ShellShock"
+[node name="blue shell" type="Sprite2D" parent="Title/Node2D" unique_id=329429249]
+position = Vector2(172, 11.231934)
+scale = Vector2(0.60684407, 0.6068441)
+texture = ExtResource("6_o42a4")
+region_enabled = true
+region_rect = Rect2(26, 76, 84, 84)
 
-[node name="fade_transition" parent="." unique_id=871146565 instance=ExtResource("3_dl0pg")]
-visible = false
+[node name="shell" type="Sprite2D" parent="Title/Node2D" unique_id=863459404]
+position = Vector2(-155, 13.231934)
+scale = Vector2(0.60684407, 0.6068441)
+texture = ExtResource("7_0qo7l")
+region_enabled = true
+region_rect = Rect2(500, 66, 134, 99)
+
+[node name="Titledrop shadow2" type="Sprite2D" parent="Title/Node2D" unique_id=1241874209]
+modulate = Color(0.4627451, 0.4627451, 0.4627451, 0.37254903)
+position = Vector2(-0.73272514, 2.2319412)
+scale = Vector2(1.2346808, 0.27112162)
+texture = ExtResource("3_ql1sk")
+region_enabled = true
+region_rect = Rect2(83, 35, 296, 203)
+
+[node name="Title" type="Sprite2D" parent="Title/Node2D" unique_id=1256256194]
+position = Vector2(1, -2)
+scale = Vector2(0.60684407, 0.60684407)
+texture = ExtResource("6_dibtv")
+region_enabled = true
+region_rect = Rect2(41.173607, 30.6568, 569.668, 118.19281)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title" unique_id=2052431353]
+libraries/ = SubResource("AnimationLibrary_b3loq")
+autoplay = &"title"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1537215083]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
-[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=1992459473]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=182736051]
+libraries/ = SubResource("AnimationLibrary_o7rkd")
+autoplay = &"fade in"
 
 [connection signal="mouse_entered" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_mouse_exited"]
@@ -378,4 +560,3 @@ layout_mode = 1
 [connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

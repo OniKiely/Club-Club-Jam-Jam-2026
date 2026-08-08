@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cqm7qt7t6bj6d"]
+
+[ext_resource type="Script" uid="uid://c63uixq2a47c2" path="res://Scripts/trash/trash current.gd" id="1_ja4mb"]
+[ext_resource type="Texture2D" uid="uid://bo4eaewidcdo4" path="res://Assets/Art/Trash_ccjj.png" id="2_tdyvx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ja4mb"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f8p0"]
+radius = 29.017237
+
+[node name="trash current" type="RigidBody2D" unique_id=1655524999]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_ja4mb")
+sleeping = true
+script = ExtResource("1_ja4mb")
+
+[node name="TrashCcjj" type="Sprite2D" parent="." unique_id=64455984]
+position = Vector2(-1.0000002, -21)
+scale = Vector2(0.50408256, 0.50408256)
+texture = ExtResource("2_tdyvx")
+region_enabled = true
+region_rect = Rect2(30, 47, 68, 43)
+
+[node name="TrashCcjj2" type="Sprite2D" parent="." unique_id=275091143]
+position = Vector2(22, 5)
+scale = Vector2(0.50408256, 0.50408256)
+texture = ExtResource("2_tdyvx")
+region_enabled = true
+region_rect = Rect2(47, 97, 28, 67)
+
+[node name="TrashCcjj3" type="Sprite2D" parent="." unique_id=73899106]
+position = Vector2(-17, 13)
+scale = Vector2(0.50408256, 0.50408256)
+texture = ExtResource("2_tdyvx")
+region_enabled = true
+region_rect = Rect2(97, 97, 75, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818489242]
+shape = SubResource("CircleShape2D_1f8p0")
+
+[node name="down ray" type="RayCast2D" parent="." unique_id=490204363]
+target_position = Vector2(0, 55)
+
+[node name="left ray" type="RayCast2D" parent="." unique_id=125049684]
+target_position = Vector2(-60, 1)
+
+[node name="right ray" type="RayCast2D" parent="." unique_id=1055301910]
+target_position = Vector2(60, 0)

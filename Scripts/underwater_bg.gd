@@ -24,12 +24,14 @@ func _process(delta: float) -> void:
 
 func _emit_particle():
 	var particle = P_particle.instantiate()
-	particle.global_position.x = randf_range(-600,600) + 0.2 * GlobalVariables.Player.position.x
-	particle.global_position.y = 200 + 0.2 * GlobalVariables.Player.position.y
-		#print(particle.initialVelocity)
+	particle.global_position.x = randf_range(-600,600)
+	particle.global_position.y = 100
+	if GlobalVariables.Player:
+		particle.global_position += 0.2 * GlobalVariables.Player.position
 	particles1.add_child(particle)
 	particle = P_particle.instantiate()
-	particle.global_position.x = randf_range(-600,600) + 0.4 * GlobalVariables.Player.position.x
-	particle.global_position.y = 200 + 0.4 * GlobalVariables.Player.position.y
-		#print(particle.initialVelocity)
+	particle.global_position.x = randf_range(-600,600)
+	particle.global_position.y = 100
+	if GlobalVariables.Player:
+		particle.global_position += 0.4 * GlobalVariables.Player.position
 	particles2.add_child(particle)

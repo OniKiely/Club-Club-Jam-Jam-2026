@@ -1,7 +1,7 @@
 extends Node2D
 
-const P_TEST_WORLD = preload("uid://doul58i5xcg8o")
-const P_START_MENU = preload("uid://uoyyxrjanto")
+const P_START_MENU = preload("res://Scenes/StartMenu.tscn")
+const P_TEST_WORLD = preload("res://Scenes/testWin.tscn")
 
 
 
@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 
 func _play():
 	currentScene.queue_free()
+	#var Packed_level:PackedScene = load(P_TEST_WORLD_path)
 	var level = P_TEST_WORLD.instantiate()
 	currentScene = level
 	scene_holder.add_child(level)

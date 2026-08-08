@@ -7,11 +7,49 @@
 [ext_resource type="Script" uid="uid://byc6j5xnjwif0" path="res://Scripts/player_animations.gd" id="2_vgqql"]
 [ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scripts/camera_2d.gd" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://by3rajokn6c6r" path="res://Scripts/shell/shell manager.gd" id="3_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://7m732fs1w01i" path="res://Assets/Art/cannon.png" id="5_ukyrk"]
 [ext_resource type="Script" uid="uid://cvd0kgvhb1l1j" path="res://Scripts/powerups.gd" id="8_8erm5"]
 [ext_resource type="Script" uid="uid://bkmqtc6d3svwp" path="res://Scripts/camera_limit_manager.gd" id="8_f1ek2"]
 [ext_resource type="Script" uid="uid://d2h1h3rgvf6lu" path="res://Scripts/UI/clam_counter.gd" id="10_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bs65fjn0oosa6" path="res://Assets/Art/tiny clamshell.png" id="11_pu2lt"]
 [ext_resource type="Script" uid="uid://t48cw51hj2vr" path="res://Scripts/UI/score_counter.gd" id="12_pu2lt"]
+
+[sub_resource type="Animation" id="Animation_ukyrk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cannon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -32.999996)]
+}
+
+[sub_resource type="Animation" id="Animation_7dp3o"]
+resource_name = "shoot"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cannon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.028666575, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -32.999996), Vector2(0, -16), Vector2(0, -32.999996)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4iuc"]
+_data = {
+&"RESET": SubResource("Animation_ukyrk"),
+&"shoot": SubResource("Animation_7dp3o")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
@@ -314,6 +352,24 @@ script = ExtResource("1_cvnsp")
 shellData = ExtResource("2_pu2lt")
 bullet_scene = ExtResource("2_3smsa")
 
+[node name="Weapon" type="Node2D" parent="." unique_id=791512220]
+
+[node name="cannon" type="Node2D" parent="Weapon" unique_id=721450971]
+visible = false
+position = Vector2(0, 6)
+
+[node name="Cannon" type="Sprite2D" parent="Weapon/cannon" unique_id=189941548]
+position = Vector2(0, -32.999996)
+scale = Vector2(1.409669, 1.409669)
+texture = ExtResource("5_ukyrk")
+
+[node name="Aim" type="Marker2D" parent="Weapon/cannon/Cannon" unique_id=938439992]
+position = Vector2(0, -18.444046)
+scale = Vector2(0.70938635, 0.70938635)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon/cannon" unique_id=723172349]
+libraries/ = SubResource("AnimationLibrary_h4iuc")
+
 [node name="sprite" type="Node2D" parent="." unique_id=803871257]
 
 [node name="shell" type="Node2D" parent="sprite" unique_id=2041529287 node_paths=PackedStringArray("player")]
@@ -343,10 +399,6 @@ script = ExtResource("3_6t5aa")
 
 [node name="CameraLimitManager" type="Node2D" parent="Camera2D" unique_id=850097112]
 script = ExtResource("8_f1ek2")
-
-[node name="Aim" type="Marker2D" parent="." unique_id=938439992]
-
-[node name="Weapon" type="Node2D" parent="." unique_id=791512220]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=601692525]
 position = Vector2(-709, -558)

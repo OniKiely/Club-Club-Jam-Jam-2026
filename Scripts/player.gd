@@ -135,17 +135,26 @@ func respawn():
 
 #bullet code
 @export var bullet_scene: PackedScene
-@onready var aim = $Aim
+@onready var aim = $Weapon/cannon/Cannon/Aim
 @onready var weapon = $Weapon
+
+@onready var cannon: Node2D = $Weapon/cannon
+
 
 func _process(delta: float):
 	var mouse_pos = get_global_mouse_position()
 	var direction = mouse_pos - global_position
-	weapon.rotation = direction.angle()
+	#weapon.rotation = direction.angle()
 	
 	if Input.is_action_pressed("shoot") and T_attack_cooldown == 0 and shellData.canShoot:
 		shoot()
 		T_attack_cooldown = shellData.attack_cooldown
+	
+	if shellData.canShoot:
+		cannon.visible = true
+		cannon.rotation = direction.angle() + PI/2
+	else:
+		cannon.visible = false
 	
 	if T_attack_cooldown != 0:
 		T_attack_cooldown = move_toward(T_attack_cooldown,0,delta)
@@ -155,6 +164,9 @@ func shoot():
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
 	bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
+	$Weapon/cannon/AnimationPlayer.play("RESET")
+	$Weapon/cannon/AnimationPlayer.play("shoot")
+
 
 func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 	if area is CameraLimiter:

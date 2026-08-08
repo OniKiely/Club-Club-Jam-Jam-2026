@@ -363,8 +363,4 @@ script = ExtResource("8_8erm5")
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="DashTimer" type="Timer" parent="." unique_id=354626906]
-wait_time = 0.5
-
 [connection signal="area_entered" from="CameraLimitDetection" to="." method="_on_camera_limit_detection_area_entered"]
-[connection signal="timeout" from="DashTimer" to="Powerups" method="_on_dash_timer_timeout"]

@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @onready var sprite = $sprite
 @onready var camera = $Camera2D
-@onready var powerup_abilitys = $Powerups
+@onready var powerup_abilites = $Powerups
 
 @export var attack_cooldown:float = 0
 var T_attack_cooldown:float = 0
@@ -22,13 +22,15 @@ var current_checkpoint: Vector2
 var current_state = state.DEFAULT
 enum state {
 	DEFAULT,
-	DEATH
+	DEATH,
+	DASH,
 }
 
 var current_powerup = powerup.NONE
 enum powerup {
 	NONE,
-	FASTFALL
+	FASTFALL,
+	DASH,
 }
 
 var walking:bool = false
@@ -51,12 +53,22 @@ func _physics_process(delta: float) -> void:
 			movement(delta)
 		state.DEATH:
 			sprite.visible = false
+		state.DASH:
+			apply_gravity(delta)
+			gravity = 980 / 8
+			velocity.x = last_input * 400
+			if is_on_wall():
+				camera.apply_shake(10)
+				current_state = state.DEFAULT
+			move_and_slide()
 	
 	match current_powerup:
 		powerup.NONE:
 			pass
 		powerup.FASTFALL:
-			powerup_abilitys.fastfall_ability()
+			powerup_abilites.fastfall_ability()
+		powerup.DASH:
+			powerup_abilites.dash_ability(delta)
 	
 	
 	
@@ -64,10 +76,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("kill_button"):
 		on_death()
 
+var last_input: int = 1
 func movement(delta):
 	# move left and right
 	var input_axis = Input.get_axis("move_left", "move_right")
+	print(input_axis)
 	if input_axis != 0:
+		last_input = input_axis
 		sprite.scale.x = input_axis
 		velocity.x = move_toward(velocity.x, current_speed * input_axis, acceleration * delta)
 		walking = true
@@ -98,6 +113,8 @@ func collect_powerup(name):
 	match name:
 		"fastfall":
 			current_powerup = powerup.FASTFALL
+		"dash":
+			current_powerup = powerup.DASH
 		_:
 			print("Unknown powerup collected. ", name, " not valid")
 

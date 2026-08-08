@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kpyqrwao77lx"]
+
+[ext_resource type="Texture2D" uid="uid://djcbcxas58l7n" path="res://icon.svg" id="1_lulh3"]
+[ext_resource type="Script" uid="uid://473vsdiiw4o8" path="res://Scripts/winflag.gd" id="1_yn3uw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(25, 50)
+
+[node name="winFlag" type="Area2D" unique_id=1807619014]
+script = ExtResource("1_yn3uw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250921478]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1958609030]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lulh3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

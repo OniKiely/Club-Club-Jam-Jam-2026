@@ -163,7 +163,8 @@ func shoot():
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
-	bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
+	bullet.direction = (get_global_mouse_position() - global_position).normalized()
+	#bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
 	$Weapon/cannon/AnimationPlayer.play("RESET")
 	$Weapon/cannon/AnimationPlayer.play("shoot")
 

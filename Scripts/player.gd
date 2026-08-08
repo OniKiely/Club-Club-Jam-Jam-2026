@@ -9,7 +9,6 @@ extends CharacterBody2D
 #@export var shellManager: Node2D
 @export var shellData:ShellData
 
-@export var attack_cooldown:float = 0
 var T_attack_cooldown:float = 0
 
 var default_speed: int = 250
@@ -88,7 +87,7 @@ func movement(delta):
 	if input_axis != 0:
 		last_input = input_axis
 		sprite.scale.x = input_axis
-		velocity.x = move_toward(velocity.x, current_speed * input_axis, acceleration * delta)
+		velocity.x = move_toward(velocity.x, shellData.max_speed * input_axis, shellData.acceleration * delta)
 		walking = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
@@ -106,10 +105,10 @@ func apply_gravity(delta):
 func handle_jump():
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_strength
+			velocity.y = shellData.jump_strength
 	else:
-		if Input.is_action_just_released("jump") and velocity.y < jump_strength / 2:
-			velocity.y = jump_strength / 2
+		if Input.is_action_just_released("jump") and velocity.y < shellData.jump_strength / 2:
+			velocity.y = shellData.jump_strength / 2
 
 # this is where we write what happens depending on which power up is collected
 # gets called in power_up_pickup

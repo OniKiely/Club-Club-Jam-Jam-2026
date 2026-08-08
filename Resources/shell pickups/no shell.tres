@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://upmhh3kdsi13"]
+[gd_resource type="Resource" script_class="ShellData" format=3 uid="uid://upmhh3kdsi13"]
 
 [ext_resource type="Texture2D" uid="uid://k86ofuofu6cd" path="res://Assets/Art/Player/Crabbert Body.png" id="1_j2srn"]
 [ext_resource type="Script" uid="uid://c5183r8xbtta6" path="res://Scripts/shell/shell pick up data.gd" id="2_e2jw3"]
@@ -7,3 +7,5 @@
 script = ExtResource("2_e2jw3")
 playerShellTexture = ExtResource("1_j2srn")
 pickupTexture = ExtResource("1_j2srn")
+jump_strength = -500.0
+acceleration = 1500

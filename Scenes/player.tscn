@@ -312,7 +312,6 @@ polygon = PackedVector2Array(686, 579, 686, 581, 732, 581, 732, 579)
 light_mask = 0
 script = ExtResource("1_cvnsp")
 shellData = ExtResource("2_pu2lt")
-attack_cooldown = 0.25
 bullet_scene = ExtResource("2_3smsa")
 
 [node name="sprite" type="Node2D" parent="." unique_id=803871257]

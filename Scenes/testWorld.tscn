@@ -204,7 +204,6 @@ position = Vector2(784, 352)
 pauseMenu = NodePath("../PauseMenu")
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=1066546381 instance=ExtResource("13_t0p86")]
-visible = false
 
 [node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("14_0roqs")]
 position = Vector2(656, 296)

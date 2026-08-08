@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bab826kebj3ty"]
+
+[ext_resource type="Script" uid="uid://rcqsrvchqs8f" path="res://Scripts/camera_limiter.gd" id="1_fvvej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn3qd"]
+size = Vector2(20, 432)
+
+[node name="CameraLimiter" type="Area2D" unique_id=1900997688]
+script = ExtResource("1_fvvej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1225854616]
+shape = SubResource("RectangleShape2D_tn3qd")
+
+[node name="LimitPosition" type="Marker2D" parent="." unique_id=1422526312]

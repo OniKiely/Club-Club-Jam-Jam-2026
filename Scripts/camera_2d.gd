@@ -1,6 +1,7 @@
 extends Camera2D
 
 @export var shakeFade: float = 5.0
+@onready var camera_limit_manager = $CameraLimitManager
 
 var rng = RandomNumberGenerator.new()
 

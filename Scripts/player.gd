@@ -137,3 +137,8 @@ func shoot():
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
 	bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
+
+func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
+	if area is CameraLimiter:
+		camera.camera_limit_manager.set_limiter(area)
+		print(area)

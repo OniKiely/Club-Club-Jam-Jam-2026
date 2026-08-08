@@ -6,6 +6,9 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 @onready var powerup_abilites = $Powerups
 
+#@export var shellManager: Node2D
+@export var shellData:ShellData
+
 @export var attack_cooldown:float = 0
 var T_attack_cooldown:float = 0
 
@@ -43,6 +46,7 @@ func _ready():
 	
 	# set starting checkpoint
 	current_checkpoint = global_position
+	#_change_shell(player.shellData)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -140,14 +144,12 @@ func _process(delta: float):
 	var direction = mouse_pos - global_position
 	weapon.rotation = direction.angle()
 	
+	if Input.is_action_pressed("shoot") and T_attack_cooldown == 0 and shellData.canShoot:
+		shoot()
+		T_attack_cooldown = shellData.attack_cooldown
 	
 	if T_attack_cooldown != 0:
 		T_attack_cooldown = move_toward(T_attack_cooldown,0,delta)
-
-func _input(event):
-	if event.is_action_pressed("shoot") and T_attack_cooldown == 0:
-		shoot()
-		T_attack_cooldown = attack_cooldown
 
 func shoot():
 	var bullet = bullet_scene.instantiate()

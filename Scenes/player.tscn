@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://kdkqlnvpcj8x" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://c0m2iym4ydnde" path="res://Scenes/bullet.tscn" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://dlxqcho462uog" path="res://Assets/Art/Player/crabbert sprites.png" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://y2atba2piycg" path="res://Assets/Art/Player/Crabbert Shell.png" id="2_fkybt"]
+[ext_resource type="Resource" uid="uid://upmhh3kdsi13" path="res://Resources/shell pickups/no shell.tres" id="2_pu2lt"]
 [ext_resource type="Script" uid="uid://byc6j5xnjwif0" path="res://Scripts/player_animations.gd" id="2_vgqql"]
 [ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scripts/camera_2d.gd" id="3_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://k86ofuofu6cd" path="res://Assets/Art/Player/Crabbert Body.png" id="3_x3wgy"]
+[ext_resource type="Script" uid="uid://by3rajokn6c6r" path="res://Scripts/shell/shell manager.gd" id="3_pu2lt"]
 [ext_resource type="Script" uid="uid://cvd0kgvhb1l1j" path="res://Scripts/powerups.gd" id="8_8erm5"]
 [ext_resource type="Script" uid="uid://bkmqtc6d3svwp" path="res://Scripts/camera_limit_manager.gd" id="8_f1ek2"]
 [ext_resource type="Script" uid="uid://d2h1h3rgvf6lu" path="res://Scripts/UI/clam_counter.gd" id="10_gymyn"]
@@ -311,20 +311,16 @@ polygon = PackedVector2Array(686, 579, 686, 581, 732, 581, 732, 579)
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
 light_mask = 0
 script = ExtResource("1_cvnsp")
+shellData = ExtResource("2_pu2lt")
 attack_cooldown = 0.25
 bullet_scene = ExtResource("2_3smsa")
 
 [node name="sprite" type="Node2D" parent="." unique_id=803871257]
 
-[node name="shell" type="Node2D" parent="sprite" unique_id=2041529287]
+[node name="shell" type="Node2D" parent="sprite" unique_id=2041529287 node_paths=PackedStringArray("player")]
 position = Vector2(-7, 0)
-
-[node name="CrabbertShell" type="Sprite2D" parent="sprite/shell" unique_id=710016522]
-visible = false
-texture = ExtResource("2_fkybt")
-
-[node name="CrabbertBody" type="Sprite2D" parent="sprite/shell" unique_id=1008807780]
-texture = ExtResource("3_x3wgy")
+script = ExtResource("3_pu2lt")
+player = NodePath("../..")
 
 [node name="Player animations" type="Node2D" parent="sprite" unique_id=1324462162 node_paths=PackedStringArray("Player")]
 position = Vector2(-7, 0)

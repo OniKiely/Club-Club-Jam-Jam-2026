@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bmihqdk3wae3h"]
+
+[ext_resource type="Script" uid="uid://brcpk4p3upq75" path="res://Scripts/shell/shell_pickup.gd" id="1_c06ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f8p0"]
+size = Vector2(44, 28)
+
+[node name="shell pickup" type="Node2D" unique_id=944937600]
+script = ExtResource("1_c06ac")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280213161]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1796852461]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=507035718]
+shape = SubResource("RectangleShape2D_1f8p0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

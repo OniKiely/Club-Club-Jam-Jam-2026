@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
+[ext_resource type="Resource" uid="uid://byedofx8jtefu" path="res://Resources/shell pickups/shell.tres" id="11_wm471"]
 [ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="11_xvvnt"]
+[ext_resource type="Resource" uid="uid://upmhh3kdsi13" path="res://Resources/shell pickups/no shell.tres" id="12_6ux8o"]
+[ext_resource type="PackedScene" uid="uid://bmihqdk3wae3h" path="res://Scenes/shell/shell_pickup.tscn" id="12_j4ew0"]
 [ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
@@ -152,6 +155,14 @@ position = Vector2(779, -31)
 
 [node name="Clam Pickup12" parent="Pickups" unique_id=1547856826 instance=ExtResource("7_rdb4h")]
 position = Vector2(725, -31)
+
+[node name="shell pickup" parent="Pickups" unique_id=944937600 instance=ExtResource("12_j4ew0")]
+position = Vector2(882, 293)
+shell = ExtResource("11_wm471")
+
+[node name="shell pickup2" parent="Pickups" unique_id=474682550 instance=ExtResource("12_j4ew0")]
+position = Vector2(1321, 297)
+shell = ExtResource("12_6ux8o")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1599153964]
 position = Vector2(605, 80)

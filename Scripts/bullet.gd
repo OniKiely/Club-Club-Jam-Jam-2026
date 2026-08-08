@@ -16,3 +16,12 @@ func _ready():
 
 func _physics_process(delta):
 	global_position += direction * speed * delta
+
+#called when the bullet hits an enemy
+#deletes projectile when the particles are done emitting
+func delete():
+	$"particle emmiter".emitting = false
+	var direction = Vector2.ZERO
+	$Sprite2D.hide()
+	await get_tree().create_timer(0.5).timeout
+	queue_free()

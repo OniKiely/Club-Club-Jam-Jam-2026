@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("enemy"):
 		$Sprite2D.hide()
-		$GPUParticles2D.emitting = true
+		$CPUParticles2D.emitting = true
 		if body.name == "player":
 			pass
 		else:
 			pass
-		await $GPUParticles2D.finished
+		await $CPUParticles2D.finished
 		queue_free()

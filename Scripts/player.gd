@@ -4,15 +4,18 @@ extends CharacterBody2D
 
 @onready var sprite = $sprite
 @onready var camera = $Camera2D
+@onready var powerup_abilitys = $Powerups
 
 @export var attack_cooldown:float = 0
 var T_attack_cooldown:float = 0
 
-var speed: int = 250
+var default_speed: int = 250
+var current_speed: int = default_speed
 var acceleration: int = 700
 var friction = 900
 var jump_strength = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var can_jump: bool = true
 
 var current_checkpoint: Vector2
 
@@ -20,6 +23,12 @@ var current_state = state.DEFAULT
 enum state {
 	DEFAULT,
 	DEATH
+}
+
+var current_powerup = powerup.NONE
+enum powerup {
+	NONE,
+	FASTFALL
 }
 
 var walking:bool = false
@@ -37,12 +46,19 @@ func _physics_process(delta: float) -> void:
 	match current_state:
 		state.DEFAULT:
 			apply_gravity(delta)
-			handle_jump()
+			if can_jump:
+				handle_jump()
 			movement(delta)
 		state.DEATH:
 			sprite.visible = false
 	
-		
+	match current_powerup:
+		powerup.NONE:
+			pass
+		powerup.FASTFALL:
+			powerup_abilitys.fastfall_ability()
+	
+	
 	
 	# FOR TESTING ONLY REMOVE BEFORE RELEASE
 	if Input.is_action_just_pressed("kill_button"):
@@ -53,12 +69,13 @@ func movement(delta):
 	var input_axis = Input.get_axis("move_left", "move_right")
 	if input_axis != 0:
 		sprite.scale.x = input_axis
-		velocity.x = move_toward(velocity.x, speed * input_axis, acceleration * delta)
+		velocity.x = move_toward(velocity.x, current_speed * input_axis, acceleration * delta)
 		walking = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 		walking = false
 	move_and_slide()
+
 
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -79,8 +96,8 @@ func handle_jump():
 # gets called in power_up_pickup
 func collect_powerup(name):
 	match name:
-		"example":
-			pass
+		"fastfall":
+			current_powerup = powerup.FASTFALL
 		_:
 			print("Unknown powerup collected. ", name, " not valid")
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="power_up_data" format=3 uid="uid://dxu6f346vcy6m"]
+
+[ext_resource type="Script" uid="uid://bt1mb2sgylyu3" path="res://Scripts/power_up_data.gd" id="1_pa1bk"]
+[ext_resource type="Texture2D" uid="uid://jtv0ulv3hpmx" path="res://Assets/tempBullet.png" id="2_u1tbe"]
+
+[resource]
+script = ExtResource("1_pa1bk")
+name = "fastfall"
+sprite = ExtResource("2_u1tbe")
+metadata/_custom_type_script = "uid://bt1mb2sgylyu3"

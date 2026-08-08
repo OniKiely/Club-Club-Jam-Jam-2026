@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_iey3s"]
 [ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="3_ilxaj"]
 [ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="4_b8w0i"]
-[ext_resource type="Resource" uid="uid://bh4d4x7vun2rg" path="res://Resources/PowerUps/HalflifeCrowbar.tres" id="4_d0hh2"]
+[ext_resource type="Resource" uid="uid://dxu6f346vcy6m" path="res://Resources/PowerUps/Fastfall.tres" id="7_l8m0x"]
 [ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
 [ext_resource type="PackedScene" uid="uid://biaki5gei2hae" path="res://Scenes/fade_transition.tscn" id="10_emcaa"]
@@ -106,8 +106,8 @@ tile_set = SubResource("TileSet_57qmd")
 position = Vector2(567, 298)
 
 [node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("3_iey3s")]
-position = Vector2(696, 360)
-data = ExtResource("4_d0hh2")
+position = Vector2(704, 360)
+data = ExtResource("7_l8m0x")
 
 [node name="Pickups" type="Node2D" parent="." unique_id=1325764474]
 

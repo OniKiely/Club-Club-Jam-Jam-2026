@@ -33,7 +33,8 @@ func switch_to(state_name : String) -> void:
 #something right before calling queue_free()
 func stop() -> void:
 	stopped = true
-	current_state.exit()
+	if current_state:
+		current_state.exit()
 	current_state = null
 
 #runs the current state's process

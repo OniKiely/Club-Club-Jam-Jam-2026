@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-var player = null
-
 func _ready() -> void:
 	pass
 
@@ -14,12 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	player = body
 	$StateMachine.switch_to("Follow")
 
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	player = null
 	$StateMachine.switch_to("Wander")
 
 

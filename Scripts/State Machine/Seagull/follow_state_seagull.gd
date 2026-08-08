@@ -3,7 +3,7 @@ extends state
 var seagull = null
 var player = null
 var dir = Vector2(0, 0)
-var speed = 50
+var speed = 100
 
 var TRASH = preload("uid://k38chnonovla")
 
@@ -11,7 +11,7 @@ var TRASH = preload("uid://k38chnonovla")
 func enter() -> void:
 	$AttackTimer.start()
 	seagull = get_parent().get_parent()
-	player = seagull.player
+	player = GlobalVariables.Player
 
 #called each frame, but only when the state is active
 func run(delta: float) -> void:
@@ -32,9 +32,10 @@ func exit() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
+	var moved_pos = player.global_position + (player.velocity / 4)
 	for i in range(3):
 		var attack = TRASH.instantiate()
-		var theta = i * (PI/12) + PI/12
-		attack.dir = Vector2(cos(theta) * dir.x, sin(theta))
+		var theta = (i * (PI/8)) - (PI/8) + seagull.global_position.angle_to_point(moved_pos)
+		attack.dir = Vector2(cos(theta), sin(theta))
 		attack.global_position = seagull.global_position
 		get_tree().get_root().add_child(attack)

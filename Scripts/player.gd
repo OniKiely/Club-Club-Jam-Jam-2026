@@ -172,3 +172,11 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 	if area is CameraLimiter:
 		camera.camera_limit_manager.set_limiter(area)
 		print(area)
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	$Hurtbox/CollisionShape2D.disabled = true
+	
+	await get_tree().create_timer(1).timeout
+	
+	$Hurtbox/CollisionShape2D.disabled = false

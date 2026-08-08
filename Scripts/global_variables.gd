@@ -8,3 +8,10 @@ var ShellManager:Node2D
 
 var score: int = 0
 var clams: int = 0
+
+
+func _play_bubble_transition():
+	const BUBBLE_TRANSITION = preload("uid://nrx1ltxc82dy")
+	add_child(BUBBLE_TRANSITION.instantiate())
+	
+	

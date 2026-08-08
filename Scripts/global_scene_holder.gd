@@ -1,7 +1,11 @@
 extends Node2D
 
+
+#THIS SCENE IS NO LONGER USED
+
+
 const P_START_MENU = preload("res://Scenes/StartMenu.tscn")
-const P_TEST_WORLD = preload("res://Scenes/testWin.tscn")
+const P_TEST_WORLD = preload("res://Scenes/testWorld.tscn")
 
 
 
@@ -18,19 +22,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	GlobalVariables.GameController = self
 
-func _play():
-	currentScene.queue_free()
-	#var Packed_level:PackedScene = load(P_TEST_WORLD_path)
-	var level = P_TEST_WORLD.instantiate()
-	currentScene = level
-	scene_holder.add_child(level)
-
-func _return_to_menu():
-	currentScene.queue_free()
-	var mainMenu = P_START_MENU.instantiate()
-	currentScene = mainMenu
-	scene_holder.add_child(mainMenu)
-	
+#func _play():
+	#currentScene.queue_free()
+	##var Packed_level:PackedScene = load(P_TEST_WORLD_path)
+	#var level = P_TEST_WORLD.instantiate()
+	#currentScene = level
+	#scene_holder.add_child(level)
+#
+#func _return_to_menu():
+	#currentScene.queue_free()
+	#var mainMenu = P_START_MENU.instantiate()
+	#currentScene = mainMenu
+	#scene_holder.add_child(mainMenu)
+	#
 
 func _play_bubble_transition():
 	const BUBBLE_TRANSITION = preload("uid://nrx1ltxc82dy")

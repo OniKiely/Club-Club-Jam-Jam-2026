@@ -371,7 +371,13 @@ metadata/_edit_vertical_guides_ = [320.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=646844230]
 
-[node name="underwater BG" parent="CanvasLayer" unique_id=1869367768 instance=ExtResource("2_o42a4")]
+[node name="Bg" type="Control" parent="CanvasLayer" unique_id=1531322217]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="underwater BG" parent="CanvasLayer/Bg" unique_id=1869367768 instance=ExtResource("2_o42a4")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=843624193]
 anchors_preset = 8

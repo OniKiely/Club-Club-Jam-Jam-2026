@@ -11,7 +11,6 @@ P_particle = ExtResource("2_spqf5")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=636117362]
 scroll_scale = Vector2(0, 0)
-scroll_offset = Vector2(35, 0)
 
 [node name="Bg" type="Sprite2D" parent="Parallax2D" unique_id=1080530340]
 position = Vector2(334, 180)

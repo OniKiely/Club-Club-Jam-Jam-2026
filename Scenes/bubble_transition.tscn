@@ -1,0 +1,341 @@
+[gd_scene format=3 uid="uid://nrx1ltxc82dy"]
+
+[ext_resource type="Script" uid="uid://du7megcrdlooh" path="res://Scripts/bubble_transition.gd" id="1_5rnrf"]
+[ext_resource type="Shader" uid="uid://1k6ybqyxpyqa" path="res://Scenes/pause_menu.gdshader" id="2_72yep"]
+[ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="3_motwi"]
+
+[sub_resource type="Animation" id="Animation_tso7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r756l"]
+resource_name = "bubble transition"
+length = 1.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.1870001513825, 3.1870001513825, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcis1"]
+_data = {
+&"RESET": SubResource("Animation_tso7k"),
+&"bubble transition": SubResource("Animation_r756l")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1f8p0"]
+shader = ExtResource("2_72yep")
+shader_parameter/lod = 0.0
+
+[node name="bubble transition" type="Node2D" unique_id=966396042]
+script = ExtResource("1_5rnrf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1294293973]
+libraries/ = SubResource("AnimationLibrary_vcis1")
+autoplay = &"bubble transition"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=377970928]
+material = SubResource("ShaderMaterial_1f8p0")
+offset_left = -37.0
+offset_top = -14.0
+offset_right = 704.0
+offset_bottom = 401.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=927339010]
+
+[node name="bubble particle" parent="Node2D" unique_id=887517662 instance=ExtResource("3_motwi")]
+position = Vector2(159.00002, 395)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle2" parent="Node2D" unique_id=651870358 instance=ExtResource("3_motwi")]
+position = Vector2(231, 455)
+scale = Vector2(4.1248164, 4.219228)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle3" parent="Node2D" unique_id=1576054255 instance=ExtResource("3_motwi")]
+position = Vector2(350.00003, 485)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle4" parent="Node2D" unique_id=1131069741 instance=ExtResource("3_motwi")]
+position = Vector2(430, 394.00003)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle5" parent="Node2D" unique_id=153111467 instance=ExtResource("3_motwi")]
+position = Vector2(55, 494)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle6" parent="Node2D" unique_id=1653631938 instance=ExtResource("3_motwi")]
+position = Vector2(486, 501)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle7" parent="Node2D" unique_id=729341991 instance=ExtResource("3_motwi")]
+position = Vector2(593, 460)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle8" parent="Node2D" unique_id=914215063 instance=ExtResource("3_motwi")]
+position = Vector2(155, 607)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle9" parent="Node2D" unique_id=422841478 instance=ExtResource("3_motwi")]
+position = Vector2(268, 626)
+scale = Vector2(4.1248164, 4.2192273)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle10" parent="Node2D" unique_id=2080882373 instance=ExtResource("3_motwi")]
+position = Vector2(408, 563)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle11" parent="Node2D" unique_id=1677769717 instance=ExtResource("3_motwi")]
+position = Vector2(455, 669)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle22" parent="Node2D" unique_id=1841790285 instance=ExtResource("3_motwi")]
+position = Vector2(158, 531)
+scale = Vector2(4.1248164, 4.219228)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle23" parent="Node2D" unique_id=1637920942 instance=ExtResource("3_motwi")]
+position = Vector2(254, 533)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle24" parent="Node2D" unique_id=1552187728 instance=ExtResource("3_motwi")]
+position = Vector2(432, 536)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle28" parent="Node2D" unique_id=2075823056 instance=ExtResource("3_motwi")]
+position = Vector2(431, 600)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle29" parent="Node2D" unique_id=2142575830 instance=ExtResource("3_motwi")]
+position = Vector2(534, 554)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle30" parent="Node2D" unique_id=937704173 instance=ExtResource("3_motwi")]
+position = Vector2(512, 672)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle31" parent="Node2D" unique_id=755278006 instance=ExtResource("3_motwi")]
+position = Vector2(536, 645)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle25" parent="Node2D" unique_id=113557905 instance=ExtResource("3_motwi")]
+position = Vector2(195, 668)
+scale = Vector2(4.1248164, 4.2192273)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle26" parent="Node2D" unique_id=1476909154 instance=ExtResource("3_motwi")]
+position = Vector2(335, 646)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle27" parent="Node2D" unique_id=1895234274 instance=ExtResource("3_motwi")]
+position = Vector2(465.00003, 872)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle12" parent="Node2D" unique_id=634968869 instance=ExtResource("3_motwi")]
+position = Vector2(56, 623)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle13" parent="Node2D" unique_id=423066861 instance=ExtResource("3_motwi")]
+position = Vector2(525, 668)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle14" parent="Node2D" unique_id=1942804603 instance=ExtResource("3_motwi")]
+position = Vector2(599, 601)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle15" parent="Node2D" unique_id=869695769 instance=ExtResource("3_motwi")]
+position = Vector2(109, 838)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle16" parent="Node2D" unique_id=682619931 instance=ExtResource("3_motwi")]
+position = Vector2(226, 741)
+scale = Vector2(4.1248164, 4.2192273)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle17" parent="Node2D" unique_id=1297377385 instance=ExtResource("3_motwi")]
+position = Vector2(348, 720)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle18" parent="Node2D" unique_id=2001518845 instance=ExtResource("3_motwi")]
+position = Vector2(405, 741)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle19" parent="Node2D" unique_id=1925863045 instance=ExtResource("3_motwi")]
+position = Vector2(74, 720)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle20" parent="Node2D" unique_id=1651036609 instance=ExtResource("3_motwi")]
+position = Vector2(475, 740)
+scale = Vector2(4.124817, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0
+
+[node name="bubble particle21" parent="Node2D" unique_id=496119161 instance=ExtResource("3_motwi")]
+position = Vector2(590, 724)
+scale = Vector2(4.1248164, 4.2192254)
+initialVelocity = Vector2(0, -500)
+initialVelocityRandomness = Vector2(100, 50)
+gravity = Vector2(0, -1)
+hasDrag = false
+lifespan = 2.0

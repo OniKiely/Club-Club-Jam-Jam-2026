@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Club Club Jam Jam 2026"
-run/main_scene="uid://uoyyxrjanto"
+run/main_scene="uid://xo6q1ub86s2m"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dw0otdk2y2qak"
 

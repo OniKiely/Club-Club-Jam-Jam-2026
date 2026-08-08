@@ -263,9 +263,14 @@ position = Vector2(-464, 152)
 [node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_pgapj")]
 position = Vector2(749, -34)
 
+<<<<<<< Updated upstream
 [node name="FadeCL" type="CanvasLayer" parent="." unique_id=1235916004]
 
 [node name="ColorRect" type="ColorRect" parent="FadeCL" unique_id=1544868489]
+=======
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1544868489]
+visible = false
+>>>>>>> Stashed changes
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -276,7 +281,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadeCL/ColorRect" unique_id=125625497]
 libraries/ = SubResource("AnimationLibrary_6ux8o")
-autoplay = &"fade in"
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xo6q1ub86s2m"]
+
+[ext_resource type="Script" uid="uid://cc780maulxwt7" path="res://Scripts/global_scene_holder.gd" id="1_38f2y"]
+[ext_resource type="PackedScene" uid="uid://uoyyxrjanto" path="res://Scenes/StartMenu.tscn" id="2_bmqts"]
+
+[node name="Global Scene holder" type="Node2D" unique_id=1582172771]
+script = ExtResource("1_38f2y")
+
+[node name="Scene Holder" type="Node2D" parent="." unique_id=1862706712]
+
+[node name="StartMenu" parent="Scene Holder" unique_id=103745356 instance=ExtResource("2_bmqts")]
+metadata/_edit_use_anchors_ = true
+
+[node name="transition" type="CanvasLayer" parent="." unique_id=920436069]
+layer = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShellData" format=3 uid="uid://cn1ajnokobkg2"]
+
+[ext_resource type="Texture2D" uid="uid://1a10t7xlwoob" path="res://Assets/Art/Player/Pink Crabbert Shell.png" id="1_crf7d"]
+[ext_resource type="Script" uid="uid://c5183r8xbtta6" path="res://Scripts/shell/shell pick up data.gd" id="2_jaha1"]
+
+[resource]
+script = ExtResource("2_jaha1")
+playerShellTexture = ExtResource("1_crf7d")
+pickupTexture = ExtResource("1_crf7d")
+canShoot = true
+attack_cooldown = 0.25
+jump_strength = -700.0
+max_speed = 175

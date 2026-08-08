@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShellData" format=3 uid="uid://yyc6q6k4jum2"]
+
+[ext_resource type="Texture2D" uid="uid://dfktjs1njtjcs" path="res://Assets/Art/Player/thorn shell.png" id="1_fj88l"]
+[ext_resource type="Script" uid="uid://c5183r8xbtta6" path="res://Scripts/shell/shell pick up data.gd" id="2_b6y0b"]
+
+[resource]
+script = ExtResource("2_b6y0b")
+playerShellTexture = ExtResource("1_fj88l")
+pickupTexture = ExtResource("1_fj88l")
+canShoot = true
+jump_strength = -350.0
+max_speed = 175

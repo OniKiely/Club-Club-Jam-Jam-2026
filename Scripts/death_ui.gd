@@ -5,8 +5,20 @@ extends Control
 @onready var pause_menu = $"../../PauseCL/PauseMenu"
 
 var facts: Array[String] = [
-	"Insert fact here",
-	"insert more here"
+	"More than 560,000 hermit crabs were killed by plastic debris 
+	on two remote islands. (McCauley et al., 2019)",
+	"36% of blue crabs sampled in Corpus Christi Bay were found 
+	to have plastic particles in their stomachs. (Phillips & Bonner, 2020)",
+	"Invasive yellow crazy ants have killed tens of millions 
+	of Christmas Island red crabs. (Parks Australia)",
+	"Only 1.8% of beach debris recorded on Christmas Island 
+	originated from the island or mainland Australia. 
+	(Marine Pollution Bulletin, 2026)",
+	"Ocean acidification caused 100% mortality in juvenile 
+	red king crabs after 95 days at pH 7.5. (Long et al., 2013)",
+	"Fiddler crabs in a polluted Colombian mangrove accumulated 
+	microplastics at approximately 13 times the concentration 
+	found in surrounding sediment. (Global Change Biology, 2025)"
 ]
 
 func _ready() -> void:

@@ -29,7 +29,7 @@ func _on_level_won():
 
 func _on_next_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn") #Change this
+	GlobalVariables._next_level()
 
 
 func _on_restart_button_pressed() -> void:

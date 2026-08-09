@@ -1,38 +1,38 @@
-[gd_scene format=4 uid="uid://doul58i5xcg8o"]
+[gd_scene format=4 uid="uid://cdryu54wob62l"]
 
-[ext_resource type="Script" uid="uid://bmvy0g4fybilp" path="res://Scripts/level_manager.gd" id="1_0roqs"]
-[ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="1_l54rq"]
-[ext_resource type="PackedScene" uid="uid://cmcphjxhj7og0" path="res://Scenes/underwater_bg.tscn" id="1_xr43f"]
-[ext_resource type="PackedScene" uid="uid://bhbwfqjinjgiq" path="res://Scenes/player.tscn" id="2_l54rq"]
-[ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="3_iey3s"]
-[ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="3_ilxaj"]
-[ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="4_b8w0i"]
-[ext_resource type="Resource" uid="uid://dxu6f346vcy6m" path="res://Resources/PowerUps/Fastfall.tres" id="7_l8m0x"]
-[ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_rdb4h"]
-[ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="9_xr43f"]
-[ext_resource type="Resource" uid="uid://byedofx8jtefu" path="res://Resources/shell pickups/shell.tres" id="11_wm471"]
-[ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="11_xvvnt"]
-[ext_resource type="Resource" uid="uid://upmhh3kdsi13" path="res://Resources/shell pickups/no shell.tres" id="12_6ux8o"]
-[ext_resource type="Resource" uid="uid://yyc6q6k4jum2" path="res://Resources/shell pickups/thorn shell.tres" id="12_65h5i"]
-[ext_resource type="PackedScene" uid="uid://bmihqdk3wae3h" path="res://Scenes/shell/shell_pickup.tscn" id="12_j4ew0"]
-[ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="12_l8m0x"]
-[ext_resource type="Resource" uid="uid://cn1ajnokobkg2" path="res://Resources/shell pickups/pink shell.tres" id="13_lsb16"]
-[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="13_t0p86"]
-[ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
-[ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="18_p6ccs"]
-[ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_pgapj"]
-[ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_is1em"]
-[ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="21_lsb16"]
-[ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="24_f4tc4"]
+[ext_resource type="Script" uid="uid://bmvy0g4fybilp" path="res://Scripts/level_manager.gd" id="1_jip10"]
+[ext_resource type="PackedScene" uid="uid://cy42jdegki0ar" path="res://Scenes/island_bg.tscn" id="2_1xj2d"]
+[ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="3_7h8th"]
+[ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="4_m4i1e"]
+[ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="5_ixm8h"]
+[ext_resource type="PackedScene" uid="uid://bhbwfqjinjgiq" path="res://Scenes/player.tscn" id="6_xk8vt"]
+[ext_resource type="PackedScene" uid="uid://c76gnm44vw3u0" path="res://Scenes/power_up_pickup.tscn" id="7_umcau"]
+[ext_resource type="Resource" uid="uid://dxu6f346vcy6m" path="res://Resources/PowerUps/Fastfall.tres" id="8_ud172"]
+[ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="9_s5367"]
+[ext_resource type="PackedScene" uid="uid://bmihqdk3wae3h" path="res://Scenes/shell/shell_pickup.tscn" id="10_blyvk"]
+[ext_resource type="Resource" uid="uid://byedofx8jtefu" path="res://Resources/shell pickups/shell.tres" id="11_ts3wb"]
+[ext_resource type="Resource" uid="uid://yyc6q6k4jum2" path="res://Resources/shell pickups/thorn shell.tres" id="12_chm77"]
+[ext_resource type="Resource" uid="uid://cn1ajnokobkg2" path="res://Resources/shell pickups/pink shell.tres" id="13_srchd"]
+[ext_resource type="Resource" uid="uid://upmhh3kdsi13" path="res://Resources/shell pickups/no shell.tres" id="14_p6e1f"]
+[ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="15_xo6ri"]
+[ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="16_potos"]
+[ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="17_6d4lf"]
+[ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="18_c0rmi"]
+[ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_xcfnk"]
+[ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_1xj2d"]
+[ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="20_tjmj4"]
+[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="21_8jijy"]
+[ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="22_vybpq"]
+[ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="23_txe2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
-texture = ExtResource("1_l54rq")
+texture = ExtResource("3_7h8th")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rdb4h"]
-texture = ExtResource("3_ilxaj")
+texture = ExtResource("4_m4i1e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -53,7 +53,7 @@ polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xr43f"]
-texture = ExtResource("4_b8w0i")
+texture = ExtResource("5_ixm8h")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -101,12 +101,13 @@ sources/2 = SubResource("TileSetAtlasSource_xr43f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
 size = Vector2(2216, 112)
 
-[node name="TestWorld" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player")]
-script = ExtResource("1_0roqs")
+[node name="Level 2" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player")]
+script = ExtResource("1_jip10")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
+Level = 2
 
-[node name="underwater BG" parent="." unique_id=1869367768 instance=ExtResource("1_xr43f")]
+[node name="island BG" parent="." unique_id=1869367768 instance=ExtResource("2_1xj2d")]
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=933806181]
 visible = false
@@ -117,66 +118,66 @@ tile_set = SubResource("TileSet_57qmd")
 tile_map_data = PackedByteArray("AAAIAAwAAgADAAEAAAAIAA0AAgAIAAMAAAAIAA4AAgAIAAMAAAAJAAwAAgADAAEAAAAJAA0AAgAIAAMAAAAJAA4AAgAIAAMAAAAKAAwAAgADAAEAAAAKAA0AAgAIAAMAAAAKAA4AAgAIAAMAAAALAAwAAgADAAEAAAALAA0AAgAIAAMAAAALAA4AAgAIAAMAAAAMAAwAAgADAAEAAAAMAA0AAgAIAAMAAAAMAA4AAgAIAAMAAAANAAwAAgADAAEAAAANAA0AAgAIAAMAAAANAA4AAgAIAAMAAAAOAAwAAgADAAEAAAAOAA0AAgAIAAMAAAAOAA4AAgAIAAMAAAAPAAwAAgADAAEAAAAPAA0AAgAIAAMAAAAPAA4AAgAIAAMAAAAQAAwAAgADAAEAAAAQAA0AAgAIAAMAAAAQAA4AAgAIAAMAAAARAAwAAgADAAEAAAARAA0AAgAIAAMAAAARAA4AAgAIAAMAAAASAAwAAgADAAEAAAASAA0AAgAIAAMAAAASAA4AAgAIAAMAAAATAAwAAgADAAEAAAATAA0AAgAIAAMAAAATAA4AAgAIAAMAAAAUAAwAAgADAAEAAAAUAA0AAgAIAAMAAAAUAA4AAgAIAAMAAAAVAAwAAgADAAEAAAAVAA0AAgAIAAMAAAAVAA4AAgAIAAMAAAAWAAwAAgADAAEAAAAWAA0AAgAIAAMAAAAWAA4AAgAIAAMAAAAXAAwAAgADAAEAAAAXAA0AAgAIAAMAAAAXAA4AAgAIAAMAAAAYAAwAAgADAAEAAAAYAA0AAgAIAAMAAAAYAA4AAgAIAAMAAAAZAAwAAgADAAEAAAAZAA0AAgAIAAMAAAAZAA4AAgAIAAMAAAAaAAwAAgADAAEAAAAaAA0AAgAIAAMAAAAaAA4AAgAIAAMAAAAbAAwAAgADAAEAAAAbAA0AAgAIAAMAAAAbAA4AAgAIAAMAAAAHAA4AAgAIAAMAAAAHAA0AAgAIAAMAAAAHAAwAAgAIAAMAAAAHAAsAAgAIAAMAAAAHAAoAAgAIAAMAAAAHAAkAAgAIAAMAAAAHAAgAAgAIAAMAAAAHAAcAAgAIAAMAAAAHAAYAAgAIAAMAAAAGAAYAAgAIAAMAAAAGAAUAAgACAAEAAAAGAAcAAgAIAAMAAAAGAAgAAgAIAAMAAAAGAAkAAgAIAAMAAAAGAAoAAgAIAAMAAAAGAAsAAgAIAAMAAAAGAAwAAgAIAAMAAAAGAA0AAgAIAAMAAAAGAA4AAgAIAAMAAAAHAAUAAgADAAEAAAAcAAwAAgADAAEAAAAcAA0AAgAIAAMAAAAcAA4AAgAIAAMAAAAdAAwAAgADAAEAAAAdAA0AAgAIAAMAAAAdAA4AAgAIAAMAAAAeAAwAAgADAAEAAAAeAA0AAgAIAAMAAAAeAA4AAgAIAAMAAAAfAAwAAgAEAAEAAAAfAA0AAgAIAAMAAAAfAA4AAgAIAAMAAAAmAAwAAgABAAEAAAAmAA0AAgAIAAMAAAAmAA4AAgAIAAMAAAAnAAwAAgACAAEAAAAnAA0AAgAIAAMAAAAnAA4AAgAIAAMAAAAoAAwAAgACAAEAAAAoAA0AAgAIAAMAAAAoAA4AAgAIAAMAAAApAAwAAgACAAEAAAApAA0AAgAIAAMAAAApAA4AAgAIAAMAAAAqAAwAAgACAAEAAAAqAA0AAgAIAAMAAAAqAA4AAgAIAAMAAAArAAwAAgACAAEAAAArAA0AAgAIAAMAAAArAA4AAgAIAAMAAAAsAAwAAgACAAEAAAAsAA0AAgAIAAMAAAAsAA4AAgAIAAMAAAAtAAwAAgACAAEAAAAtAA0AAgAIAAMAAAAtAA4AAgAIAAMAAAAuAAwAAgACAAEAAAAuAA0AAgAIAAMAAAAuAA4AAgAIAAMAAAAvAAwAAgACAAEAAAAvAA0AAgAIAAMAAAAvAA4AAgAIAAMAAAAwAAwAAgACAAEAAAAwAA0AAgAIAAMAAAAwAA4AAgAIAAMAAAAgAAkAAgABAAEAAAAhAAkAAgACAAEAAAAiAAkAAgACAAEAAAAjAAkAAgACAAEAAAAkAAkAAgACAAEAAAAlAAkAAgAEAAEAAAAbAAoAAgABAAEAAAAcAAoAAgADAAEAAAAdAAoAAgAEAAEAAAAoAAoAAgABAAEAAAApAAoAAgACAAEAAAAqAAoAAgAEAAEAAAAxAA4AAgAIAAMAAAAxAA0AAgAIAAMAAAAyAA0AAgAIAAMAAAAyAAwAAgAIAAMAAAAzAAwAAgAIAAMAAAAzAAsAAgAIAAMAAAA0AAsAAgAIAAMAAAA1AAoAAgAIAAMAAAA2AAoAAgAIAAMAAAAxAAoAAgAGAAEAAAAxAAsAAgAIAAMAAAAxAAwAAgAIAAMAAAAyAAoAAgACAAEA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AAANAA8AAgAIAAMAAAANABAAAgAIAAMAAAANABEAAgAIAAMAAAANABIAAgAIAAMAAAANABMAAgAIAAMAAAAOAA8AAgAIAAMAAAAOABAAAgAIAAMAAAAOABEAAgAIAAMAAAAOABIAAgAIAAMAAAAOABMAAgAIAAMAAAAPAA8AAgAIAAMAAAAPABAAAgAIAAMAAAAPABEAAgAIAAMAAAAPABIAAgAIAAMAAAAPABMAAgAIAAMAAAAQAA8AAgAIAAMAAAAQABAAAgAIAAMAAAAQABEAAgAIAAMAAAAQABIAAgAIAAMAAAAQABMAAgAIAAMAAAARAA8AAgAIAAMAAAARABAAAgAIAAMAAAARABEAAgAIAAMAAAARABIAAgAIAAMAAAARABMAAgAIAAMAAAASAA8AAgAIAAMAAAASABAAAgAIAAMAAAASABEAAgAIAAMAAAASABIAAgAIAAMAAAASABMAAgAIAAMAAAATAA8AAgAIAAMAAAATABAAAgAIAAMAAAATABEAAgAIAAMAAAATABIAAgAIAAMAAAATABMAAgAIAAMAAAAUAA8AAgAIAAMAAAAUABAAAgAIAAMAAAAUABEAAgAIAAMAAAAUABIAAgAIAAMAAAAUABMAAgAIAAMAAAAVAA8AAgAIAAMAAAAVABAAAgAIAAMAAAAVABEAAgAIAAMAAAAVABIAAgAIAAMAAAAVABMAAgAIAAMAAAAWAA8AAgAIAAMAAAAWABAAAgAIAAMAAAAWABEAAgAIAAMAAAAWABIAAgAIAAMAAAAWABMAAgAIAAMAAAAXAA8AAgAIAAMAAAAXABAAAgAIAAMAAAAXABEAAgAIAAMAAAAXABIAAgAIAAMAAAAXABMAAgAIAAMAAAAYAA8AAgAIAAMAAAAYABAAAgAIAAMAAAAYABEAAgAIAAMAAAAYABIAAgAIAAMAAAAYABMAAgAIAAMAAAAZAA8AAgAIAAMAAAAZABAAAgAIAAMAAAAZABEAAgAIAAMAAAAZABIAAgAIAAMAAAAZABMAAgAIAAMAAAAaAA8AAgAIAAMAAAAaABAAAgAIAAMAAAAaABEAAgAIAAMAAAAaABIAAgAIAAMAAAAaABMAAgAIAAMAAAAbAA8AAgAIAAMAAAAbABAAAgAIAAMAAAAbABEAAgAIAAMAAAAbABIAAgAIAAMAAAAbABMAAgAIAAMAAAAcAA8AAgAIAAMAAAAcABAAAgAIAAMAAAAcABEAAgAIAAMAAAAcABIAAgAIAAMAAAAcABMAAgAIAAMAAAAdAA8AAgAIAAMAAAAdABAAAgAIAAMAAAAdABEAAgAIAAMAAAAdABIAAgAIAAMAAAAdABMAAgAIAAMAAAAeAA8AAgAIAAMAAAAeABAAAgAIAAMAAAAeABEAAgAIAAMAAAAeABIAAgAIAAMAAAAeABMAAgAIAAMAAAAfAA8AAgAIAAMAAAAfABAAAgAIAAMAAAAfABEAAgAIAAMAAAAfABIAAgAIAAMAAAAfABMAAgAIAAMAAAAYAP//AgADAAAAAAAZAP//AgADAAAAAAAaAP//AgAEAAAAAAAiAP//AgADAAAAAAAjAP//AgAEAAAAAAAqAP//AgADAAAAAAArAP//AgAEAAAAAAAwAAEAAgACAAAAAAAxAAEAAgAEAAAAAAAwAAUAAgACAAAAAAAxAAUAAgAEAAAAAAA0AAcAAgABAAAAAAA1AAcAAgACAAAAAAA2AAcAAgADAAAAAAA3APr/AgADAAAAAAAgAP//AgABAAAAAAAhAP//AgACAAAAAAAoAP//AgABAAAAAAApAP//AgACAAAAAAAvAAEAAgABAAAAAAA0AAMAAgABAAAAAAA1AAMAAgACAAAAAAAvAAUAAgABAAAAAAA2AAMAAgADAAAAAAAUAP//AgABAAAAAAAUAAAAAgABAAEAAAAVAP//AgACAAAAAAAVAAAAAgACAAEAAAAWAP//AgADAAAAAAAWAAAAAgADAAEAAAAXAP//AgADAAAAAAAXAAAAAgADAAEAAAA=")
 tile_set = SubResource("TileSet_57qmd")
 
-[node name="Player" parent="." unique_id=492339151 instance=ExtResource("2_l54rq")]
+[node name="Player" parent="." unique_id=492339151 instance=ExtResource("6_xk8vt")]
 position = Vector2(567, 298)
 
-[node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("3_iey3s")]
+[node name="PowerUpPickup" parent="." unique_id=1063037373 instance=ExtResource("7_umcau")]
 position = Vector2(704, 360)
-data = ExtResource("7_l8m0x")
+data = ExtResource("8_ud172")
 
 [node name="Pickups" type="Node2D" parent="." unique_id=1325764474]
 
-[node name="Clam Pickup" parent="Pickups" unique_id=1418753025 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup" parent="Pickups" unique_id=1418753025 instance=ExtResource("9_s5367")]
 position = Vector2(303, 349)
 
-[node name="Clam Pickup2" parent="Pickups" unique_id=1341121964 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup2" parent="Pickups" unique_id=1341121964 instance=ExtResource("9_s5367")]
 position = Vector2(359, 349)
 
-[node name="Clam Pickup3" parent="Pickups" unique_id=1861782879 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup3" parent="Pickups" unique_id=1861782879 instance=ExtResource("9_s5367")]
 position = Vector2(417, 349)
 
-[node name="Clam Pickup4" parent="Pickups" unique_id=1621190205 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup4" parent="Pickups" unique_id=1621190205 instance=ExtResource("9_s5367")]
 position = Vector2(1057, 252)
 
-[node name="Clam Pickup5" parent="Pickups" unique_id=183625953 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup5" parent="Pickups" unique_id=183625953 instance=ExtResource("9_s5367")]
 position = Vector2(1142, 245)
 
-[node name="Clam Pickup6" parent="Pickups" unique_id=2089728972 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup6" parent="Pickups" unique_id=2089728972 instance=ExtResource("9_s5367")]
 position = Vector2(1554, 160)
 
-[node name="Clam Pickup7" parent="Pickups" unique_id=1741485230 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup7" parent="Pickups" unique_id=1741485230 instance=ExtResource("9_s5367")]
 position = Vector2(1737, 57)
 
-[node name="Clam Pickup8" parent="Pickups" unique_id=1004584762 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup8" parent="Pickups" unique_id=1004584762 instance=ExtResource("9_s5367")]
 position = Vector2(1323, -28)
 
-[node name="Clam Pickup9" parent="Pickups" unique_id=1285091285 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup9" parent="Pickups" unique_id=1285091285 instance=ExtResource("9_s5367")]
 position = Vector2(1087, -25)
 
-[node name="Clam Pickup10" parent="Pickups" unique_id=884075781 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup10" parent="Pickups" unique_id=884075781 instance=ExtResource("9_s5367")]
 position = Vector2(835, -24)
 
-[node name="Clam Pickup11" parent="Pickups" unique_id=1608459747 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup11" parent="Pickups" unique_id=1608459747 instance=ExtResource("9_s5367")]
 position = Vector2(733, -26)
 
-[node name="Clam Pickup12" parent="Pickups" unique_id=1547856826 instance=ExtResource("7_rdb4h")]
+[node name="Clam Pickup12" parent="Pickups" unique_id=1547856826 instance=ExtResource("9_s5367")]
 position = Vector2(783, -28)
 
-[node name="shell pickup" parent="Pickups" unique_id=944937600 instance=ExtResource("12_j4ew0")]
+[node name="shell pickup" parent="Pickups" unique_id=944937600 instance=ExtResource("10_blyvk")]
 position = Vector2(882, 293)
-shell = ExtResource("11_wm471")
+shell = ExtResource("11_ts3wb")
 
-[node name="shell pickup5" parent="Pickups" unique_id=1748360956 instance=ExtResource("12_j4ew0")]
+[node name="shell pickup5" parent="Pickups" unique_id=1748360956 instance=ExtResource("10_blyvk")]
 position = Vector2(1468, 353)
-shell = ExtResource("12_65h5i")
+shell = ExtResource("12_chm77")
 
-[node name="shell pickup4" parent="Pickups" unique_id=238958957 instance=ExtResource("12_j4ew0")]
+[node name="shell pickup4" parent="Pickups" unique_id=238958957 instance=ExtResource("10_blyvk")]
 position = Vector2(1687, 224)
-shell = ExtResource("13_lsb16")
+shell = ExtResource("13_srchd")
 
-[node name="shell pickup2" parent="Pickups" unique_id=474682550 instance=ExtResource("12_j4ew0")]
+[node name="shell pickup2" parent="Pickups" unique_id=474682550 instance=ExtResource("10_blyvk")]
 position = Vector2(1321, 297)
-shell = ExtResource("12_6ux8o")
+shell = ExtResource("14_p6e1f")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1599153964]
 position = Vector2(605, 80)
@@ -189,19 +190,19 @@ shadow_color = Color(0.23137255, 0.23137255, 0.4509804, 1)
 shadow_filter = 2
 
 [node name="Particles" type="Node2D" parent="." unique_id=296845036]
-script = ExtResource("9_xr43f")
+script = ExtResource("15_xo6ri")
 
-[node name="Killzone" parent="." unique_id=308784554 instance=ExtResource("11_xvvnt")]
+[node name="Killzone" parent="." unique_id=308784554 instance=ExtResource("16_potos")]
 position = Vector2(1048, 728)
 
 [node name="CollisionShape2D" parent="Killzone" index="0" unique_id=27263728]
 position = Vector2(-84, -32)
 shape = SubResource("RectangleShape2D_jvagm")
 
-[node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("12_l8m0x")]
+[node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("17_6d4lf")]
 position = Vector2(784, 352)
 
-[node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("14_0roqs")]
+[node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("18_c0rmi")]
 position = Vector2(656, 296)
 limit_y = 2
 
@@ -210,32 +211,50 @@ position = Vector2(-464, 152)
 
 [node name="Objects" type="Node2D" parent="." unique_id=1419944227]
 
-[node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_pgapj")]
+[node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_xcfnk")]
 position = Vector2(686, -31)
 
 [node name="enemies" type="Node2D" parent="." unique_id=573245378]
 
-[node name="Seagull" parent="enemies" unique_id=1506539934 instance=ExtResource("20_is1em")]
+[node name="Seagull" parent="enemies" unique_id=1506539934 instance=ExtResource("20_1xj2d")]
 position = Vector2(376, 224)
 
-[node name="Seagull2" parent="enemies" unique_id=266583665 instance=ExtResource("20_is1em")]
+[node name="Seagull2" parent="enemies" unique_id=21622417 instance=ExtResource("20_1xj2d")]
 position = Vector2(774, 204)
+
+[node name="Seagull3" parent="enemies" unique_id=1442927418 instance=ExtResource("20_1xj2d")]
+position = Vector2(998, 122)
+
+[node name="Seagull4" parent="enemies" unique_id=2096794971 instance=ExtResource("20_1xj2d")]
+position = Vector2(1396, 102)
+
+[node name="Seagull5" parent="enemies" unique_id=519645193 instance=ExtResource("20_1xj2d")]
+position = Vector2(572, -170)
+
+[node name="Seagull6" parent="enemies" unique_id=635278143 instance=ExtResource("20_1xj2d")]
+position = Vector2(970, -190)
+
+[node name="Seagull7" parent="enemies" unique_id=1357574471 instance=ExtResource("20_1xj2d")]
+position = Vector2(1285, -170)
+
+[node name="Seagull8" parent="enemies" unique_id=1873285058 instance=ExtResource("20_1xj2d")]
+position = Vector2(1625, -99)
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 
-[node name="pause button" parent="PauseCL" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("18_p6ccs")]
+[node name="pause button" parent="PauseCL" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("20_tjmj4")]
 pauseMenu = NodePath("../PauseMenu")
 
-[node name="PauseMenu" parent="PauseCL" unique_id=1066546381 instance=ExtResource("13_t0p86")]
+[node name="PauseMenu" parent="PauseCL" unique_id=1066546381 instance=ExtResource("21_8jijy")]
 
 [node name="WinCL" type="CanvasLayer" parent="." unique_id=1836203151]
 
-[node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("21_lsb16")]
+[node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("22_vybpq")]
 visible = false
 
 [node name="DeathCL" type="CanvasLayer" parent="." unique_id=183253604]
 
-[node name="deathUI" parent="DeathCL" unique_id=2143124319 instance=ExtResource("24_f4tc4")]
+[node name="deathUI" parent="DeathCL" unique_id=2143124319 instance=ExtResource("23_txe2d")]
 visible = false
 
 [editable path="Killzone"]

@@ -28,10 +28,12 @@ func _emit_particle():
 	particle.global_position.y = 100
 	if GlobalVariables.Player:
 		particle.global_position += 0.2 * GlobalVariables.Player.position
-	particles1.add_child(particle)
+	if particles1:
+		particles1.add_child(particle)
 	particle = P_particle.instantiate()
 	particle.global_position.x = randf_range(-600,600)
 	particle.global_position.y = 100
 	if GlobalVariables.Player:
 		particle.global_position += 0.4 * GlobalVariables.Player.position
-	particles2.add_child(particle)
+	if particles2:
+		particles2.add_child(particle)

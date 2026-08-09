@@ -192,7 +192,7 @@ func shoot():
 func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 	if area is CameraLimiter:
 		camera.camera_limit_manager.set_limiter(area)
-		print(area)
+		#print(area)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:

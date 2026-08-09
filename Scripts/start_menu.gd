@@ -12,7 +12,7 @@ func _on_start_button_pressed() -> void:
 	
 	#GlobalVariables.GameController._play()
 	
-	get_tree().change_scene_to_file("res://Scenes/testWorld.tscn")
+	get_tree().change_scene_to_file(GlobalVariables.levelArray[0])
 
 
 func _on_exit_button_pressed() -> void:

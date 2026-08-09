@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://hvwonjy651b0"]
+
+[ext_resource type="AudioStream" uid="uid://cmdl6ot365nmj" path="res://Assets/Audio/SHELLSHOCK (BEACH).mp3" id="1_kwtr5"]
+
+[node name="beach song" type="AudioStreamPlayer" unique_id=552006759]
+stream = ExtResource("1_kwtr5")
+volume_db = -2.929
+autoplay = true

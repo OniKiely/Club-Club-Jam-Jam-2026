@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="4_6afsh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 35.0
+radius = 17.117243
 
 [node name="Bullet" type="Area2D" unique_id=1437750222]
 collision_layer = 8

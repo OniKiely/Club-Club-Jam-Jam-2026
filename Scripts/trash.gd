@@ -17,5 +17,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			pass
 		else:
 			pass
+		await get_tree().physics_frame
+		$Area2D/CollisionShape2D.disabled = true
 		await $CPUParticles2D.finished
 		queue_free()

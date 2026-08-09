@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="14_0roqs"]
 [ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="18_p6ccs"]
 [ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_pgapj"]
+[ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_is1em"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="21_lsb16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
@@ -210,6 +211,14 @@ position = Vector2(-464, 152)
 
 [node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_pgapj")]
 position = Vector2(749, -34)
+
+[node name="enemies" type="Node2D" parent="." unique_id=573245378]
+
+[node name="Seagull" parent="enemies" unique_id=1506539934 instance=ExtResource("20_is1em")]
+position = Vector2(376, 224)
+
+[node name="Seagull2" parent="enemies" unique_id=266583665 instance=ExtResource("20_is1em")]
+position = Vector2(774, 204)
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 

@@ -196,7 +196,7 @@ _data = {
 &"wave": SubResource("Animation_usq34")
 }
 
-[node name="winUI" type="Control" unique_id=1656095371 node_paths=PackedStringArray("score_label")]
+[node name="winUI" type="Control" unique_id=1656095371 node_paths=PackedStringArray("score_label", "time_label", "total_time_label")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -206,6 +206,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a7d2m")
 score_label = NodePath("UI/UI Buttons/VBoxContainer2/Control/ScoreLabel")
+time_label = NodePath("UI/UI Buttons/VBoxContainer2/Control2/TimeLabel")
+total_time_label = NodePath("UI/UI Buttons/VBoxContainer2/Control3/TotalTimeLabel")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1287560068]
 material = SubResource("ShaderMaterial_cn7ge")
@@ -303,7 +305,7 @@ texture = ExtResource("4_gm1e3")
 region_enabled = true
 region_rect = Rect2(252, 155, 136, 27)
 
-[node name="ScoreLabel" type="Label" parent="UI/UI Buttons/VBoxContainer2/Control2" unique_id=912809213]
+[node name="TimeLabel" type="Label" parent="UI/UI Buttons/VBoxContainer2/Control2" unique_id=912809213]
 layout_mode = 0
 offset_left = -24.238495
 offset_top = -2.0
@@ -323,7 +325,7 @@ texture = ExtResource("4_gm1e3")
 region_enabled = true
 region_rect = Rect2(252, 155, 136, 27)
 
-[node name="ScoreLabel" type="Label" parent="UI/UI Buttons/VBoxContainer2/Control3" unique_id=1469192158]
+[node name="TotalTimeLabel" type="Label" parent="UI/UI Buttons/VBoxContainer2/Control3" unique_id=1469192158]
 layout_mode = 0
 offset_left = -24.238495
 offset_top = -2.0

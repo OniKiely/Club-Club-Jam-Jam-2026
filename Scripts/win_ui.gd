@@ -1,7 +1,9 @@
 extends Control
 
-var levelScore := 0
 @export var score_label: Label
+@export var time_label: Label
+@export var total_time_label: Label
+
 
 
 @onready var win_flag = $"../../winFlag"
@@ -15,10 +17,13 @@ func _ready() -> void:
 
 func _on_level_won():
 	#May change this later
-	levelScore = GlobalVariables.score
+	
 	GlobalVariables.totalTime += GlobalVariables.levelTime
 	
-	score_label.text = "Score: " + str(levelScore)
+	score_label.text = "Score: " + str(GlobalVariables.score)
+	time_label.text = "Time: " + str(snapped(GlobalVariables.levelTime,0.01))
+	total_time_label.text = "Total Time: " + str(snapped(GlobalVariables.totalTime,0.01))
+	
 	
 	#Lock the pause menu
 	pause_menu.set_pause_locked(true)

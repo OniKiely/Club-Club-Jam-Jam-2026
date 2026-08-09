@@ -87,10 +87,12 @@ autoplay = "default"
 frame_progress = 0.07473098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=634562350]
+visible = false
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3smsa")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=127340304]
+visible = false
 collision_layer = 64
 collision_mask = 32
 
@@ -98,6 +100,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=795191374]
+visible = false
 collision_layer = 4
 collision_mask = 8
 

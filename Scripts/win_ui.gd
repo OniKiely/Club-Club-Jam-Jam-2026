@@ -1,7 +1,8 @@
 extends Control
 
 var levelScore := 0
-@onready var score_label = $ScoreLabel
+@export var score_label: Label
+
 
 @onready var win_flag = $"../../winFlag"
 @onready var pause_menu = $"../../PauseCL/PauseMenu"
@@ -14,7 +15,7 @@ func _ready() -> void:
 
 func _on_level_won():
 	#May change this later
-	levelScore += GlobalVariables.score
+	levelScore = GlobalVariables.score
 	
 	score_label.text = "Score: " + str(levelScore)
 	
@@ -23,6 +24,7 @@ func _on_level_won():
 	get_tree().paused = true
 	visible = true
 	$AnimationPlayer.play("blur")
+	$UI/AnimationPlayer.play("wave")
 
 
 func _on_next_button_pressed() -> void:

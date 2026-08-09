@@ -24,6 +24,8 @@ var can_jump: bool = true
 
 var current_checkpoint: Vector2
 
+var heart_textures = [preload("uid://du2lbh0gw7ty0"), preload("uid://cif88dr5q1eno")]
+
 var current_state = state.DEFAULT
 enum state {
 	DEFAULT,
@@ -136,6 +138,8 @@ func on_death():
 func respawn():
 	lives -= 1
 	if lives > 0:
+		print(str(lives))
+		get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
 		self.global_position = current_checkpoint
 		#UPDATE VISUALS HERE
 	else:

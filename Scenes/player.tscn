@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cvd0kgvhb1l1j" path="res://Scripts/powerups.gd" id="8_8erm5"]
 [ext_resource type="Script" uid="uid://bkmqtc6d3svwp" path="res://Scripts/camera_limit_manager.gd" id="8_f1ek2"]
 [ext_resource type="Script" uid="uid://d2h1h3rgvf6lu" path="res://Scripts/UI/clam_counter.gd" id="10_gymyn"]
+[ext_resource type="Texture2D" uid="uid://cif88dr5q1eno" path="res://Assets/Art/heart.png" id="11_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://bs65fjn0oosa6" path="res://Assets/Art/tiny clamshell.png" id="11_pu2lt"]
 [ext_resource type="Script" uid="uid://t48cw51hj2vr" path="res://Scripts/UI/score_counter.gd" id="12_pu2lt"]
 
@@ -431,16 +432,37 @@ wait_time = 0.5
 
 [node name="Player UI" type="CanvasLayer" parent="." unique_id=1211840619]
 
+[node name="Hearts" type="Node2D" parent="Player UI" unique_id=672176516]
+position = Vector2(4, 0)
+
+[node name="Heart1" type="TextureRect" parent="Player UI/Hearts" unique_id=107336558]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_7dp3o")
+
+[node name="Heart2" type="TextureRect" parent="Player UI/Hearts" unique_id=914332751]
+offset_left = 67.0
+offset_right = 131.0
+offset_bottom = 64.0
+texture = ExtResource("11_7dp3o")
+
+[node name="Heart3" type="TextureRect" parent="Player UI/Hearts" unique_id=488392568]
+offset_left = 134.0
+offset_right = 198.0
+offset_bottom = 64.0
+texture = ExtResource("11_7dp3o")
+
 [node name="Score Counter" type="Node2D" parent="Player UI" unique_id=1504653169]
-position = Vector2(15, 10)
+position = Vector2(15, 63)
 script = ExtResource("12_pu2lt")
 
 [node name="score count" type="Label" parent="Player UI/Score Counter" unique_id=1955417763]
 offset_right = 40.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Clam Counter" type="Node2D" parent="Player UI" unique_id=2127374055]
-position = Vector2(33, 44)
+position = Vector2(33, 97)
 script = ExtResource("10_gymyn")
 
 [node name="Label" type="Label" parent="Player UI/Clam Counter" unique_id=1636704631]

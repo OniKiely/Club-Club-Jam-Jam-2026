@@ -211,7 +211,7 @@ position = Vector2(-464, 152)
 [node name="Objects" type="Node2D" parent="." unique_id=1419944227]
 
 [node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("19_pgapj")]
-position = Vector2(749, -34)
+position = Vector2(392, 338)
 
 [node name="enemies" type="Node2D" parent="." unique_id=573245378]
 
@@ -231,7 +231,6 @@ pauseMenu = NodePath("../PauseMenu")
 [node name="WinCL" type="CanvasLayer" parent="." unique_id=1836203151]
 
 [node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("21_lsb16")]
-process_mode = 3
 
 [node name="DeathCL" type="CanvasLayer" parent="." unique_id=183253604]
 

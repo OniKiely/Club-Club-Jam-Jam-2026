@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready():
+	GlobalVariables.levelTime = 0
 	# sets up starting camera bounds
 	if initial_camera_limiter and player:
 		player.camera.camera_limit_manager.set_limiter(initial_camera_limiter, true)
@@ -17,3 +18,6 @@ func _ready():
 	#await get_tree().process_frame
 	#GlobalVariables.Particles = particlesHolder
 	#print(particlesHolder,"particl")
+
+func _process(delta: float) -> void:
+	GlobalVariables.levelTime += delta

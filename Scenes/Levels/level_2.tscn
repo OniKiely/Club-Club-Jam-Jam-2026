@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_xcfnk"]
 [ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_1xj2d"]
 [ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="20_tjmj4"]
+[ext_resource type="Script" uid="uid://u3a5qbmmx1yv" path="res://Scripts/level timer.gd" id="21_7h8th"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="21_8jijy"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="22_vybpq"]
 [ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="23_txe2d"]
@@ -239,6 +240,26 @@ position = Vector2(1285, -170)
 
 [node name="Seagull8" parent="enemies" unique_id=1873285058 instance=ExtResource("20_1xj2d")]
 position = Vector2(1625, -99)
+
+[node name="Level Timer" type="CanvasLayer" parent="." unique_id=84938830]
+
+[node name="Control" type="Control" parent="Level Timer" unique_id=740107525]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Level Timer/Control" unique_id=126750148]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 22.0
+script = ExtResource("21_7h8th")
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 

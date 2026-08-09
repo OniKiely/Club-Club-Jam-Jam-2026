@@ -4,14 +4,11 @@ var button_type = null
 
 func _on_start_button_pressed() -> void:
 	button_type = "start"
-	#$ColorRect/AnimationPlayer.play_backwards("fade in")
-	#GlobalVariables.GameController._play_bubble_transition()
 	GlobalVariables._play_bubble_transition()
 	
 	await get_tree().create_timer(0.7,false).timeout
 	
-	#GlobalVariables.GameController._play()
-	
+	GlobalVariables._reset_player_data()
 	get_tree().change_scene_to_file(GlobalVariables.levelArray[0])
 
 

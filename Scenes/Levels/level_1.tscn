@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="21_ujweo"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="22_k6fki"]
 [ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="23_4d3gw"]
+[ext_resource type="Script" uid="uid://u3a5qbmmx1yv" path="res://Scripts/level timer.gd" id="24_pmbdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("3_ksf1i")
@@ -100,11 +101,10 @@ sources/2 = SubResource("TileSetAtlasSource_xr43f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
 size = Vector2(2216, 112)
 
-[node name="Level 1" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player", "particlesHolder")]
+[node name="Level 1" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player")]
 script = ExtResource("1_ad63i")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
-particlesHolder = NodePath("Particles")
 
 [node name="underwater BG" parent="." unique_id=1869367768 instance=ExtResource("2_pmbdk")]
 
@@ -214,6 +214,26 @@ position = Vector2(-464, 152)
 position = Vector2(686, -31)
 
 [node name="enemies" type="Node2D" parent="." unique_id=573245378]
+
+[node name="Level Timer" type="CanvasLayer" parent="." unique_id=197561295]
+
+[node name="Control" type="Control" parent="Level Timer" unique_id=1922891547]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Level Timer/Control" unique_id=915201033]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 22.0
+script = ExtResource("24_pmbdk")
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 

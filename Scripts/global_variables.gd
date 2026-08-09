@@ -10,6 +10,8 @@ var ShellManager:Node2D
 var score: int = 0
 var clams: int = 0
 var currentLevel:int = 1
+var levelTime:float = 0
+var totalTime:float = 0
 
 
 const BUBBLE_TRANSITION = preload("uid://nrx1ltxc82dy")
@@ -27,6 +29,12 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	_play_music(BEACH_SONG.instantiate())
+
+func _reset_player_data():
+	score = 0
+	clams = 0
+	levelTime = 0
+	totalTime = 0
 
 func _play_bubble_transition():
 	add_child(BUBBLE_TRANSITION.instantiate())

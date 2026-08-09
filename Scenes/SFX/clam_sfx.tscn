@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4tbhwh86poiq"]
+
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="1_1wc04"]
+[ext_resource type="AudioStream" uid="uid://dhnuya7535htc" path="res://Assets/Audio/COLLECT CLAM.wav" id="1_sjsea"]
+
+[node name="clam SFX" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_sjsea")
+autoplay = true
+script = ExtResource("1_1wc04")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

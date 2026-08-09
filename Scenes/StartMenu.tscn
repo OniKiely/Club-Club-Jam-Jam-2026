@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dyrt8mem24mb1" path="res://Assets/Art/Title.png" id="6_dibtv"]
 [ext_resource type="Texture2D" uid="uid://cxkeu2tfi306a" path="res://Assets/Art/Titleblueshell.png" id="6_o42a4"]
 [ext_resource type="Texture2D" uid="uid://d3pnwsewxnfwj" path="res://Assets/Art/Titletanshell.png" id="7_0qo7l"]
+[ext_resource type="Texture2D" uid="uid://ulffw4jlsug4" path="res://Assets/Art/vignette.png" id="9_o42a4"]
 
 [sub_resource type="Animation" id="Animation_ujd4t"]
 length = 0.001
@@ -143,6 +144,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_o6asp"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -365,6 +367,9 @@ _data = {
 &"fade out": SubResource("Animation_x3sen")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1f8p0"]
+blend_mode = 3
+
 [node name="StartMenu" type="Node2D" unique_id=1336783598]
 script = ExtResource("1_xtte2")
 metadata/_edit_vertical_guides_ = [320.0]
@@ -540,9 +545,17 @@ color = Color(0, 0, 0, 1)
 libraries/ = SubResource("AnimationLibrary_o7rkd")
 autoplay = &"fade in"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1189424961]
+material = SubResource("CanvasItemMaterial_1f8p0")
+position = Vector2(321.00003, 199)
+scale = Vector2(0.86972547, 0.6459682)
+texture = ExtResource("9_o42a4")
+
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/StartButton" to="CanvasLayer/VBoxContainer/StartButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/StartButton" to="CanvasLayer/VBoxContainer/StartButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="CanvasLayer/VBoxContainer/StartButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/ExitButton" to="CanvasLayer/VBoxContainer/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/ExitButton" to="CanvasLayer/VBoxContainer/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="CanvasLayer/VBoxContainer/ExitButton" method="_on_pressed"]

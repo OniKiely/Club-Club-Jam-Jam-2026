@@ -26,6 +26,8 @@ var current_checkpoint: Vector2
 
 var heart_textures = [preload("uid://du2lbh0gw7ty0"), preload("uid://cif88dr5q1eno")]
 
+const GUN_SFX = preload("uid://c646ltlf38wv4")
+
 var current_state = state.DEFAULT
 enum state {
 	DEFAULT,
@@ -182,12 +184,14 @@ func shoot():
 	#bullet.direction = (get_global_mouse_position() - aim.global_position).normalized()
 	$Weapon/cannon/AnimationPlayer.play("RESET")
 	$Weapon/cannon/AnimationPlayer.play("shoot")
+	
+	GlobalVariables._play_sfx(GUN_SFX.instantiate())
 
 
 func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 	if area is CameraLimiter:
 		camera.camera_limit_manager.set_limiter(area)
-		print(area)
+		#print(area)
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:

@@ -8,6 +8,6 @@ script = ExtResource("2_jaha1")
 playerShellTexture = ExtResource("1_crf7d")
 pickupTexture = ExtResource("1_crf7d")
 canShoot = true
-attack_cooldown = 0.25
+attack_cooldown = 0.5
 jump_strength = -700.0
 max_speed = 175

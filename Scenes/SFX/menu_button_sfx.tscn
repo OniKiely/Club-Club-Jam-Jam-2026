@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crhb4rk4u6k60"]
+
+[ext_resource type="AudioStream" uid="uid://bxhe3kdpnph2v" path="res://Assets/Audio/MENU BUTTON.wav" id="1_s0oxf"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_lqdds"]
+
+[node name="menu button SFX" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_s0oxf")
+autoplay = true
+script = ExtResource("2_lqdds")
+randomizePitch = false
+randomizedPitch = Vector2(0, 0)
+
+[connection signal="finished" from="." to="." method="_on_finished"]

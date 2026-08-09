@@ -12,6 +12,7 @@ extends CharacterBody2D
 var T_attack_cooldown:float = 0
 
 var lives = 3
+signal gameOver()
 
 var default_speed: int = 250
 var current_speed: int = default_speed
@@ -130,9 +131,9 @@ func on_death():
 	current_state = state.DEATH
 	Engine.time_scale = 0.5
 	await get_tree().create_timer(2).timeout
-	Engine.time_scale = 0
-	if deathUI:
-		deathUI.show()
+	Engine.time_scale = 1
+	
+	gameOver.emit()
 
 func respawn():
 	lives -= 1

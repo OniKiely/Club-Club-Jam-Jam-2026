@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cfhkwi6imk3su"]
+
+[ext_resource type="Script" uid="uid://d4io0u7g6y033" path="res://Scripts/death_ui.gd" id="1_e6fjf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m1v7i"]
+load_path = "res://.godot/imported/Title.png-722dae9e57d0bbf972f3d5d5f4bbf9aa.ctex"
+
+[sub_resource type="Animation" id="Animation_e6fjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kx37q"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_reacv"]
+_data = {
+&"RESET": SubResource("Animation_e6fjf"),
+&"fade": SubResource("Animation_kx37q")
+}
+
+[node name="deathUI" type="Control" unique_id=2143124319]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6fjf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1763293951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FactLabel" type="Label" parent="." unique_id=732668655]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -11.5
+offset_right = 86.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Insert Depressing Fact"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1472915481]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = SubResource("CompressedTexture2D_m1v7i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=245908585]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -140.0
+offset_right = 143.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MenuButton" type="Button" parent="HBoxContainer" unique_id=1229569047]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Menu"
+
+[node name="RestartButton" type="Button" parent="HBoxContainer" unique_id=629756419]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restart"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=964203598]
+libraries/ = SubResource("AnimationLibrary_reacv")
+
+[connection signal="pressed" from="HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

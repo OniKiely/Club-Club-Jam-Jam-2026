@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_pgapj"]
 [ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_is1em"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="21_lsb16"]
+[ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="24_f4tc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
 texture = ExtResource("1_l54rq")
@@ -231,6 +232,10 @@ pauseMenu = NodePath("../PauseMenu")
 
 [node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("21_lsb16")]
 visible = false
+
+[node name="DeathCL" type="CanvasLayer" parent="." unique_id=183253604]
+
+[node name="deathUI" parent="DeathCL" unique_id=2143124319 instance=ExtResource("24_f4tc4")]
 
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

@@ -11,6 +11,8 @@ extends CharacterBody2D
 
 var T_attack_cooldown:float = 0
 
+var lives = 3
+
 var default_speed: int = 250
 var current_speed: int = default_speed
 var acceleration: int = 700
@@ -131,7 +133,12 @@ func on_death():
 		deathUI.show()
 
 func respawn():
-	self.global_position = current_checkpoint
+	lives -= 1
+	if lives > 0:
+		self.global_position = current_checkpoint
+		#UPDATE VISUALS HERE
+	else:
+		on_death()
 
 #bullet code
 @export var bullet_scene: PackedScene
@@ -177,3 +184,12 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 	if area is CameraLimiter:
 		camera.camera_limit_manager.set_limiter(area)
 		print(area)
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	$Hurtbox/CollisionShape2D.disabled = true
+	respawn() #respawn covers death logic if not enough lives to respawn
+	
+	await get_tree().create_timer(3).timeout
+	
+	$Hurtbox/CollisionShape2D.disabled = false

@@ -339,15 +339,20 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(46, 27.86125)
+size = Vector2(29, 18.861252)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3smsa"]
-polygon = PackedVector2Array(686, 579, 686, 581, 732, 581, 732, 579)
+polygon = PackedVector2Array(691, 579, 691, 581, 734, 581, 735, 579)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(36, 22)
+
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
 light_mask = 0
+collision_layer = 33
+collision_mask = 65
 script = ExtResource("1_cvnsp")
 shellData = ExtResource("2_pu2lt")
 bullet_scene = ExtResource("2_3smsa")
@@ -391,7 +396,7 @@ animation = &"walking"
 libraries/ = SubResource("AnimationLibrary_tx1dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328232740]
-position = Vector2(0, 8.930625)
+position = Vector2(5.5, 13.430626)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1869746703]
@@ -401,7 +406,7 @@ script = ExtResource("3_6t5aa")
 script = ExtResource("8_f1ek2")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=601692525]
-position = Vector2(-709, -558)
+position = Vector2(-709, -563)
 occluder = SubResource("OccluderPolygon2D_3smsa")
 
 [node name="Powerups" type="Node2D" parent="." unique_id=883852140]
@@ -412,6 +417,14 @@ script = ExtResource("8_8erm5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimitDetection" unique_id=2120491576]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1552305511]
+collision_layer = 2
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1505055942]
+position = Vector2(6, 13)
+shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="DashTimer" type="Timer" parent="." unique_id=354626906]
 wait_time = 0.5
@@ -442,4 +455,5 @@ scale = Vector2(1.3936069, 1.3936069)
 texture = ExtResource("11_pu2lt")
 
 [connection signal="area_entered" from="CameraLimitDetection" to="." method="_on_camera_limit_detection_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="DashTimer" to="Powerups" method="_on_dash_timer_timeout"]

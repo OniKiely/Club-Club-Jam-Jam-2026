@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://wjtnoo3qxhgl"]
+
+[ext_resource type="Texture2D" uid="uid://t5q0xd6sah0b" path="res://Assets/Art/Enemies/tourist_1.png" id="1_8cqip"]
+[ext_resource type="Script" uid="uid://dxdwxy2liwkpl" path="res://Scripts/tourist.gd" id="1_h5d6v"]
+[ext_resource type="Texture2D" uid="uid://gwhey4m53iub" path="res://Assets/Art/particle.png" id="3_cagv0"]
+[ext_resource type="Script" uid="uid://b0yq3lai0e5al" path="res://Scripts/State Machine/state_machine.gd" id="4_540ic"]
+[ext_resource type="Script" uid="uid://dcc5g0c8blr2f" path="res://Scripts/State Machine/Seagull/follow_state_seagull.gd" id="5_mfu8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cagv0"]
+size = Vector2(118, 37.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(98, 41)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fcnqv"]
+points = PackedVector2Array(-70.5, 85, -77.5, 124, 34.5, 121, 45.5, -134, -36.5, -132, -29.5, 78)
+
+[sub_resource type="Curve" id="Curve_lucgn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.18817204, 1), 0.0, 0.0, 0, 0, Vector2(0.5376344, 0.24107146), 0.0, 0.0, 0, 0, Vector2(0.6505376, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_540ic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mfu8j"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kj0st"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4otog"]
+_data = {
+&"RESET": SubResource("Animation_540ic"),
+&"attack": SubResource("Animation_mfu8j"),
+&"disappear": SubResource("Animation_kj0st")
+}
+
+[node name="Tourist" type="CharacterBody2D" unique_id=1792519958]
+collision_mask = 2
+script = ExtResource("1_h5d6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133209319]
+scale = Vector2(2, 2)
+texture = ExtResource("1_8cqip")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1232413810]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1780816016]
+position = Vector2(-3, 112.75)
+shape = SubResource("RectangleShape2D_cagv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001030725]
+position = Vector2(0, 102.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=487875834]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=525036273]
+position = Vector2(17.5, 5)
+shape = SubResource("ConvexPolygonShape2D_fcnqv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1352545272]
+emitting = false
+amount = 30
+texture = ExtResource("3_cagv0")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 30
+draw_order = 1
+emission_shape = 4
+emission_points = PackedVector2Array(-32, 8, -32, 9, -32, 10, -32, 11, -32, 12, -32, 13, -31, 8, -31, 13, -31, 14, -30, -14, -30, -13, -30, -12, -30, -11, -30, 7, -30, 8, -30, 14, -29, -15, -29, -14, -29, -11, -29, -10, -29, 7, -29, 14, -29, 15, -28, -16, -28, -15, -28, -14, -28, -13, -28, -12, -28, -10, -28, 6, -28, 7, -28, 15, -27, -18, -27, -17, -27, -16, -27, -14, -27, -12, -27, -10, -27, 6, -27, 15, -26, -19, -26, -18, -26, -14, -26, -13, -26, -12, -26, -10, -26, 5, -26, 6, -26, 15, -25, -19, -25, -18, -25, -10, -25, 5, -25, 15, -25, 16, -24, -18, -24, -17, -24, -10, -24, -1, -24, 4, -24, 5, -24, 15, -24, 16, -23, -17, -23, -10, -23, -2, -23, -1, -23, 0, -23, 1, -23, 2, -23, 4, -23, 15, -22, -17, -22, -10, -22, -9, -22, -2, -22, 2, -22, 3, -22, 4, -22, 14, -22, 15, -21, -17, -21, -9, -21, -8, -21, -3, -21, -2, -21, 14, -20, -17, -20, -16, -20, -8, -20, -3, -20, 14, -19, -16, -19, -8, -19, -7, -19, -3, -19, 13, -19, 14, -18, -16, -18, -7, -18, -6, -18, -5, -18, -4, -18, -3, -18, 13, -17, -16, -17, 13, -16, -16, -16, 12, -16, 13, -15, -16, -15, -15, -15, 11, -15, 12, -14, -15, -14, 8, -14, 9, -14, 10, -14, 11, -13, -18, -13, -15, -13, 7, -13, 8, -12, -19, -12, -18, -12, -17, -12, -15, -12, 7, -11, -19, -11, -18, -11, -17, -11, -16, -11, -15, -11, 7, -10, -18, -10, 6, -10, 7, -9, -18, -9, 6, -8, -19, -8, -18, -8, 5, -8, 6, -7, -18, -7, -17, -7, 5, -6, -17, -6, -16, -6, 5, -6, 12, -5, -16, -5, 4, -5, 5, -5, 12, -4, -16, -4, 4, -4, 12, -3, -16, -3, 4, -3, 12, -3, 14, -3, 15, -3, 16, -3, 17, -3, 18, -2, -16, -2, 3, -2, 4, -2, 12, -2, 13, -2, 14, -1, -16, -1, 3, -1, 12, 0, -16, 0, 3, 0, 12, 1, -16, 1, -2, 1, -1, 1, 0, 1, 2, 1, 3, 1, 12, 2, -16, 2, -15, 2, -2, 2, 0, 2, 1, 2, 2, 2, 12, 2, 16, 2, 17, 2, 18, 2, 19, 3, -15, 3, -2, 3, 1, 3, 15, 3, 16, 3, 17, 3, 19, 3, 20, 4, -15, 4, -3, 4, -2, 4, 15, 4, 17, 4, 20, 5, -18, 5, -17, 5, -15, 5, -3, 5, 15, 5, 16, 5, 17, 6, -19, 6, -18, 6, -17, 6, -16, 6, -15, 6, -3, 6, 15, 6, 16, 7, -20, 7, -19, 7, -3, 8, -21, 8, -20, 8, -3, 8, 18, 8, 19, 8, 20, 8, 21, 9, -22, 9, -21, 9, -3, 9, 17, 9, 18, 9, 19, 10, -22, 10, -3, 10, 17, 10, 18, 11, -23, 11, -22, 11, -3, 11, 17, 11, 18, 11, 19, 11, 20, 12, -26, 12, -25, 12, -24, 12, -23, 12, -3, 12, 17, 12, 18, 13, -27, 13, -26, 13, -3, 13, 17, 13, 18, 13, 19, 13, 20, 13, 21, 14, -27, 14, -26, 14, -4, 14, -3, 15, -26, 15, -16, 15, -15, 15, -14, 15, -4, 16, -26, 16, -17, 16, -16, 16, -14, 16, -13, 16, -5, 16, -4, 17, -26, 17, -19, 17, -18, 17, -17, 17, -13, 17, -12, 17, -5, 17, 25, 17, 26, 18, -26, 18, -20, 18, -19, 18, -12, 18, -11, 18, -5, 18, 18, 18, 19, 18, 20, 18, 21, 18, 22, 18, 23, 18, 24, 19, -26, 19, -21, 19, -20, 19, -11, 19, -10, 19, -5, 19, 18, 19, 22, 20, -26, 20, -22, 20, -21, 20, -10, 20, -5, 20, 18, 20, 22, 21, -26, 21, -23, 21, -22, 21, -10, 21, -9, 21, -5, 21, 18, 21, 21, 21, 22, 22, -26, 22, -25, 22, -24, 22, -23, 22, -9, 22, -8, 22, -5, 22, 18, 22, 19, 22, 20, 22, 21, 23, -25, 23, -24, 23, -8, 23, -7, 23, -6, 23, -5)
+emission_colors = PackedColorArray()
+direction = Vector2(0, -1)
+spread = 75.0
+gravity = Vector2(0, 0)
+scale_amount_min = 1.25
+scale_amount_max = 1.75
+scale_amount_curve = SubResource("Curve_lucgn")
+hue_variation_min = -0.11000002
+hue_variation_max = 0.039999977
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1490096883]
+libraries/ = SubResource("AnimationLibrary_4otog")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1509001487]
+script = ExtResource("4_540ic")
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=1544761298]
+script = ExtResource("5_mfu8j")
+
+[node name="AttackTimer" type="Timer" parent="StateMachine/Follow" unique_id=1126167168]
+wait_time = 3.0
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1579961101]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="StateMachine/Follow/AttackTimer" to="StateMachine/Follow" method="_on_attack_timer_timeout"]

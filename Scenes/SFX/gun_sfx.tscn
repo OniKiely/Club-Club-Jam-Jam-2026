@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c646ltlf38wv4"]
+
+[ext_resource type="AudioStream" uid="uid://rhtr5w2do1q" path="res://Assets/Audio/UPDATED MANTIS GUN 1.wav" id="1_qbsoj"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_3o7gr"]
+
+[node name="gun SFX" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_qbsoj")
+volume_db = -8.15
+pitch_scale = 1.46
+autoplay = true
+script = ExtResource("2_3o7gr")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

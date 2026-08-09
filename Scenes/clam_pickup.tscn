@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bca58c02x85mv" path="res://Scripts/score_pickup.gd" id="1_xjs5f"]
 [ext_resource type="Resource" uid="uid://dpbclpruurm4" path="res://Resources/ScoreItems/Clam.tres" id="2_6hkdx"]
 [ext_resource type="Texture2D" uid="uid://c4qry6pnyhvrf" path="res://Assets/Art/clamshell animated.png" id="2_ekjuv"]
+[ext_resource type="PackedScene" uid="uid://b4tbhwh86poiq" path="res://Scenes/SFX/clam_sfx.tscn" id="3_6hkdx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_we7n5"]
 radius = 19.0
@@ -234,6 +235,7 @@ _data = {
 script = ExtResource("1_xjs5f")
 data = ExtResource("2_6hkdx")
 animation_player = NodePath("AnimationPlayer")
+soundFX = ExtResource("3_6hkdx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070480538]
 

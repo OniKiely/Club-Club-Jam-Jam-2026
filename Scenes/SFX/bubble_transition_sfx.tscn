@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dpmehr60v0t4f"]
+
+[ext_resource type="AudioStream" uid="uid://h0ud25rna6ax" path="res://Assets/Audio/BUBBLE TRANSITION.wav" id="1_ow5wk"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_rnaa3"]
+
+[node name="bubble transition SFX" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_ow5wk")
+volume_db = -5.433
+pitch_scale = 1.34
+autoplay = true
+script = ExtResource("2_rnaa3")
+randomizePitch = false
+randomizedPitch = Vector2(0, 0)
+
+[connection signal="finished" from="." to="." method="_on_finished"]

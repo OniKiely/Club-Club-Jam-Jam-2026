@@ -128,3 +128,4 @@ libraries/ = SubResource("AnimationLibrary_v5jx7")
 [connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

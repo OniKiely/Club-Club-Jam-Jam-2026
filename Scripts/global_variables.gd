@@ -49,6 +49,6 @@ func _play_music(song:Node):
 
 func _next_level():
 	if levelArray.size()-1 < currentLevel:
-		get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/end_scene.tscn")
 	else:
 		get_tree().change_scene_to_file(levelArray[currentLevel])

@@ -34,6 +34,9 @@ func _on_level_won():
 
 
 func _on_next_button_pressed() -> void:
+	GlobalVariables._play_bubble_transition()
+	
+	await get_tree().create_timer(0.7).timeout
 	get_tree().paused = false
 	GlobalVariables._next_level()
 

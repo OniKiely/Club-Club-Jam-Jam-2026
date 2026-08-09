@@ -27,6 +27,5 @@ func _emit_particle():
 	var particle = P_particle.instantiate()
 	if trail:
 		particle.initialVelocity = trail.velocity/4
-		particle.position = global_position
-		#print(particle.initialVelocity)
+	particle.position = global_position
 	GlobalVariables.Particles.add_child(particle)

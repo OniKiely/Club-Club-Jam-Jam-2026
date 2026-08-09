@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b0yq3lai0e5al" path="res://Scripts/State Machine/state_machine.gd" id="4_540ic"]
 [ext_resource type="Script" uid="uid://dbfuuo8lhxck3" path="res://Scripts/State Machine/tourist/follow_state_tourist.gd" id="5_540ic"]
 [ext_resource type="Script" uid="uid://qjtfjp7o0n5p" path="res://Scripts/State Machine/tourist/attack_state_tourist.gd" id="6_mfu8j"]
+[ext_resource type="Script" uid="uid://kcrf7q3w7vsy" path="res://Scripts/particles/particle_emmiter.gd" id="7_4otog"]
+[ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="8_qw3sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cagv0"]
 size = Vector2(118, 37.5)
@@ -141,6 +143,20 @@ wait_time = 5.0
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=1579961101]
 script = ExtResource("6_mfu8j")
+
+[node name="particle emmiter" type="Node2D" parent="." unique_id=303861288 node_paths=PackedStringArray("trail")]
+position = Vector2(-59, 0)
+script = ExtResource("7_4otog")
+trail = NodePath("")
+P_particle = ExtResource("8_qw3sf")
+emitSpeed = 0.04
+
+[node name="particle emmiter2" type="Node2D" parent="." unique_id=1929276318 node_paths=PackedStringArray("trail")]
+position = Vector2(55, 0)
+script = ExtResource("7_4otog")
+trail = NodePath("")
+P_particle = ExtResource("8_qw3sf")
+emitSpeed = 0.04
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="StateMachine/Follow/AttackTimer" to="StateMachine/Follow" method="_on_attack_timer_timeout"]

@@ -35,6 +35,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	else:
 		if health > 0:
 			$Sprite2D.texture = sprites[3 - health]
+			$AnimatedSprite2D.frame = 3 - health
 
 func attack():
 	var tween = create_tween()

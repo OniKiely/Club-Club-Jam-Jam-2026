@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://qjtfjp7o0n5p" path="res://Scripts/State Machine/tourist/attack_state_tourist.gd" id="6_mfu8j"]
 [ext_resource type="Script" uid="uid://kcrf7q3w7vsy" path="res://Scripts/particles/particle_emmiter.gd" id="7_4otog"]
 [ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="8_qw3sf"]
+[ext_resource type="Texture2D" uid="uid://baavvfkfkpvhm" path="res://Assets/Art/Enemies/tourist1.png" id="9_a5iq8"]
+[ext_resource type="Texture2D" uid="uid://wpoxuli16cpg" path="res://Assets/Art/Enemies/tourist2.png" id="10_pvffq"]
+[ext_resource type="Texture2D" uid="uid://ctfyoxhhmhqne" path="res://Assets/Art/Enemies/tourist3.png" id="11_fh5a3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cagv0"]
 size = Vector2(118, 37.5)
@@ -75,11 +78,29 @@ _data = {
 &"disappear": SubResource("Animation_kj0st")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1f8p0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_a5iq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pvffq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fh5a3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Tourist" type="CharacterBody2D" unique_id=1792519958]
 collision_mask = 2
 script = ExtResource("1_h5d6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133209319]
+visible = false
 position = Vector2(0, -127)
 scale = Vector2(2, 2)
 texture = ExtResource("1_8cqip")
@@ -157,6 +178,11 @@ script = ExtResource("7_4otog")
 trail = NodePath("")
 P_particle = ExtResource("8_qw3sf")
 emitSpeed = 0.04
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2091081951]
+position = Vector2(4, -165)
+scale = Vector2(2.1393647, 2.1393647)
+sprite_frames = SubResource("SpriteFrames_1f8p0")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="StateMachine/Follow/AttackTimer" to="StateMachine/Follow" method="_on_attack_timer_timeout"]

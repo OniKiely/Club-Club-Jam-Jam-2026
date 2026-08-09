@@ -32,6 +32,10 @@ window/stretch/aspect="expand"
 Player=""
 enemy=""
 
+[gui]
+
+theme/custom_font="uid://cpbp1c7lme6ah"
+
 [input]
 
 move_left={

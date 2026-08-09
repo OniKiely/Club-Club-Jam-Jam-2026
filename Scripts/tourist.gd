@@ -33,4 +33,12 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		await $CPUParticles2D.finished
 		queue_free()
 	else:
-		$Sprite2D.texture = sprites[3 - health]
+		if health > 0:
+			$Sprite2D.texture = sprites[3 - health]
+
+func attack():
+	var tween = create_tween()
+	var old_pos_y = self.global_position.y
+	var pos = Vector2(self.global_position.x, GlobalVariables.Player.global_position.y + 20)
+	tween.tween_property(self, "global_position", pos, 1)
+	tween.tween_property(self, "global_position", Vector2(self.global_position.x, old_pos_y), 1.5)

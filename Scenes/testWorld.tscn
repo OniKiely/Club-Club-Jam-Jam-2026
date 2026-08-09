@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_pgapj"]
 [ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="20_is1em"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="21_lsb16"]
+[ext_resource type="PackedScene" uid="uid://wjtnoo3qxhgl" path="res://Scenes/tourist.tscn" id="21_sx6or"]
 [ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="24_f4tc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
@@ -195,7 +196,7 @@ script = ExtResource("9_xr43f")
 position = Vector2(1048, 728)
 
 [node name="CollisionShape2D" parent="Killzone" index="0" unique_id=27263728]
-position = Vector2(-84, -32)
+position = Vector2(-84, -138)
 shape = SubResource("RectangleShape2D_jvagm")
 
 [node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("12_l8m0x")]
@@ -220,6 +221,9 @@ position = Vector2(376, 224)
 
 [node name="Seagull2" parent="enemies" unique_id=266583665 instance=ExtResource("20_is1em")]
 position = Vector2(774, 204)
+
+[node name="Tourist" parent="enemies" unique_id=1792519958 instance=ExtResource("21_sx6or")]
+position = Vector2(533, -51)
 
 [node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
 

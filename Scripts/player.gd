@@ -137,11 +137,10 @@ func on_death():
 
 func respawn():
 	lives -= 1
-	if lives > 0:
-		print(str(lives))
+	if lives >= 0:
 		get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
+	if lives > 0:
 		self.global_position = current_checkpoint
-		#UPDATE VISUALS HERE
 	else:
 		on_death()
 
@@ -192,9 +191,9 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	$Hurtbox/CollisionShape2D.disabled = true
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	respawn() #respawn covers death logic if not enough lives to respawn
 	
-	await get_tree().create_timer(3).timeout
-	
-	$Hurtbox/CollisionShape2D.disabled = false
+	await get_tree().create_timer(2).timeout
+
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)

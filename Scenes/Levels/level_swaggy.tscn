@@ -99,7 +99,7 @@ size = Vector2(4160, 112)
 script = ExtResource("1_xgwww")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
-Level = 2
+Level = 4
 
 [node name="island BG" parent="." unique_id=1869367768 instance=ExtResource("2_q1xsc")]
 

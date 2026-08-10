@@ -11,11 +11,13 @@ radius = 32.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_mflna"]
 radius = 35.014282
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3xts"]
+radius = 35.057095
+
 [node name="trash current" type="CharacterBody2D" unique_id=1879777127]
 collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_ja4mb")
-chargeFrequency = null
-chargeRandomness = null
 
 [node name="TrashCcjj" type="Sprite2D" parent="." unique_id=64455984]
 position = Vector2(-1.0000002, -21)
@@ -65,3 +67,14 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1795523475]
 shape = SubResource("CircleShape2D_mflna")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=952810747]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1373954769]
+visible = false
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_r3xts")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

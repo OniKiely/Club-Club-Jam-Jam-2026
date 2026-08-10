@@ -9,6 +9,8 @@ extends CharacterBody2D
 #@export var shellManager: Node2D
 @export var shellData:ShellData
 
+var immune:bool = false
+
 var T_attack_cooldown:float = 0
 
 var lives = 3
@@ -193,6 +195,10 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if immune:
+		return
+	immune = true
+	
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	lives -= 1
 	
@@ -210,3 +216,4 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	await get_tree().create_timer(1).timeout
 	print("hello!")
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)
+	immune = false

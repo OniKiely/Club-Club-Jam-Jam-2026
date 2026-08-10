@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var score:int = 100
+
 @export var chargeFrequency:float = 3
 @export var chargeRandomness:float = 1
 var charging:bool = false
@@ -102,5 +104,19 @@ func _trash_physics(delta):
 	move_and_slide()
 
 
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if !body.is_in_group("enemy"):
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("enemy"):
+		await get_tree().physics_frame
+		$Area2D/CollisionShape2D.disabled = true
+		await get_tree().create_timer(0.2,false).timeout
+		await get_tree().physics_frame
+		$Area2D/CollisionShape2D.disabled = false
+		
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	GlobalVariables.score += score
+	area.delete()
+	await get_tree().process_frame
+	await get_tree().physics_frame
+	queue_free()

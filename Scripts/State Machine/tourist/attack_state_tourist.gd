@@ -1,4 +1,4 @@
-extends Node
+extends state
 
 func enter() -> void:
 	get_parent().get_parent().attack()

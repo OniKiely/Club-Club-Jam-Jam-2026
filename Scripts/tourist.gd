@@ -41,6 +41,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			$Sprite2D.texture = sprites[3 - health]
 
 func attack():
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)
 	var tween = create_tween()
 	var old_pos_y = self.global_position.y
 	var pos = Vector2(self.global_position.x, GlobalVariables.Player.global_position.y + 20)
@@ -63,3 +64,6 @@ func attack():
 		instance.speed = 300
 		instance.gravity_mult = 400
 		get_tree().get_root().add_child(instance)
+	await get_tree().create_timer(1.5).timeout
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
+	

@@ -132,7 +132,7 @@ func on_death():
 	camera.apply_shake(15)
 	current_state = state.DEATH
 	Engine.time_scale = 0.5
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1,false).timeout
 	Engine.time_scale = 1
 	
 	gameOver.emit()

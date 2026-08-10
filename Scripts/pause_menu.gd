@@ -12,6 +12,10 @@ func resume():
 	$AnimationPlayer.play_backwards("blur")
 
 func pause():
+	
+	if GlobalVariables.Player.current_state == GlobalVariables.Player.state.DEATH:
+		return
+		
 	get_tree().paused = true
 	visible = true
 	$AnimationPlayer.play("blur")

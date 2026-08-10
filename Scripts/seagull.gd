@@ -25,5 +25,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	$StateMachine.stop()
 	$AnimatedSprite2D.hide()
 	$CPUParticles2D.emitting = true
+	
+	await get_tree().physics_frame
+	
+	
 	await $CPUParticles2D.finished
 	queue_free()

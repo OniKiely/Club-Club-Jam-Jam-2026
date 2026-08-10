@@ -23,6 +23,7 @@ func run(delta: float) -> void:
 		dir = Vector2(-1, 0) #dir is left
 	else:
 		dir = Vector2(1, 0)#dir is right
+	tourist.global_position.y = player.global_position.y - 333
 	tourist.velocity = dir * speed
 
 #called when the state is switched out of

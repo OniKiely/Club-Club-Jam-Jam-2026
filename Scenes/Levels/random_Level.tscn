@@ -404,32 +404,17 @@ position = Vector2(1848, -20)
 [node name="Seagull5" parent="enemies" unique_id=1422456923 instance=ExtResource("20_n0d5h")]
 position = Vector2(2273, 46)
 
-[node name="Seagull6" parent="enemies" unique_id=1058800952 instance=ExtResource("20_n0d5h")]
-position = Vector2(4460, -276)
-
 [node name="Seagull7" parent="enemies" unique_id=977994438 instance=ExtResource("20_n0d5h")]
 position = Vector2(5324, -200)
 
 [node name="Seagull14" parent="enemies" unique_id=1796279821 instance=ExtResource("20_n0d5h")]
 position = Vector2(3538, -280)
 
-[node name="Seagull8" parent="enemies" unique_id=1293624248 instance=ExtResource("20_n0d5h")]
-position = Vector2(5111, -245)
-
 [node name="Seagull15" parent="enemies" unique_id=122783903 instance=ExtResource("20_n0d5h")]
 position = Vector2(4799, -179)
 
-[node name="Seagull9" parent="enemies" unique_id=812618113 instance=ExtResource("20_n0d5h")]
-position = Vector2(5526, -224)
-
 [node name="Seagull10" parent="enemies" unique_id=1543446863 instance=ExtResource("20_n0d5h")]
 position = Vector2(6398, -926)
-
-[node name="Seagull11" parent="enemies" unique_id=1221436277 instance=ExtResource("20_n0d5h")]
-position = Vector2(5948, -759)
-
-[node name="Seagull12" parent="enemies" unique_id=91286624 instance=ExtResource("20_n0d5h")]
-position = Vector2(5798, -516)
 
 [node name="Seagull13" parent="enemies" unique_id=119193778 instance=ExtResource("20_n0d5h")]
 position = Vector2(6246, -51)

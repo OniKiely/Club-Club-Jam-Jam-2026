@@ -27,9 +27,9 @@ const BEACH_SONG = preload("uid://hvwonjy651b0")
 var levelArray = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
-	"res://Scenes/Levels/level_3.tcsn",
+	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_swaggy.tscn",
-	"res://Scence/Levels/random_level.tcsn",
+	"res://Scence/Levels/random_level.tscn",
 	"res://Scenes/Levels/level_5.tscn"
 ]
 

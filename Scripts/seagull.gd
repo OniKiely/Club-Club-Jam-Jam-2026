@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var score:int = 100
+
 func _ready() -> void:
 	pass
 
@@ -20,6 +22,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
+	GlobalVariables.score += score
 	if area.name == "bullet":
 		area.delete()
 	$StateMachine.stop()

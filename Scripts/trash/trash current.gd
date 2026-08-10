@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var score:int = 100
 
-@export var chargeFrequency:float = 3
+@export var chargeFrequency:float = 4
 @export var chargeRandomness:float = 1
 var charging:bool = false
 var T_chargeTimer:float = chargeFrequency
@@ -14,6 +14,8 @@ var acceleration:Vector2 = Vector2(0,0)
 
 var playerChargePercent:float = 0
 var chargeTowardsPlayer:bool
+
+var active:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,15 +44,17 @@ func _process(delta: float) -> void:
 		var Cvelocity = (position - GlobalVariables.Player.position).normalized() * Vector2(-2,-2)
 		
 		if playerChargePercent < 0.8:
-			velocity = lerp(velocity,Cvelocity,delta * playerChargePercent * 20)
+			print(playerChargePercent)
+			velocity = lerp(velocity,Cvelocity,delta * playerChargePercent * 50)
 			playerChargePercent += delta * 2
-		#if playerChargePercent > 0.5:
-			#chargeTowardsPlayer = false
+		if playerChargePercent > 0.5:
+			chargeTowardsPlayer = false
 	
 	if T_chargeTimer != 0:
 		T_chargeTimer = move_toward(T_chargeTimer,0,delta)
 		if T_chargeTimer == 0:
-			_charge()
+			if active:
+				_charge()
 			T_chargeTimer = chargeFrequency + randf_range(-chargeRandomness,chargeRandomness)
 	
 	
@@ -77,7 +81,7 @@ func _charge_toward_player():
 	playerChargePercent = 0
 	chargeTowardsPlayer = true
 	acceleration = Vector2(0,0)
-	velocity = (position - GlobalVariables.Player.position).normalized() * Vector2(-2,-2)
+	#velocity = (position - GlobalVariables.Player.position).normalized() * Vector2(-2,-2)
 	await get_tree().create_timer(1,false).timeout
 	chargeTowardsPlayer = false
 
@@ -104,14 +108,6 @@ func _trash_physics(delta):
 	move_and_slide()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if !body.is_in_group("enemy"):
-		await get_tree().physics_frame
-		$Area2D/CollisionShape2D.disabled = true
-		await get_tree().create_timer(0.2,false).timeout
-		await get_tree().physics_frame
-		$Area2D/CollisionShape2D.disabled = false
-		
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
@@ -120,3 +116,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	await get_tree().process_frame
 	await get_tree().physics_frame
 	queue_free()
+
+
+func _on_activate_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		active = true
+		
+
+
+func _on_activate_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		active = false

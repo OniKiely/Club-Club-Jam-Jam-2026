@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var score:int = 100
+
 var health = 3
 var sprites = [preload("uid://baavvfkfkpvhm"), preload("uid://wpoxuli16cpg"), preload("uid://ctfyoxhhmhqne")]
 var BULLET = preload("uid://k38chnonovla")
@@ -28,6 +30,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
 		area.delete()
 	if health == 0:
+		GlobalVariables.score += score
 		#$StateMachine.stop()
 		$Sprite2D.hide()
 		$CPUParticles2D.emitting = true

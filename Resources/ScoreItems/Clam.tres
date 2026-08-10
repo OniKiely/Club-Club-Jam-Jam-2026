@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_p2k28")
 name = "Clam"
-score_value = 100
+score_value = 50
 clam_value = 1
 metadata/_custom_type_script = "uid://dt5wjno5facc6"

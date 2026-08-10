@@ -3,11 +3,12 @@ extends Node2D
 var dir = Vector2(0, 0)
 var speed = 250
 var gravity = 0
+var gravity_mult = 200
 
 func _process(delta: float) -> void:
 	self.global_position += dir * speed * delta
 	self.global_position.y += delta * gravity
-	gravity += delta * 200
+	gravity += delta * gravity_mult
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("enemy"):

@@ -170,9 +170,6 @@ position = Vector2(1596, -388)
 [node name="Clam Pickup14" parent="Pickups" unique_id=529189763 instance=ExtResource("9_s5367")]
 position = Vector2(1564, -345)
 
-[node name="Clam Pickup6" parent="Pickups" unique_id=2089728972 instance=ExtResource("9_s5367")]
-position = Vector2(1554, 160)
-
 [node name="shell pickup" parent="Pickups" unique_id=944937600 instance=ExtResource("10_blyvk")]
 position = Vector2(908, 302)
 shell = ExtResource("11_ts3wb")

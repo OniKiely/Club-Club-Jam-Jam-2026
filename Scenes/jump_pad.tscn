@@ -26,9 +26,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(45, 24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(53, 20)
 
@@ -41,13 +38,6 @@ sprite_frames = SubResource("SpriteFrames_1f8p0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=100017683]
 visible = false
 texture = ExtResource("2_mydsc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=573193069]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=686107921]
-position = Vector2(0.5, -1)
-shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=419351795]
 

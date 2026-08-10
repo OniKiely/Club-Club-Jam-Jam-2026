@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 		var Cvelocity = (position - GlobalVariables.Player.position).normalized() * Vector2(-2,-2)
 		
 		if playerChargePercent < 0.8:
-			print(playerChargePercent)
 			velocity = lerp(velocity,Cvelocity,delta * playerChargePercent * 50)
 			playerChargePercent += delta * 2
 		if playerChargePercent > 0.5:

@@ -1,22 +1,21 @@
 [gd_scene format=3 uid="uid://bi5vnkjm1s46k"]
 
 [ext_resource type="Script" uid="uid://dhislhi3hd3lg" path="res://Scenes/end_scene.gd" id="1_5pkqa"]
+[ext_resource type="Texture2D" uid="uid://hmmdwce0yrsw" path="res://Assets/Art/end.png" id="2_5rked"]
 
 [node name="end scene" type="Node2D" unique_id=1966473037]
 script = ExtResource("1_5pkqa")
 
-[node name="Button" type="Button" parent="." unique_id=954371931]
-offset_left = 497.0
-offset_top = 313.0
-offset_right = 612.0
-offset_bottom = 342.0
-text = "Back to Menu"
+[node name="End" type="Sprite2D" parent="." unique_id=1877510722]
+position = Vector2(346.50003, 179)
+scale = Vector2(1.1650001, 1.2716465)
+texture = ExtResource("2_5rked")
 
-[node name="Label" type="Label" parent="." unique_id=653463258]
-offset_left = 236.0
-offset_top = 143.0
-offset_right = 398.0
-offset_bottom = 164.0
-text = "yo thanks for playing!"
+[node name="Button" type="Button" parent="." unique_id=954371931]
+offset_left = 21.0
+offset_top = 314.0
+offset_right = 136.0
+offset_bottom = 343.0
+text = "Back to Menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

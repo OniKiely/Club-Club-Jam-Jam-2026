@@ -1,0 +1,219 @@
+[gd_scene format=4 uid="uid://c406a2ji4d1xh"]
+
+[ext_resource type="Script" uid="uid://bmvy0g4fybilp" path="res://Scripts/level_manager.gd" id="1_qtlgb"]
+[ext_resource type="Texture2D" uid="uid://d0bq8i8w342dw" path="res://Assets/Art/tree.jpg" id="2_u1oq1"]
+[ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="3_47kfd"]
+[ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="4_djm48"]
+[ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="5_ohwpq"]
+[ext_resource type="PackedScene" uid="uid://bhbwfqjinjgiq" path="res://Scenes/player.tscn" id="6_s2ket"]
+[ext_resource type="PackedScene" uid="uid://i1yrypvttreb" path="res://Scenes/clam_pickup.tscn" id="7_eowf3"]
+[ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="13_p84df"]
+[ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="14_eelle"]
+[ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="16_851mb"]
+[ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="17_3tasi"]
+[ext_resource type="Script" uid="uid://di780uw06qmre" path="res://Scripts/backtomylevel.gd" id="17_gyl1l"]
+[ext_resource type="Script" uid="uid://u3a5qbmmx1yv" path="res://Scripts/level timer.gd" id="21_o3fqd"]
+[ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="22_sw3bh"]
+[ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="23_ouyx4"]
+[ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="24_yu6jc"]
+[ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="25_pj0dq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iey3s"]
+texture = ExtResource("3_47kfd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rdb4h"]
+texture = ExtResource("4_djm48")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b8w0i"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xr43f"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_emcaa"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xvvnt"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l8m0x"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xr43f"]
+texture = ExtResource("5_ohwpq")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_b8w0i")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_b8w0i")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_b8w0i")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_b8w0i")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xr43f")
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+8:1/0 = 0
+8:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xvvnt")
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:2/0 = 0
+8:2/0 = 0
+6:3/0 = 0
+6:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_emcaa")
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:3/0 = 0
+8:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l8m0x")
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_57qmd"]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_iey3s")
+sources/1 = SubResource("TileSetAtlasSource_rdb4h")
+sources/2 = SubResource("TileSetAtlasSource_xr43f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvagm"]
+size = Vector2(10000, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36v2t"]
+size = Vector2(20, 2000)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Level 2" type="Node2D" unique_id=2044987218 node_paths=PackedStringArray("initial_camera_limiter", "player")]
+script = ExtResource("1_qtlgb")
+initial_camera_limiter = NodePath("CameraLimiter")
+player = NodePath("Player")
+Level = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1488063185]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(380, 137)
+scale = Vector2(3, 3)
+texture = ExtResource("2_u1oq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1693277630]
+position = Vector2(547, 185)
+texture = ExtResource("2_u1oq1")
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=933806181]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAYAAQAAAAAAAAAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAAAAAAAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_57qmd")
+
+[node name="TileMap2" type="TileMapLayer" parent="." unique_id=700846313]
+visible = false
+tile_set = SubResource("TileSet_57qmd")
+
+[node name="Player" parent="." unique_id=492339151 instance=ExtResource("6_s2ket")]
+position = Vector2(44, 335)
+
+[node name="Pickups" type="Node2D" parent="." unique_id=1325764474]
+
+[node name="Clam Pickup" parent="Pickups" unique_id=1418753025 instance=ExtResource("7_eowf3")]
+visible = false
+position = Vector2(493, 351)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1599153964]
+position = Vector2(605, 80)
+rotation = 0.39275151
+color = Color(0.007843138, 0.11764706, 0.16078432, 0.3529412)
+energy = 1.01
+blend_mode = 1
+shadow_enabled = true
+shadow_color = Color(0.23137255, 0.23137255, 0.4509804, 1)
+shadow_filter = 2
+
+[node name="Particles" type="Node2D" parent="." unique_id=296845036]
+script = ExtResource("13_p84df")
+
+[node name="Killzone" parent="." unique_id=308784554 instance=ExtResource("14_eelle")]
+position = Vector2(1048, 728)
+
+[node name="CollisionShape2D" parent="Killzone" index="0" unique_id=27263728]
+position = Vector2(3413, -28)
+shape = SubResource("RectangleShape2D_jvagm")
+
+[node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("16_851mb")]
+position = Vector2(656, 296)
+limit_y = 2
+
+[node name="CollisionShape2D" parent="CameraLimiter" index="0" unique_id=1225854616]
+position = Vector2(91, -819)
+shape = SubResource("RectangleShape2D_36v2t")
+
+[node name="LimitPosition" parent="CameraLimiter" index="1" unique_id=1422526312]
+position = Vector2(-464, 152)
+
+[node name="Objects" type="Node2D" parent="." unique_id=1419944227]
+
+[node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("17_3tasi")]
+position = Vector2(8627, 359)
+
+[node name="Level Timer" type="CanvasLayer" parent="." unique_id=84938830]
+
+[node name="Control" type="Control" parent="Level Timer" unique_id=740107525]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Level Timer/Control" unique_id=126750148]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 22.0
+script = ExtResource("21_o3fqd")
+
+[node name="PauseCL" type="CanvasLayer" parent="." unique_id=166130899]
+
+[node name="pause button" parent="PauseCL" unique_id=701145281 node_paths=PackedStringArray("pauseMenu") instance=ExtResource("22_sw3bh")]
+pauseMenu = NodePath("../PauseMenu")
+
+[node name="PauseMenu" parent="PauseCL" unique_id=1066546381 instance=ExtResource("23_ouyx4")]
+
+[node name="WinCL" type="CanvasLayer" parent="." unique_id=1836203151]
+
+[node name="winUI" parent="WinCL" unique_id=1656095371 instance=ExtResource("24_yu6jc")]
+visible = false
+
+[node name="DeathCL" type="CanvasLayer" parent="." unique_id=183253604]
+
+[node name="deathUI" parent="DeathCL" unique_id=2143124319 instance=ExtResource("25_pj0dq")]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=499199666]
+script = ExtResource("17_gyl1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1650507246]
+position = Vector2(719, 363)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+
+[editable path="Killzone"]
+[editable path="CameraLimiter"]

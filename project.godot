@@ -26,6 +26,7 @@ window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://03bv8ywfhply"
 
 [global_group]
 

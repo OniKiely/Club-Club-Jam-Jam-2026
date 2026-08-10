@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.get("jump_pad_strength"):
 		body.velocity.y = body.jump_pad_strength
+		
+		$AnimatedSprite2D.frame = 1
+		await get_tree().create_timer(0.05,false).timeout
+		$AnimatedSprite2D.frame = 0

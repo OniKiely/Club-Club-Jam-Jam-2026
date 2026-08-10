@@ -213,6 +213,9 @@ shape = SubResource("RectangleShape2D_jvagm")
 [node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("15_s0hn8")]
 position = Vector2(784, 352)
 
+[node name="CheckpointFlag2" parent="." unique_id=222316463 instance=ExtResource("15_s0hn8")]
+position = Vector2(2448, 350)
+
 [node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("16_ulgip")]
 position = Vector2(656, 296)
 limit_y = 2

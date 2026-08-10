@@ -1,8 +1,10 @@
 extends Control
 
 var pause_locked := false
+var textures = [preload("uid://voa307ji63k"), preload("uid://c4ua5y522adju")]
 
 func _ready() -> void:
+	print(str(AudioServer.get_bus_volume_db(0)))
 	get_tree().paused = false
 	visible = false
 	$AnimationPlayer.play("RESET")
@@ -50,3 +52,15 @@ func _process(_delta):
 
 func set_pause_locked(locked: bool):
 	pause_locked = locked
+
+
+func _on_texture_button_pressed() -> void:
+	GlobalVariables.muted = !GlobalVariables.muted
+	if GlobalVariables.muted:
+		$TextureButton.texture_normal = textures[1]
+	else:
+		$TextureButton.texture_normal = textures[0]
+	AudioServer.set_bus_mute(0, GlobalVariables.muted)
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(0, value)

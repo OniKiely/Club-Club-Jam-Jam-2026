@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://er3uverof7rc" path="res://Assets/Art/main_buttons.png" id="3_bpi0q"]
 [ext_resource type="Script" uid="uid://eepur36mf1cw" path="res://Scripts/UI/button animations.gd" id="4_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://ca3l4s2xhb8c3" path="res://Assets/Art/Restartnpausebuttons.png" id="5_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://voa307ji63k" path="res://Assets/Art/UI/unmuted.png" id="6_myy0f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("1_emv3i")
@@ -370,6 +371,24 @@ libraries/ = SubResource("AnimationLibrary_u8tnp")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=939377728]
 libraries/ = SubResource("AnimationLibrary_1och7")
 
+[node name="HSlider" type="HSlider" parent="." unique_id=170970924]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 8.0
+offset_right = 632.0
+offset_bottom = 24.0
+min_value = -1.0
+max_value = 1.5
+step = 0.1
+value = 1.0
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2097069100]
+layout_mode = 0
+offset_left = 491.0
+offset_right = 523.0
+offset_bottom = 32.0
+texture_normal = ExtResource("6_myy0f")
+
 [connection signal="mouse_entered" from="VBoxContainer/ResumeButton" to="VBoxContainer/ResumeButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/ResumeButton" to="VBoxContainer/ResumeButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
@@ -382,3 +401,6 @@ libraries/ = SubResource("AnimationLibrary_1och7")
 [connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="VBoxContainer/ExitButton" method="_on_pressed"]
+[connection signal="editor_state_changed" from="HSlider" to="." method="_on_h_slider_editor_state_changed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

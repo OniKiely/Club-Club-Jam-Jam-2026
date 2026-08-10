@@ -15,6 +15,8 @@ var currentLevel:int = 1
 var levelTime:float = 0
 var totalTime:float = 0
 
+var muted = false
+var volume = 0
 
 const BUBBLE_TRANSITION = preload("uid://nrx1ltxc82dy")
 const BUBBLE_TRANSITION_SFX = preload("uid://dpmehr60v0t4f")

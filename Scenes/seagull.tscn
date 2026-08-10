@@ -79,6 +79,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.18817204, 1), 0.0, 0.0, 0, 0, 
 point_count = 5
 
 [node name="Seagull" type="CharacterBody2D" unique_id=1506539934 groups=["enemy"]]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_pmc4f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1645521583]

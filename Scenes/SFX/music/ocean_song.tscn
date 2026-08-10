@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cughgtr4a0khy"]
+
+[ext_resource type="AudioStream" uid="uid://xgwfuebdjmt5" path="res://Assets/Audio/UNDERWATER.2.wav" id="1_46akk"]
+
+[node name="ocean song" type="AudioStreamPlayer" unique_id=552006759]
+stream = ExtResource("1_46akk")
+volume_db = -4.425
+autoplay = true

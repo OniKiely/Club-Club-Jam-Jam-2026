@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://flfq428jmfsg"]
+
+[ext_resource type="AudioStream" uid="uid://chrwjkhbk3n3x" path="res://Assets/Audio/VICTORY JINGLE.wav" id="1_lflpw"]
+
+[node name="credits song" type="AudioStreamPlayer" unique_id=552006759]
+stream = ExtResource("1_lflpw")
+volume_db = -8.167
+autoplay = true

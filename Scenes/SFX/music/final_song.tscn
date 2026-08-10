@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dedu16y1sgshk"]
+
+[ext_resource type="AudioStream" uid="uid://dr8sobfon1idj" path="res://Assets/Audio/FINAL LEVEL.wav" id="1_s02ak"]
+
+[node name="final song" type="AudioStreamPlayer" unique_id=552006759]
+stream = ExtResource("1_s02ak")
+volume_db = -4.425
+autoplay = true

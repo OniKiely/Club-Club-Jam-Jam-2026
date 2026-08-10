@@ -21,10 +21,18 @@ var volume = 0
 const BUBBLE_TRANSITION = preload("uid://nrx1ltxc82dy")
 const BUBBLE_TRANSITION_SFX = preload("uid://dpmehr60v0t4f")
 
+var Songs:Dictionary = {
+	"beach" = "res://Scenes/SFX/music/beach_song.tscn",
+	"final" = "res://Scenes/SFX/music/final_song.tscn",
+	"ocean" = "res://Scenes/SFX/music/ocean_song.tscn",
+	"credits" = "res://Scenes/SFX/music/credits_song.tscn",
+}
+
 const BEACH_SONG = preload("uid://hvwonjy651b0")
 
 
 var current_music:String = ""
+var current_music_node:Node
 
 #all levels in an array
 var levelArray = [
@@ -39,7 +47,7 @@ var levelArray = [
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	_play_music(BEACH_SONG.instantiate())
+	_play_music("beach")
 
 func _reset_player_data():
 	score = 0
@@ -59,8 +67,18 @@ func _play_bubble_transition():
 func _play_sfx(sfx:Node):
 	add_child(sfx)
 
-func _play_music(song:Node):
-	add_child(song)
+func _play_music(song:String):
+	if current_music == song:
+		return
+	if Songs.has(song):
+		var newsong = load(Songs[song]).instantiate()
+		add_child(newsong)
+		current_music = song
+		
+		if current_music_node:
+			current_music_node.queue_free()
+		
+		current_music_node = newsong
 
 func _next_level():
 	if levelArray.size()-1 < currentLevel:

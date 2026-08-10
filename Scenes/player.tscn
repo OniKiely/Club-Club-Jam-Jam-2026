@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://qwjkhgdqgc4w" path="res://Scripts/camera_2d.gd" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://by3rajokn6c6r" path="res://Scripts/shell/shell manager.gd" id="3_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://7m732fs1w01i" path="res://Assets/Art/cannon.png" id="5_ukyrk"]
+[ext_resource type="Shader" uid="uid://rx663jo4o744" path="res://Scenes/Hitflash.gdshader" id="7_fd4e3"]
 [ext_resource type="Script" uid="uid://cvd0kgvhb1l1j" path="res://Scripts/powerups.gd" id="8_8erm5"]
 [ext_resource type="Script" uid="uid://bkmqtc6d3svwp" path="res://Scripts/camera_limit_manager.gd" id="8_f1ek2"]
 [ext_resource type="Script" uid="uid://d2h1h3rgvf6lu" path="res://Scripts/UI/clam_counter.gd" id="10_gymyn"]
@@ -52,6 +53,21 @@ _data = {
 &"RESET": SubResource("Animation_ukyrk"),
 &"shoot": SubResource("Animation_7dp3o")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fd4e3"]
+shader = ExtResource("7_fd4e3")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqcod"]
+shader = ExtResource("7_fd4e3")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_igrcy"]
+shader = ExtResource("7_fd4e3")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
@@ -354,6 +370,68 @@ size = Vector2(36, 22)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1f8p0"]
 blend_mode = 3
 
+[sub_resource type="Animation" id="Animation_fd4e3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/Player animations/Sprite2D:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/shell/ShellSprite:material:shader_parameter/hit_flash_on")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qqcod"]
+resource_name = "hit"
+length = 0.19999999999999998
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/Player animations/Sprite2D:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/shell/ShellSprite:material:shader_parameter/hit_flash_on")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igrcy"]
+_data = {
+&"RESET": SubResource("Animation_fd4e3"),
+&"hit": SubResource("Animation_qqcod")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=492339151 groups=["Player"]]
 light_mask = 0
 collision_layer = 33
@@ -365,7 +443,6 @@ bullet_scene = ExtResource("2_3smsa")
 [node name="Weapon" type="Node2D" parent="." unique_id=791512220]
 
 [node name="cannon" type="Node2D" parent="Weapon" unique_id=721450971]
-visible = false
 position = Vector2(0, 6)
 
 [node name="Cannon" type="Sprite2D" parent="Weapon/cannon" unique_id=189941548]
@@ -381,11 +458,15 @@ scale = Vector2(0.70938635, 0.70938635)
 libraries/ = SubResource("AnimationLibrary_h4iuc")
 
 [node name="sprite" type="Node2D" parent="." unique_id=803871257]
+material = SubResource("ShaderMaterial_fd4e3")
 
 [node name="shell" type="Node2D" parent="sprite" unique_id=2041529287 node_paths=PackedStringArray("player")]
 position = Vector2(-7, 0)
 script = ExtResource("3_pu2lt")
 player = NodePath("../..")
+
+[node name="ShellSprite" type="Sprite2D" parent="sprite/shell" unique_id=1501565072]
+material = SubResource("ShaderMaterial_qqcod")
 
 [node name="Player animations" type="Node2D" parent="sprite" unique_id=1324462162 node_paths=PackedStringArray("Player")]
 position = Vector2(-7, 0)
@@ -393,6 +474,7 @@ script = ExtResource("2_vgqql")
 Player = NodePath("../..")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="sprite/Player animations" unique_id=469830101]
+material = SubResource("ShaderMaterial_igrcy")
 scale = Vector2(1.027, 1)
 sprite_frames = SubResource("SpriteFrames_1f8p0")
 animation = &"walking"
@@ -452,6 +534,7 @@ offset_right = 66.0
 offset_bottom = 64.0
 scale = Vector2(0.7206395, 0.7206395)
 texture = ExtResource("11_7dp3o")
+metadata/_edit_use_anchors_ = true
 
 [node name="Heart2" type="TextureRect" parent="Player UI/Hearts" unique_id=914332751]
 offset_left = 53.0
@@ -460,6 +543,7 @@ offset_right = 117.0
 offset_bottom = 68.0
 scale = Vector2(0.7206395, 0.7206395)
 texture = ExtResource("11_7dp3o")
+metadata/_edit_use_anchors_ = true
 
 [node name="Heart3" type="TextureRect" parent="Player UI/Hearts" unique_id=488392568]
 offset_left = 102.99999
@@ -468,6 +552,7 @@ offset_right = 167.0
 offset_bottom = 68.0
 scale = Vector2(0.7206395, 0.7206395)
 texture = ExtResource("11_7dp3o")
+metadata/_edit_use_anchors_ = true
 
 [node name="Score Counter" type="Node2D" parent="Player UI" unique_id=1504653169]
 position = Vector2(15, 52)
@@ -487,11 +572,15 @@ offset_left = 6.0
 offset_top = -4.0
 offset_right = 46.0
 offset_bottom = 19.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TinyClamshell" type="Sprite2D" parent="Player UI/Clam Counter" unique_id=935911400]
 position = Vector2(-9, 8)
 scale = Vector2(1.3936069, 1.3936069)
 texture = ExtResource("11_pu2lt")
+
+[node name="HitflashAnim" type="AnimationPlayer" parent="." unique_id=1942694570]
+libraries/ = SubResource("AnimationLibrary_igrcy")
 
 [connection signal="area_entered" from="CameraLimitDetection" to="." method="_on_camera_limit_detection_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

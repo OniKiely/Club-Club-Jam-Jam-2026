@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cdryu54wob62l"]
 
 [ext_resource type="Script" uid="uid://bmvy0g4fybilp" path="res://Scripts/level_manager.gd" id="1_jip10"]
-[ext_resource type="PackedScene" uid="uid://cy42jdegki0ar" path="res://Scenes/island_bg.tscn" id="2_1xj2d"]
+[ext_resource type="PackedScene" uid="uid://cmcphjxhj7og0" path="res://Scenes/underwater_bg.tscn" id="2_jip10"]
 [ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="3_7h8th"]
 [ext_resource type="Texture2D" uid="uid://dw4dl7d77vdvb" path="res://Assets/Art/sand tile.png" id="4_m4i1e"]
 [ext_resource type="Texture2D" uid="uid://hqegs6k3hfrr" path="res://Assets/Art/Sand tilemap.png" id="5_ixm8h"]
@@ -106,7 +106,7 @@ initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
 Level = 2
 
-[node name="island BG" parent="." unique_id=1869367768 instance=ExtResource("2_1xj2d")]
+[node name="underwater BG" parent="." unique_id=1869367768 instance=ExtResource("2_jip10")]
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=933806181]
 visible = false

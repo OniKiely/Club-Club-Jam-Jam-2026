@@ -24,7 +24,11 @@ const BEACH_SONG = preload("uid://hvwonjy651b0")
 #all levels in an array
 var levelArray = [
 	"res://Scenes/Levels/level_1.tscn",
-	"res://Scenes/Levels/level_2.tscn"
+	"res://Scenes/Levels/level_2.tscn",
+	"res://Scenes/Levels/level_3.tcsn",
+	"res://Scenes/Levels/level_swaggy.tscn",
+	"res://Scence/Levels/random_level.tcsn",
+	"res://Scenes/Levels/level_5.tscn"
 ]
 
 func _ready() -> void:

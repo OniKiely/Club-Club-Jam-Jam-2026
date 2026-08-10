@@ -5,6 +5,8 @@ extends Node2D
 
 @export var P_particle:PackedScene
 
+@export var particleScale:Vector2 = Vector2(1,1)
+
 var emitting = true
 @export var emitSpeed:float = 0.2
 var T_emitSpeed = 0
@@ -28,4 +30,5 @@ func _emit_particle():
 	if trail:
 		particle.initialVelocity = trail.velocity/4
 	particle.position = global_position
+	particle.scale = particleScale
 	GlobalVariables.Particles.add_child(particle)

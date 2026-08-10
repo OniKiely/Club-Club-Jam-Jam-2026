@@ -2,13 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c63uixq2a47c2" path="res://Scripts/trash/trash current.gd" id="1_ja4mb"]
 [ext_resource type="Texture2D" uid="uid://bo4eaewidcdo4" path="res://Assets/Art/Trash_ccjj.png" id="2_tdyvx"]
+[ext_resource type="Script" uid="uid://kcrf7q3w7vsy" path="res://Scripts/particles/particle_emmiter.gd" id="3_mflna"]
+[ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="4_r3xts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f8p0"]
-radius = 29.017237
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mflna"]
+radius = 35.014282
 
 [node name="trash current" type="CharacterBody2D" unique_id=1879777127]
 collision_layer = 0
 script = ExtResource("1_ja4mb")
+chargeFrequency = null
+chargeRandomness = null
 
 [node name="TrashCcjj" type="Sprite2D" parent="." unique_id=64455984]
 position = Vector2(-1.0000002, -21)
@@ -35,10 +42,26 @@ region_rect = Rect2(97, 97, 75, 70)
 shape = SubResource("CircleShape2D_1f8p0")
 
 [node name="down ray" type="RayCast2D" parent="." unique_id=490204363]
-target_position = Vector2(0, 55)
+target_position = Vector2(0, 70)
+collision_mask = 128
 
 [node name="left ray" type="RayCast2D" parent="." unique_id=125049684]
-target_position = Vector2(-60, 1)
+target_position = Vector2(-70, 0)
+collision_mask = 128
 
 [node name="right ray" type="RayCast2D" parent="." unique_id=1055301910]
-target_position = Vector2(60, 0)
+target_position = Vector2(70, 0)
+collision_mask = 128
+
+[node name="particle emmiter2" type="Node2D" parent="." unique_id=133305529]
+script = ExtResource("3_mflna")
+P_particle = ExtResource("4_r3xts")
+particleScale = Vector2(3, 3)
+emitSpeed = 0.04
+
+[node name="Area2D" type="Area2D" parent="." unique_id=549495190]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1795523475]
+shape = SubResource("CircleShape2D_mflna")

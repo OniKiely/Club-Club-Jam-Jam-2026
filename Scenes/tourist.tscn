@@ -148,12 +148,14 @@ script = ExtResource("6_mfu8j")
 position = Vector2(-59, 0)
 script = ExtResource("7_4otog")
 P_particle = ExtResource("8_qw3sf")
+particleScale = Vector2(3, 3)
 emitSpeed = 0.04
 
 [node name="particle emmiter2" type="Node2D" parent="." unique_id=1929276318]
 position = Vector2(55, 0)
 script = ExtResource("7_4otog")
 P_particle = ExtResource("8_qw3sf")
+particleScale = Vector2(3, 3)
 emitSpeed = 0.04
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2102785586]

@@ -97,6 +97,7 @@ restart={
 2d_physics/layer_5="enemybullet"
 2d_physics/layer_6="playerdetection"
 2d_physics/layer_7="enemydetection"
+2d_physics/layer_8="environment"
 
 [physics]
 

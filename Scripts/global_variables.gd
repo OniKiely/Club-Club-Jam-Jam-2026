@@ -70,6 +70,7 @@ func _play_sfx(sfx:Node):
 func _play_music(song:String):
 	if song == "none":
 		current_music_node.queue_free()
+		current_music = song
 		return
 	if current_music == song:
 		return

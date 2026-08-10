@@ -139,13 +139,7 @@ func on_death():
 	gameOver.emit()
 
 func respawn():
-	lives -= 1
-	if lives >= 0:
-		get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
-	if lives > 0:
-		self.global_position = current_checkpoint
-	else:
-		on_death()
+	self.global_position = current_checkpoint
 
 #bullet code
 @export var bullet_scene: PackedScene
@@ -199,8 +193,19 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
-	respawn() #respawn covers death logic if not enough lives to respawn
+	lives -= 1
+	
+	# hitstop effect
+	camera.apply_shake(10)
+	$HitflashAnim.play("hit")
+	Engine.time_scale = 0
+	await get_tree().create_timer(0.1,false, false, true).timeout
+	Engine.time_scale = 1
+	
+	get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
+	if lives == 0:
+		on_death()
 	
 	await get_tree().create_timer(1).timeout
-
+	print("hello!")
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)

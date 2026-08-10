@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://b17ck0ty52lmr" path="res://Scenes/seagull.tscn" id="21_nojx8"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="21_ujweo"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="22_k6fki"]
-[ext_resource type="PackedScene" uid="uid://bpagrwuokypop" path="res://Scenes/jump_pad.tscn" id="22_vvknj"]
 [ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="23_4d3gw"]
 [ext_resource type="Script" uid="uid://u3a5qbmmx1yv" path="res://Scripts/level timer.gd" id="24_pmbdk"]
 
@@ -257,9 +256,6 @@ visible = false
 
 [node name="Seagull" parent="." unique_id=1506539934 instance=ExtResource("21_nojx8")]
 position = Vector2(928, 96)
-
-[node name="JumpPad" parent="." unique_id=607402165 instance=ExtResource("22_vvknj")]
-position = Vector2(472, 368)
 
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

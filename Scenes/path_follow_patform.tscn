@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://sp6pokikqtms"]
+
+[ext_resource type="Script" uid="uid://u3uxov360vhe" path="res://Scenes/path_follow_patform.gd" id="1_0n48c"]
+[ext_resource type="Texture2D" uid="uid://xi3nss3ji28k" path="res://Assets/TempGroundSprite.png" id="1_3l2ao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(240, 32)
+
+[node name="PathFollowPatform" type="AnimatableBody2D" unique_id=1997145299]
+script = ExtResource("1_0n48c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=10075302]
+scale = Vector2(7.5, 1)
+texture = ExtResource("1_3l2ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1328191693]
+shape = SubResource("RectangleShape2D_g4v7s")

@@ -113,6 +113,7 @@ script = ExtResource("1_kp1be")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
 Level = 5
+song = "beach"
 
 [node name="island BG" parent="." unique_id=1869367768 instance=ExtResource("2_wo001")]
 

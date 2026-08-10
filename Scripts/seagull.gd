@@ -26,6 +26,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	$AnimatedSprite2D.hide()
 	$CPUParticles2D.emitting = true
 	
+	await get_tree().process_frame
 	await get_tree().physics_frame
 	$CollisionShape2D.disabled = true
 	

@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @export var chargeFrequency:float = 3
 @export var chargeRandomness:float = 1
@@ -7,13 +7,14 @@ var T_chargeTimer:float = chargeFrequency
 
 var playerXDirection
 
+var trashVelocity:Vector2 = Vector2(0,0)
 var acceleration:Vector2 = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
-	linear_velocity += acceleration
+	trashVelocity += acceleration
 	
 	if GlobalVariables.Player.position.x > position.x:
 		playerXDirection = 1
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 	if T_chargeTimer != 0:
 		T_chargeTimer = move_toward(T_chargeTimer,0,delta)
 		if T_chargeTimer == 0:
-			_charge()
+			#_charge()
 			T_chargeTimer = chargeFrequency + randf_range(-chargeRandomness,chargeRandomness)
 	
 	
@@ -33,7 +34,7 @@ func _process(delta: float) -> void:
 func _charge():
 	print("CHARGE")
 	acceleration.x = playerXDirection * 3
-	linear_velocity.y = 0
+	trashVelocity.y = 0
 	acceleration.y = -1
 	charging = true
 	await get_tree().create_timer(0.3,false).timeout
@@ -51,17 +52,21 @@ func _trash_physics(delta):
 	down_ray.rotation = -rotation
 	left_ray.rotation = -rotation
 	right_ray.rotation = -rotation
-	if !charging:
-		if down_ray.is_colliding():
-			acceleration.y = move_toward(acceleration.y,-1,delta*5)
-			if linear_velocity.y > 0:
-				linear_velocity.y = move_toward(linear_velocity.y,0.0,delta*500)
-		else:
-			acceleration.y = move_toward(acceleration.y,1,delta/10)
-		if left_ray.is_colliding():
-			acceleration.x = move_toward(acceleration.x,5,delta*20)
-		if right_ray.is_colliding():
-			acceleration.x = move_toward(acceleration.x,-5,delta*20)
-			
-		
-		linear_velocity.x = lerp(linear_velocity.x,0.0,delta)
+	#if !charging:
+		#if down_ray.is_colliding():
+			#acceleration.y = move_toward(acceleration.y,-1,delta*5)
+			#if trashVelocity.y > 0:
+				#trashVelocity.y = move_toward(trashVelocity.y,0.0,delta*500)
+		#else:
+			#acceleration.y = move_toward(acceleration.y,1,delta/10)
+		#if left_ray.is_colliding():
+			#acceleration.x = move_toward(acceleration.x,5,delta*20)
+		#if right_ray.is_colliding():
+			#acceleration.x = move_toward(acceleration.x,-5,delta*20)
+			#
+		#
+		#trashVelocity.x = lerp(trashVelocity.x,0.0,delta)
+	
+	
+	position += trashVelocity
+	move_and_slide()

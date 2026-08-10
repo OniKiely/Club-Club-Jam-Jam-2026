@@ -10,4 +10,4 @@ pickupTexture = ExtResource("1_crf7d")
 canShoot = true
 attack_cooldown = 0.5
 jump_strength = -720.0
-max_speed = 175
+max_speed = 210

@@ -68,6 +68,9 @@ func _play_sfx(sfx:Node):
 	add_child(sfx)
 
 func _play_music(song:String):
+	if song == "none":
+		current_music_node.queue_free()
+		return
 	if current_music == song:
 		return
 	if Songs.has(song):

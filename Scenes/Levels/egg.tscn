@@ -104,6 +104,7 @@ script = ExtResource("1_qtlgb")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
 Level = 2
+song = "none"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1488063185]
 modulate = Color(0, 0, 0, 1)

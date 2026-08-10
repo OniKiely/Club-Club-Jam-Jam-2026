@@ -9,6 +9,8 @@ extends CharacterBody2D
 #@export var shellManager: Node2D
 @export var shellData:ShellData
 
+var immune:bool = false
+
 var T_attack_cooldown:float = 0
 
 var lives = 3
@@ -19,6 +21,7 @@ var current_speed: int = default_speed
 var acceleration: int = 700
 var friction = 900
 var jump_strength = -400
+var jump_pad_strength = -700
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_jump: bool = true
 
@@ -129,22 +132,17 @@ func collect_powerup(name):
 			print("Unknown powerup collected. ", name, " not valid")
 
 func on_death():
+	$Weapon.visible = false
 	camera.apply_shake(15)
 	current_state = state.DEATH
 	Engine.time_scale = 0.5
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1,false).timeout
 	Engine.time_scale = 1
 	
 	gameOver.emit()
 
 func respawn():
-	lives -= 1
-	if lives >= 0:
-		get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
-	if lives > 0:
-		self.global_position = current_checkpoint
-	else:
-		on_death()
+	self.global_position = current_checkpoint
 
 #bullet code
 @export var bullet_scene: PackedScene
@@ -177,6 +175,8 @@ func _process(delta: float):
 		get_tree().reload_current_scene()
 
 func shoot():
+	if current_state == state.DEATH:
+		return
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
@@ -195,9 +195,25 @@ func _on_camera_limit_detection_area_entered(area: Area2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
-	respawn() #respawn covers death logic if not enough lives to respawn
+	if immune:
+		return
+	immune = true
 	
-	await get_tree().create_timer(2).timeout
-
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
+	lives -= 1
+	
+	# hitstop effect
+	camera.apply_shake(10)
+	$HitflashAnim.play("hit")
+	Engine.time_scale = 0
+	await get_tree().create_timer(0.1,false, false, true).timeout
+	Engine.time_scale = 1
+	
+	get_node("Player UI/Hearts/Heart" + str(lives + 1)).texture = heart_textures[0]
+	if lives == 0:
+		on_death()
+	
+	await get_tree().create_timer(1).timeout
+	print("hello!")
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)
+	immune = false

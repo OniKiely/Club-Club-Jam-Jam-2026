@@ -2,17 +2,24 @@
 
 [ext_resource type="Script" uid="uid://c63uixq2a47c2" path="res://Scripts/trash/trash current.gd" id="1_ja4mb"]
 [ext_resource type="Texture2D" uid="uid://bo4eaewidcdo4" path="res://Assets/Art/Trash_ccjj.png" id="2_tdyvx"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ja4mb"]
-bounce = 1.0
+[ext_resource type="Script" uid="uid://kcrf7q3w7vsy" path="res://Scripts/particles/particle_emmiter.gd" id="3_mflna"]
+[ext_resource type="PackedScene" uid="uid://br6kpqto48so3" path="res://Scenes/Particles/bubble_particle.tscn" id="4_r3xts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f8p0"]
-radius = 29.017237
+radius = 32.0
 
-[node name="trash current" type="RigidBody2D" unique_id=1655524999]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mflna"]
+radius = 35.014282
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3xts"]
+radius = 35.057095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4hbu"]
+radius = 343.00583
+
+[node name="trash current" type="CharacterBody2D" unique_id=1879777127]
 collision_layer = 0
-physics_material_override = SubResource("PhysicsMaterial_ja4mb")
-sleeping = true
+collision_mask = 128
 script = ExtResource("1_ja4mb")
 
 [node name="TrashCcjj" type="Sprite2D" parent="." unique_id=64455984]
@@ -40,10 +47,46 @@ region_rect = Rect2(97, 97, 75, 70)
 shape = SubResource("CircleShape2D_1f8p0")
 
 [node name="down ray" type="RayCast2D" parent="." unique_id=490204363]
-target_position = Vector2(0, 55)
+target_position = Vector2(0, 70)
+collision_mask = 128
 
 [node name="left ray" type="RayCast2D" parent="." unique_id=125049684]
-target_position = Vector2(-60, 1)
+target_position = Vector2(-70, 0)
+collision_mask = 128
 
 [node name="right ray" type="RayCast2D" parent="." unique_id=1055301910]
-target_position = Vector2(60, 0)
+target_position = Vector2(70, 0)
+collision_mask = 128
+
+[node name="particle emmiter2" type="Node2D" parent="." unique_id=133305529]
+script = ExtResource("3_mflna")
+P_particle = ExtResource("4_r3xts")
+particleScale = Vector2(3, 3)
+emitSpeed = 0.04
+
+[node name="Area2D" type="Area2D" parent="." unique_id=549495190]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1795523475]
+visible = false
+shape = SubResource("CircleShape2D_mflna")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=952810747]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1373954769]
+visible = false
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_r3xts")
+
+[node name="activate area" type="Area2D" parent="." unique_id=706697501]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activate area" unique_id=937216320]
+shape = SubResource("CircleShape2D_l4hbu")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="activate area" to="." method="_on_activate_area_body_entered"]
+[connection signal="body_exited" from="activate area" to="." method="_on_activate_area_body_exited"]

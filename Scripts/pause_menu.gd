@@ -12,6 +12,10 @@ func resume():
 	$AnimationPlayer.play_backwards("blur")
 
 func pause():
+	
+	if GlobalVariables.Player.current_state == GlobalVariables.Player.state.DEATH:
+		return
+		
 	get_tree().paused = true
 	visible = true
 	$AnimationPlayer.play("blur")
@@ -36,9 +40,9 @@ func _on_restart_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	get_tree().paused = false
 	GlobalVariables._play_bubble_transition()
-	await get_tree().create_timer(0.7,false).timeout
+	await get_tree().create_timer(0.7).timeout
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn")
 
 func _process(_delta):

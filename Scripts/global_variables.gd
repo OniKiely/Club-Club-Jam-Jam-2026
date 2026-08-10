@@ -9,6 +9,8 @@ var ShellManager:Node2D
 #stats
 var score: int = 0
 var clams: int = 0
+var tempScore: int = 0
+var tempClams: int = 0
 var currentLevel:int = 1
 var levelTime:float = 0
 var totalTime:float = 0
@@ -36,6 +38,10 @@ func _reset_player_data():
 	levelTime = 0
 	totalTime = 0
 
+func _reset_level_data():
+	score = tempScore
+	clams = tempClams
+
 func _play_bubble_transition():
 	add_child(BUBBLE_TRANSITION.instantiate())
 	_play_sfx(BUBBLE_TRANSITION_SFX.instantiate())
@@ -49,6 +55,8 @@ func _play_music(song:Node):
 
 func _next_level():
 	if levelArray.size()-1 < currentLevel:
-		get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/end_scene.tscn")
 	else:
 		get_tree().change_scene_to_file(levelArray[currentLevel])
+		GlobalVariables.tempClams = GlobalVariables.clams
+		GlobalVariables.tempScore = GlobalVariables.score

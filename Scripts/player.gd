@@ -19,6 +19,7 @@ var current_speed: int = default_speed
 var acceleration: int = 700
 var friction = 900
 var jump_strength = -400
+var jump_pad_strength = -700
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_jump: bool = true
 

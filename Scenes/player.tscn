@@ -443,7 +443,6 @@ bullet_scene = ExtResource("2_3smsa")
 [node name="Weapon" type="Node2D" parent="." unique_id=791512220]
 
 [node name="cannon" type="Node2D" parent="Weapon" unique_id=721450971]
-visible = false
 position = Vector2(0, 6)
 
 [node name="Cannon" type="Sprite2D" parent="Weapon/cannon" unique_id=189941548]
@@ -518,7 +517,6 @@ shape = SubResource("RectangleShape2D_yf5fn")
 wait_time = 0.5
 
 [node name="Player UI" type="CanvasLayer" parent="." unique_id=1211840619]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Player UI" unique_id=1601438315]
 material = SubResource("CanvasItemMaterial_1f8p0")

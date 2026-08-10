@@ -30,7 +30,7 @@ var levelArray = [
 	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_swaggy.tscn",
 	"res://Scence/Levels/random_level.tscn",
-	"res://Scenes/Levels/level_5.tscn"
+	"res://Scenes/Levels/last level.tscn"
 ]
 
 func _ready() -> void:

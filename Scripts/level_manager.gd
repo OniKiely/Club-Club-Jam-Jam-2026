@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready():
+	GlobalVariables._reset_level_data()
 	GlobalVariables.levelTime = 0
 	# sets up starting camera bounds
 	if initial_camera_limiter and player:

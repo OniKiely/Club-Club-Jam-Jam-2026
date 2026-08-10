@@ -129,6 +129,7 @@ func collect_powerup(name):
 			print("Unknown powerup collected. ", name, " not valid")
 
 func on_death():
+	$Weapon.visible = false
 	camera.apply_shake(15)
 	current_state = state.DEATH
 	Engine.time_scale = 0.5
@@ -177,6 +178,8 @@ func _process(delta: float):
 		get_tree().reload_current_scene()
 
 func shoot():
+	if current_state == state.DEATH:
+		return
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = aim.global_position
@@ -198,6 +201,6 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	respawn() #respawn covers death logic if not enough lives to respawn
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)

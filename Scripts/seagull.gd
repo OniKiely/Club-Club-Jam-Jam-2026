@@ -27,7 +27,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	$CPUParticles2D.emitting = true
 	
 	await get_tree().physics_frame
-	
+	$CollisionShape2D.disabled = true
 	
 	await $CPUParticles2D.finished
 	queue_free()

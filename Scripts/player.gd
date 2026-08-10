@@ -55,6 +55,7 @@ func _ready():
 	
 	# set starting checkpoint
 	current_checkpoint = global_position
+	Engine.time_scale = 1
 	#_change_shell(player.shellData)
 
 func _physics_process(delta: float) -> void:

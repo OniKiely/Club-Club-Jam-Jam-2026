@@ -112,7 +112,7 @@ size = Vector2(20, 2000)
 script = ExtResource("1_kp1be")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
-Level = 2
+Level = 5
 
 [node name="underwater BG" parent="." unique_id=1869367768 instance=ExtResource("2_wo001")]
 

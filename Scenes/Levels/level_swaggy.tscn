@@ -99,7 +99,7 @@ size = Vector2(4160, 112)
 script = ExtResource("1_xgwww")
 initial_camera_limiter = NodePath("CameraLimiter")
 player = NodePath("Player")
-Level = 2
+Level = 4
 
 [node name="island BG" parent="." unique_id=1869367768 instance=ExtResource("2_q1xsc")]
 
@@ -146,7 +146,7 @@ position = Vector2(-464, 152)
 [node name="Objects" type="Node2D" parent="." unique_id=1419944227]
 
 [node name="winFlag" parent="." unique_id=1807619014 instance=ExtResource("13_np62d")]
-position = Vector2(686, -31)
+position = Vector2(4224, 8)
 
 [node name="enemies" type="Node2D" parent="." unique_id=573245378]
 
@@ -201,9 +201,6 @@ position = Vector2(1536, 400)
 
 [node name="PlatformPath" parent="." unique_id=1167351454 instance=ExtResource("18_xgwww")]
 position = Vector2(3720, 176)
-
-[node name="winFlag2" parent="." unique_id=2144207688 instance=ExtResource("13_np62d")]
-position = Vector2(4224, 8)
 
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccxktb7gc7kay"]
+
+[ext_resource type="AudioStream" uid="uid://dtha25tuikjo3" path="res://Assets/Audio/GAME OVER.wav" id="1_ps5cf"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_dvry2"]
+
+[node name="lose sfx" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_ps5cf")
+autoplay = true
+script = ExtResource("2_dvry2")
+randomizePitch = false
+
+[connection signal="finished" from="." to="." method="_on_finished"]

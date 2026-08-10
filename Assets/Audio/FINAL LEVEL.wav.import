@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr8sobfon1idj"
+path="res://.godot/imported/FINAL LEVEL.wav-1716e940c8e3a511a8667b857fd5123f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/FINAL LEVEL.wav"
+dest_files=["res://.godot/imported/FINAL LEVEL.wav-1716e940c8e3a511a8667b857fd5123f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

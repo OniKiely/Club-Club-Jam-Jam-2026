@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dnjce0atlp8wg"]
+
+[ext_resource type="AudioStream" uid="uid://bwq551h5aayhf" path="res://Assets/Audio/POWER UP.wav" id="1_eu8sf"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_m8wxb"]
+
+[node name="power up sfx" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_eu8sf")
+autoplay = true
+script = ExtResource("2_m8wxb")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

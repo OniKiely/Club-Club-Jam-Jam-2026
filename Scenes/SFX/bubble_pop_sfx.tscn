@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ftm38eclpp1v"]
+
+[ext_resource type="AudioStream" uid="uid://bw2mdwq7e1d7o" path="res://Assets/Audio/PLAYER HITS ENEMY.wav" id="1_raldu"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_38aqx"]
+
+[node name="bubble pop sfx" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_raldu")
+volume_db = -2.619
+autoplay = true
+script = ExtResource("2_38aqx")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

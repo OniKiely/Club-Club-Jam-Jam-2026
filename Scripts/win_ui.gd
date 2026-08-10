@@ -4,6 +4,7 @@ extends Control
 @export var time_label: Label
 @export var total_time_label: Label
 
+const WIN_SFX = preload("uid://dps0hvuhfapx")
 
 
 @onready var win_flag = $"../../winFlag"
@@ -24,6 +25,8 @@ func _on_level_won():
 	time_label.text = "Time: " + str(snapped(GlobalVariables.levelTime,0.01))
 	total_time_label.text = "Total Time: " + str(snapped(GlobalVariables.totalTime,0.01))
 	
+	
+	GlobalVariables._play_sfx(WIN_SFX.instantiate())
 	
 	#Lock the pause menu
 	pause_menu.set_pause_locked(true)

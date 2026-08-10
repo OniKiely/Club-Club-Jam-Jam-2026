@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwq551h5aayhf"
+path="res://.godot/imported/POWER UP.wav-1806f0486f4f4d3c95d678811bc927fc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/POWER UP.wav"
+dest_files=["res://.godot/imported/POWER UP.wav-1806f0486f4f4d3c95d678811bc927fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

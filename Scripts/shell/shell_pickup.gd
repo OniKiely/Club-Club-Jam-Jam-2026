@@ -11,4 +11,7 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	GlobalVariables.ShellManager._change_shell(shell)
+	const POWER_UP_SFX = preload("uid://dnjce0atlp8wg")
+	GlobalVariables._play_sfx(POWER_UP_SFX.instantiate())
+	
 	queue_free()

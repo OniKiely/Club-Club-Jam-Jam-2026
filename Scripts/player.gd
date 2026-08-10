@@ -200,6 +200,10 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		return
 	immune = true
 	
+	const PLAYER_HURT_SFX = preload("uid://7uwdawew6g0b")
+	
+	GlobalVariables._play_sfx(PLAYER_HURT_SFX.instantiate())
+	
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	lives -= 1
 	

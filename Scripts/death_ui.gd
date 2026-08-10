@@ -4,6 +4,9 @@ extends Control
 @onready var fact_label = $FactLabel
 @onready var pause_menu = $"../../PauseCL/PauseMenu"
 
+const LOSE_SFX = preload("uid://ccxktb7gc7kay")
+
+
 var facts: Array[String] = [
 	"More than 560,000 hermit crabs were killed by plastic debris 
 	on two remote islands. (McCauley et al., 2019)",
@@ -28,6 +31,8 @@ func _ready() -> void:
 
 func _gameOver() -> void:
 	fact_label.text = facts.pick_random()
+	
+	GlobalVariables._play_sfx(LOSE_SFX.instantiate())
 	
 	pause_menu.set_pause_locked(true)
 	get_tree().paused = true

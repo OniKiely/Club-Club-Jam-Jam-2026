@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7uwdawew6g0b"]
+
+[ext_resource type="AudioStream" uid="uid://b50sll48jx88c" path="res://Assets/Audio/PLAYER GETS HIT.wav" id="1_17ofs"]
+[ext_resource type="Script" uid="uid://ctihbp3pj03d4" path="res://Scenes/SFX/sfx.gd" id="2_1l5pb"]
+
+[node name="player hurt sfx" type="AudioStreamPlayer" unique_id=1488534535]
+stream = ExtResource("1_17ofs")
+autoplay = true
+script = ExtResource("2_1l5pb")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

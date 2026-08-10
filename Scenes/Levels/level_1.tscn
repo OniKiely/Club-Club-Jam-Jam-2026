@@ -13,13 +13,11 @@
 [ext_resource type="Script" uid="uid://cp65cryx7p1oh" path="res://Scripts/particles/particles holder.gd" id="15_xlpn7"]
 [ext_resource type="PackedScene" uid="uid://cqm7qt7t6bj6d" path="res://Scenes/trash/trash current.tscn" id="16_nojx8"]
 [ext_resource type="PackedScene" uid="uid://f4y4te615d1b" path="res://Scenes/killzone.tscn" id="16_st1ra"]
-[ext_resource type="PackedScene" uid="uid://bhi5w0jgwhn28" path="res://Scenes/checkpoint_flag.tscn" id="17_i2q52"]
 [ext_resource type="PackedScene" uid="uid://bab826kebj3ty" path="res://Scenes/camera_limiter.tscn" id="18_xtkob"]
 [ext_resource type="PackedScene" uid="uid://kpyqrwao77lx" path="res://Scenes/winflag.tscn" id="19_ncwts"]
 [ext_resource type="PackedScene" uid="uid://bxsg4dwb5yqh2" path="res://Scenes/pause_button.tscn" id="20_r4dkd"]
 [ext_resource type="PackedScene" uid="uid://d2sscbshmc717" path="res://Scenes/pause_menu.tscn" id="21_ujweo"]
 [ext_resource type="PackedScene" uid="uid://cmjv62ejnrtoy" path="res://Scenes/winUI.tscn" id="22_k6fki"]
-[ext_resource type="PackedScene" uid="uid://bpagrwuokypop" path="res://Scenes/jump_pad.tscn" id="22_vvknj"]
 [ext_resource type="PackedScene" uid="uid://cfhkwi6imk3su" path="res://Scenes/deathUI.tscn" id="23_4d3gw"]
 [ext_resource type="Script" uid="uid://u3a5qbmmx1yv" path="res://Scripts/level timer.gd" id="24_pmbdk"]
 
@@ -198,9 +196,6 @@ position = Vector2(1048, 728)
 position = Vector2(-84, -32)
 shape = SubResource("RectangleShape2D_jvagm")
 
-[node name="CheckpointFlag" parent="." unique_id=121169574 instance=ExtResource("17_i2q52")]
-position = Vector2(784, 352)
-
 [node name="CameraLimiter" parent="." unique_id=1900997688 instance=ExtResource("18_xtkob")]
 position = Vector2(656, 296)
 limit_y = 2
@@ -254,9 +249,6 @@ visible = false
 
 [node name="deathUI" parent="DeathCL" unique_id=2143124319 instance=ExtResource("23_4d3gw")]
 visible = false
-
-[node name="JumpPad" parent="." unique_id=607402165 instance=ExtResource("22_vvknj")]
-position = Vector2(413, 373)
 
 [editable path="Killzone"]
 [editable path="CameraLimiter"]

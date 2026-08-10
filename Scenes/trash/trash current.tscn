@@ -85,6 +85,7 @@ shape = SubResource("CircleShape2D_r3xts")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="activate area" unique_id=937216320]
+visible = false
 shape = SubResource("CircleShape2D_l4hbu")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -30,7 +30,7 @@ animations = [{
 size = Vector2(45, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(45, 13)
+size = Vector2(53, 20)
 
 [node name="JumpPad" type="Node2D" unique_id=607402165]
 script = ExtResource("1_apsuj")
@@ -43,6 +43,7 @@ visible = false
 texture = ExtResource("2_mydsc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=573193069]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=686107921]
 position = Vector2(0.5, -1)
@@ -51,7 +52,7 @@ shape = SubResource("RectangleShape2D_yf5fn")
 [node name="Area2D" type="Area2D" parent="." unique_id=419351795]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=646067855]
-position = Vector2(0.5, -12.5)
+position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
